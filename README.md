@@ -1,32 +1,49 @@
 # Johaan Tomy Kallany — Research website
 
-A responsive, dependency-free website for GitHub Pages. Content is grounded in the CV dated 9 October 2026. The particle animation is illustrative and is explicitly labelled as such. No published papers or public code repositories are claimed.
+A light, responsive research portfolio for GitHub Pages. The homepage gives a concise academic overview; `research.html` explains the thesis question, methods, findings and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and CV dated 9 October 2026.
 
-## Publish on GitHub Pages
+## Update the GitHub site
 
-1. Create a repository named `kallanyJohaan.github.io` in your GitHub account.
-2. Upload all the files in this folder to its root (not the containing folder).
-3. In Settings → Pages, select Deploy from a branch, choose `main`, and choose `/ (root)`.
-4. GitHub will show the website address when deployment finishes.
+1. Extract the ZIP. Open the extracted folder containing `index.html`.
+2. In `kallanyJohaan/kallanyJohaan.github.io`, choose **Add file → Upload files**.
+3. Drag the extracted contents into the upload area, including the entire `assets` folder. Upload the contents at the repository root, without an extra parent folder and without uploading the ZIP itself.
+4. Choose **Commit changes** to update `main`.
+5. In **Actions**, wait for the Pages deployment to finish, then refresh https://kallanyjohaan.github.io/.
 
-For a project repository, the same root-relative-free assets also work at `kallanyJohaan.github.io/REPOSITORY/`.
+GitHub Pages should publish from `main` and `/ (root)`. Each individual file is below GitHub's 25 MiB web-upload limit. The original PowerPoint is not included because it exceeds that limit; a PDF export and a simulation video are included instead.
 
-## Personalise
+## Files
 
-- The GitHub profile is configured as https://github.com/kallanyJohaan. Add specific public repository links to each project when available.
-- Add a public CV PDF and link only after checking that its contact information is appropriate for a public website.
-- Add the thesis PDF and real figures only when cleared for public release.
-- Add manuscript details, DOI and publication links when the work is public. Keep the current “in preparation” label until then.
-- Edit colours and spacing in `style.css`; animation behaviour lives in `script.js`.
+- `index.html`: profile, thesis overview, selected projects, education and contact.
+- `research.html`: detailed research overview with original scientific figures.
+- `style.css`: light palette, typography, responsive layout and print styles.
+- `script.js`: accessible mobile navigation and copyright year.
+- `assets/`: public document copies, extracted research figures and a simulation video.
+- `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`: site metadata and Pages configuration.
 
-## Preview
+There is no build step, dependency installation, analytics or external font request. Open `index.html` directly in a browser for a local preview.
 
-Open `index.html` directly in a browser. No installation, build step or analytics account is needed.
+## Research sources
 
-## Accessibility
+The thesis is *Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows*, by Johaan Tomy Kallany, supervised by Christophe Henry with co-advisor Laetitia Giraldi, academic year 2025/2026.
 
-Semantic headings and navigation, keyboard focus styles, skip link, responsive layout, reduced-motion preference and an animation pause control are included.
+Figure files preserve the actual scientific plots:
 
-## Status
+| File | Source |
+| --- | --- |
+| `near-wall-particles.png` | Thesis figure 4.4, printed page 61 (PDF page 66) |
+| `density-coherence.png` | Thesis figure 4.8, printed page 66 (PDF page 71) |
+| `pair-recurrence.png` | Thesis figure 4.15, printed page 81 (PDF page 86) |
+| `shear-regimes.png` | Thesis figure 3.3, printed page 36 (PDF page 41) |
+| `cluster-morphology.png` | Defence slide 10 |
+| `near-wall-comparison.mp4` | Embedded simulation from defence slide 9 |
 
-Prepared for GitHub Pages; not yet connected to a GitHub account or deployed. Browser visual QA has not been performed in this environment. The configured GitHub username is `kallanyJohaan`. No placeholder links are rendered as working links.
+The public thesis copy omits student IDs and handwritten signatures from the cover. The public CV copy omits the phone and location line. The supplied originals are unchanged. The defence PDF uses still frames for embedded videos; the near-wall video is also playable on the research page.
+
+The manuscript is labelled **in preparation**. Proposed optimisation, machine learning and control directions are explicitly separate from completed thesis work. No peer-reviewed publication, DOI, public solver repository or reproducibility package is claimed.
+
+## Maintain the content
+
+Edit the text in the two HTML files and update their metadata when research status changes. Replace documents using the same filenames to preserve links. Update the footer date after substantive changes. Add publication and code links only when those resources exist publicly.
+
+The site includes semantic headings, descriptive figure captions, a keyboard skip link, visible focus styles, mobile menu controls, reduced-motion handling and print styles.
