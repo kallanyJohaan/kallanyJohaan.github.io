@@ -1,6 +1,6 @@
 # Johaan Tomy Kallany — Research website
 
-A light, responsive research portfolio for GitHub Pages. The homepage gives a concise academic overview; `research.html` explains the thesis question, methods, findings and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and CV dated 9 October 2026.
+A light, responsive research portfolio for GitHub Pages. The homepage gives a concise academic overview; `research.html` explains the thesis question, methods, findings and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and latest CV (version 4), dated 9 October 2026.
 
 ## Update the GitHub site
 
@@ -10,6 +10,8 @@ A light, responsive research portfolio for GitHub Pages. The homepage gives a co
 4. Choose **Commit changes** to update `main`.
 5. In **Actions**, wait for the Pages deployment to finish, then refresh https://kallanyjohaan.github.io/.
 
+The `assets` folder must appear at the repository root after uploading. It contains the research figures, three PDF downloads and the simulation video. Check the homepage image and **View CV** after deployment; a 404 means the corresponding asset has not reached the repository at the linked path.
+
 GitHub Pages should publish from `main` and `/ (root)`. Each individual file is below GitHub's 25 MiB web-upload limit. The original PowerPoint is not included because it exceeds that limit; a PDF export and a simulation video are included instead.
 
 ## Files
@@ -18,7 +20,7 @@ GitHub Pages should publish from `main` and `/ (root)`. Each individual file is 
 - `research.html`: detailed research overview with original scientific figures.
 - `style.css`: light palette, typography, responsive layout and print styles.
 - `script.js`: accessible mobile navigation and copyright year.
-- `assets/`: public document copies, extracted research figures and a simulation video.
+- `assets/`: public document copies, extracted research figures, responsive lossless WebP image variants and a simulation video.
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`: site metadata and Pages configuration.
 
 There is no build step, dependency installation, analytics or external font request. Open `index.html` directly in a browser for a local preview.
