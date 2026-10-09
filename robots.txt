@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kallanyjohaan.github.io/sitemap.xml
