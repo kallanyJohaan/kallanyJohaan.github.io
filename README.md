@@ -1,6 +1,6 @@
 # Johaan Tomy Kallany — Research website
 
-A light, responsive research portfolio for GitHub Pages. The homepage gives a concise academic overview; `research.html` explains the thesis question, methods, findings and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and latest CV (version 4), dated 9 October 2026.
+A light, responsive research portfolio for GitHub Pages. The homepage centres the broader question of how flow, particle inertia and local interactions produce collective transport. The thesis follows as a concrete study; `research.html` explains the individual contribution, findings, methods and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and latest CV (version 4), dated 9 October 2026.
 
 ## Update the GitHub site
 
@@ -10,20 +10,43 @@ A light, responsive research portfolio for GitHub Pages. The homepage gives a co
 4. Choose **Commit changes** to update `main`.
 5. In **Actions**, wait for the Pages deployment to finish, then refresh https://kallanyjohaan.github.io/.
 
-The `assets` folder must appear at the repository root after uploading. It contains the research figures, three PDF downloads and the simulation video. Check the homepage image and **View CV** after deployment; a 404 means the corresponding asset has not reached the repository at the linked path.
+The `assets` folder must appear at the repository root after uploading. It contains the research figures, three PDF downloads and the simulation video. Check the homepage image and all three **Download PDF** links after deployment; a 404 means the corresponding asset has not reached the repository at the linked path.
+
+### Verify the documents after deployment
+
+The **Outputs** lists on both pages use native, same-origin download links with explicit PDF filenames. The **View CV**, **Read full thesis** and thesis page citations open documents for reading. Downloads work without JavaScript; a browser or device that opens a preview also provides its own save/download action.
+
+| Document | Required file inside the repository | Pages |
+| --- | --- | ---: |
+| CV | `assets/Johaan_Tomy_Kallany_CV.pdf` | 2 |
+| Thesis | `assets/Johaan_Kallany_Thesis.pdf` | 136 |
+| Defence slides | `assets/Thesis_Defence_Slides.pdf` | 37 |
+
+After a successful Pages deployment, open each link below and confirm it displays the correct PDF, then use each **Download PDF** link on the site and open the saved file. Keep filenames and capitalisation exactly as packaged.
+
+- https://kallanyjohaan.github.io/assets/Johaan_Tomy_Kallany_CV.pdf
+- https://kallanyjohaan.github.io/assets/Johaan_Kallany_Thesis.pdf
+- https://kallanyjohaan.github.io/assets/Thesis_Defence_Slides.pdf
 
 GitHub Pages should publish from `main` and `/ (root)`. Each individual file is below GitHub's 25 MiB web-upload limit. The original PowerPoint is not included because it exceeds that limit; a PDF export and a simulation video are included instead.
 
 ## Files
 
-- `index.html`: profile, thesis overview, selected projects, education and contact.
+- `index.html`: central research idea, conceptual animation, thesis overview, selected projects and contact.
 - `research.html`: detailed research overview with original scientific figures.
 - `style.css`: light palette, typography, responsive layout and print styles.
 - `script.js`: accessible mobile navigation and copyright year.
+- `animation.js`: original canvas illustration of flow, local interactions, collective structure and future model-guided design.
 - `assets/`: public document copies, extracted research figures, responsive lossless WebP image variants and a simulation video.
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`: site metadata and Pages configuration.
 
 There is no build step, dependency installation, analytics or external font request. Open `index.html` directly in a browser for a local preview.
+
+## Homepage animation
+
+The animation illustrates a broad research programme; it is not a thesis simulation or quantitative result. Its four stages are Flow, Interactions, Collective transport and Model & design. Design/control is explicitly a future research direction.
+
+Visitors can pause/play or choose a stage. Reduced-motion preferences start with a static view; a static SVG fallback is available without JavaScript. Rendering stops when the illustration is out of view or the page is hidden. There are no external animation dependencies or video downloads on the homepage.
 
 ## Research sources
 
