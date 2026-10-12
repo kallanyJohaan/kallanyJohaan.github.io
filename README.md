@@ -1,6 +1,6 @@
 # Johaan Tomy Kallany — Research website
 
-A light, responsive research portfolio for GitHub Pages. The homepage centres the broader question of how flow, particle inertia and local interactions produce collective transport. The thesis follows as a concrete study; `research.html` explains the individual contribution, findings, methods and model scope. Scientific content is grounded in the supplied MSc thesis, defence slides and latest CV (version 4), dated 9 October 2026.
+A light, responsive research portfolio for GitHub Pages. The homepage centres the broader question of how flow, particle inertia and local interactions produce collective transport. The thesis follows as a concrete study; `research.html` explains the individual contribution, findings, methods and model scope. Scientific content is grounded in the MSc thesis, the defence slides and the CV (version 4, 9 October 2026); every result on the site links to the thesis page it comes from.
 
 ## Update the GitHub site
 
@@ -32,21 +32,23 @@ GitHub Pages should publish from `main` and `/ (root)`. Each individual file is 
 
 ## Files
 
-- `index.html`: central research idea, conceptual animation, thesis overview, selected projects and contact.
-- `research.html`: detailed research overview with original scientific figures.
-- `style.css`: light palette, typography, responsive layout and print styles.
-- `script.js`: accessible mobile navigation and copyright year.
-- `animation.js`: original canvas illustration of flow, local interactions, collective structure and future model-guided design.
-- `assets/`: public document copies, extracted research figures, responsive lossless WebP image variants and a simulation video.
+- `index.html`: who I am, the research question (with the schematic animation), the thesis with its three findings, updates, background, documents and contact.
+- `research.html`: the thesis study in detail — question, findings with the original figures, methods, scope, directions, documents and a BibTeX entry with a copy button.
+- `404.html`: the page GitHub Pages shows for a broken link.
+- `style.css`: typography (Source Serif 4 for headings, IBM Plex Sans for text, IBM Plex Mono for BibTeX), layout, responsive rules and print styles.
+- `script.js`: mobile navigation, copyright year and the Copy BibTeX button.
+- `animation.js`: the schematic canvas illustration (flow, contacts, collective structure).
+- `assets/`: public document copies, extracted research figures, responsive WebP variants and the simulation video.
+- `assets/fonts/`: self-hosted fonts (SIL Open Font License 1.1).
 - `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`: site metadata and Pages configuration.
 
-There is no build step, dependency installation, analytics or external font request. Open `index.html` directly in a browser for a local preview.
+There is no build step, dependency installation, analytics or external request of any kind; fonts are served from the repository. Open `index.html` directly in a browser for a local preview.
+
+When news happens (a submitted manuscript, a talk, a PhD offer), add a `<li>` at the top of the **Updates** list in `index.html` and update the `lastmod` dates in `sitemap.xml` and the footer date on both pages.
 
 ## Homepage animation
 
-The animation illustrates a broad research programme; it is not a thesis simulation or quantitative result. Its four stages are Flow, Interactions, Collective transport and Model & design. Design/control is explicitly a future research direction.
-
-Visitors can pause/play or choose a stage. Reduced-motion preferences start with a static view; a static SVG fallback is available without JavaScript. Rendering stops when the illustration is out of view or the page is hidden. There are no external animation dependencies or video downloads on the homepage.
+The animation is a schematic of the research question, not a thesis simulation or a quantitative result, and the page says so under it. It cycles through three phases: a carrier flow organising particle paths, contacts between particles, and population-level structure. Visitors can pause it; a reduced-motion preference starts it paused, and a static SVG stands in without JavaScript. Rendering stops when the illustration is out of view or the tab is hidden.
 
 ## Research sources
 
