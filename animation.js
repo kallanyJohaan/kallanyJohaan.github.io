@@ -1,8 +1,9 @@
 'use strict';
 
 // A schematic illustration of the research question, not a numerical solver.
-// Three phases cycle: a carrier flow organises particle paths; particles meet
-// and collide; a population-level structure emerges.
+// Three phases cycle: a carrier flow organises particle paths (tracers follow
+// it, heavier particles lag); particles meet and contacts flash; the population
+// settles into streamwise bands. Nothing here is measured or to scale.
 (() => {
   const canvas = document.getElementById('research-canvas');
   if (!canvas) return;
@@ -13,22 +14,34 @@
   const caption = document.getElementById('animation-caption');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const descriptions = [
-    'A carrier flow organises particle paths; inertia sets how faithfully particles follow it.',
+    'A carrier flow organises particle paths. Light particles follow it; heavier ones lag and cross it.',
     'Finite-size particles meet. Each contact changes two trajectories at once.',
-    'Across a whole population: clustering, pair alignment and density coherence.'
+    'Across the whole population, structure appears: bands, alignment, coherence.'
   ];
   const STAGES = descriptions.length;
-  const W = 720, H = 430, duration = 7;
+  const H = 430, duration = 8;
+  let LW = 720; // logical width, follows the rendered aspect ratio
+  const BLUE = '36, 87, 163', INK = '23, 33, 48', ORANGE = '217, 105, 15';
   let seed = 283923597;
   function random() {
     seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
     return seed / 4294967296;
   }
-  const particles = Array.from({length: 155}, (_, i) => ({
-    x: random(), y: (random() - .5) * .82,
-    lane: i % 4, phase: random() * Math.PI * 2,
-    speed: .029 + random() * .018, size: i % 7 === 0 ? 3.4 : 1.5 + random() * 1.2
-  }));
+  // x in [0,1) along the flow, y in [-.5,.5] across it. Each particle carries the
+  // label c of the streamline it would follow if it had no inertia.
+  const particles = Array.from({length: 230}, (_, i) => {
+    const heavy = i % 6 === 0;
+    const c = (random() - .5) * .86;
+    return {
+      x: random(), y: c, c, dy: 0,
+      lane: i % 4, phase: random() * Math.PI * 2,
+      speed: .028 + random() * .016,
+      size: heavy ? 3.2 + random() * .8 : 1.4 + random() * 1.3,
+      tau: heavy ? 1.0 + random() * .9 : .04 + random() * .1,
+      off: (random() - .5) * .05
+    };
+  });
+  const flashes = [];
   let current = motion.matches ? 2 : 0;
   let weights = Array(STAGES).fill(0); weights[current] = 1;
   let time = 0, story = current * duration, paused = motion.matches;
@@ -44,106 +57,151 @@
     toggle.setAttribute('aria-label', paused ? 'Play the illustration' : 'Pause the illustration');
   }
   function canRun() { return !paused && inView && !document.hidden; }
-  function schedule() {
-    if (canRun() && !frame) frame = requestAnimationFrame(tick);
+  function schedule() { if (canRun() && !frame) frame = requestAnimationFrame(tick); }
+  function stop() { if (frame) cancelAnimationFrame(frame); frame = 0; previous = 0; }
+
+  // The carrier flow: the streamline with label c, as a curve y = Y(x; c).
+  function streamline(x, c) {
+    return c + Math.sin(x * Math.PI * 2.2 + c * 3.1 + time * .12) * .045
+      + Math.sin(x * Math.PI * 4.6 - c * 2 + time * .07) * .012;
   }
-  function stop() {
-    if (frame) cancelAnimationFrame(frame);
-    frame = 0; previous = 0;
+  // Band centres for the collective phase: streamwise streaks with a slow wave.
+  const LANES = [-.30, -.10, .10, .30];
+  function streak(x, lane, phase) {
+    return lane + Math.sin(x * Math.PI * 2.05 + phase + time * .18) * .03
+      + Math.sin(x * Math.PI + time * .12) * .035 * lane;
   }
-  function curve(x, lane, phase) {
-    return Math.sin(x * Math.PI * 2.05 + phase + time * .18) * .035
-      + Math.sin(x * Math.PI + time * .12) * .04 * lane;
+  function toScreen(p) {
+    return {x: 40 + p.x * (LW - 80), y: H / 2 + p.y * 360};
   }
-  function position(p, trail = 0) {
-    const x = ((p.x + time * p.speed - trail) % 1 + 1) % 1;
-    const natural = p.y + Math.sin(x * Math.PI * 2 + p.phase + time * .13) * .085;
-    const lane = [-.29, -.09, .105, .30][p.lane];
-    const ordered = lane + curve(x, lane, p.phase * .08) + p.y * .085;
-    const structure = weights[1] * .28 + weights[2];
-    const y = natural * (1 - structure) + ordered * structure;
-    return {x: 45 + x * 630, y: H / 2 + y * 360, edge: Math.min(1, x * 18, (1 - x) * 18)};
+  function edgeFade(x) { return Math.min(1, x * 16, (1 - x) * 16); }
+
+  function step(dt) {
+    const organise = weights[2];
+    for (const p of particles) {
+      const dx = p.speed * dt * (1 + .08 * p.lane);
+      p.x += dx;
+      if (p.x >= 1) { p.x -= 1; p.c = (random() - .5) * .86; p.y = p.c + (random() - .5) * .3 * Math.min(1, p.tau); p.dy = 0; }
+      // Where the particle would be without inertia, blended toward its band as structure forms.
+      const target = streamline(p.x, p.c) * (1 - organise)
+        + (streak(p.x, LANES[p.lane], p.phase * .08) + p.off) * organise;
+      // Light particles sit on the target; heavy ones relax toward it with a lag.
+      const tau = p.tau * (1 - .5 * organise) + .03;
+      const y1 = p.y + (target - p.y) * (1 - Math.exp(-dt / tau));
+      p.dy = dx > 0 ? (y1 - p.y) / dx : 0;
+      p.y = y1;
+    }
+    // Contacts: close pairs flash, separate, and keep the change in their paths.
+    if (weights[1] > .05) {
+      const sorted = particles.slice().sort((a, b) => a.x - b.x);
+      for (let i = 0; i < sorted.length; i++) {
+        const a = sorted[i];
+        for (let j = i + 1; j < sorted.length; j++) {
+          const b = sorted[j];
+          if (b.x - a.x > .018) break;
+          const dx = (b.x - a.x) * (LW - 80), dy = (b.y - a.y) * 360;
+          const reach = a.size + b.size + 1.5, d = Math.hypot(dx, dy);
+          if (d < reach && a.x > .08 && a.x < .92) {
+            const push = (reach - d) / 360 * .6 + .004;
+            const sgn = dy >= 0 ? 1 : -1;
+            a.y -= sgn * push; b.y += sgn * push;
+            a.c -= sgn * push * 1.5; b.c += sgn * push * 1.5;
+            const s = toScreen({x: (a.x + b.x) / 2, y: (a.y + b.y) / 2});
+            if (!flashes.some(f => Math.hypot(f.x - s.x, f.y - s.y) < 14 && time - f.t < .5)) {
+              flashes.push({x: s.x, y: s.y, t: time});
+            }
+          }
+        }
+      }
+    }
+    while (flashes.length && time - flashes[0].t > .9) flashes.shift();
   }
+
   function strokePath(points, color, width) {
     context.beginPath();
     points.forEach((p, i) => i ? context.lineTo(p.x, p.y) : context.moveTo(p.x, p.y));
     context.strokeStyle = color; context.lineWidth = width; context.stroke();
   }
+
   function draw() {
-    context.clearRect(0, 0, W, H);
-    const background = context.createRadialGradient(395, 215, 25, 395, 215, 380);
-    background.addColorStop(0, '#f0f4fa'); background.addColorStop(1, '#ffffff');
-    context.fillStyle = background; context.fillRect(0, 0, W, H);
+    context.clearRect(0, 0, LW, H);
+    const background = context.createLinearGradient(0, 0, LW, H);
+    background.addColorStop(0, '#f3f6fb'); background.addColorStop(1, '#ffffff');
+    context.fillStyle = background; context.fillRect(0, 0, LW, H);
 
-    // Streamlines of the carrier flow.
-    for (let row = 0; row < 11; row++) {
-      const base = 60 + row * 30;
+    // Streamlines.
+    for (let row = 0; row < 13; row++) {
+      const y0 = -.46 + row * .077;
       const points = [];
-      for (let step = 0; step <= 70; step++) {
-        const x = step / 70;
-        points.push({x: 25 + x * 670, y: base + Math.sin(x * Math.PI * 2.2 + row * .18 + time * .10) * 17});
+      for (let s = 0; s <= 90; s++) {
+        const x = -.08 + s / 90 * 1.16;
+        points.push(toScreen({x, y: streamline(x, y0)}));
       }
-      strokePath(points, 'rgba(36, 87, 163, ' + (.11 + (row % 3 === 0 ? .07 : 0)) + ')', 1.1);
-      const arrowX = 55 + ((time * 14 + row * 49) % 600);
-      const arrowY = base + Math.sin((arrowX - 25) / 670 * Math.PI * 2.2 + row * .18 + time * .10) * 17;
-      strokePath([{x: arrowX - 4, y: arrowY - 2}, {x: arrowX, y: arrowY}, {x: arrowX - 4, y: arrowY + 2}], 'rgba(36, 87, 163, .28)', 1);
+      const alpha = .09 + (row % 3 === 0 ? .06 : 0);
+      strokePath(points, 'rgba(' + BLUE + ',' + alpha + ')', row % 3 === 0 ? 1.2 : .9);
+      const ax = -.06 + ((time * .018 + row * .083) % 1) * 1.12;
+      const head = toScreen({x: ax, y: streamline(ax, y0)});
+      const back = toScreen({x: ax - .008, y: streamline(ax - .008, y0)});
+      const ang = Math.atan2(head.y - back.y, head.x - back.x);
+      context.save(); context.translate(head.x, head.y); context.rotate(ang);
+      strokePath([{x: -4, y: -2.4}, {x: 0, y: 0}, {x: -4, y: 2.4}], 'rgba(' + BLUE + ',.32)', 1);
+      context.restore();
     }
 
-    // Soft bands stand for a population-level description; no scale is implied.
-    if (weights[2] > .01) {
+    // Soft bands stand for a population-level description.
+    if (weights[2] > .02) {
       context.save(); context.globalAlpha = weights[2];
-      for (const lane of [-.29, -.09, .105, .30]) {
+      for (const lane of LANES) {
         const path = [];
-        for (let step = 0; step <= 65; step++) {
-          const x = step / 65;
-          path.push({x: 45 + x * 630, y: H / 2 + (lane + curve(x, lane, 0)) * 360});
+        for (let s = 0; s <= 70; s++) {
+          const x = -.08 + s / 70 * 1.16;
+          path.push(toScreen({x, y: streak(x, lane, 0)}));
         }
-        strokePath(path, 'rgba(36, 87, 163, .035)', 38);
-        strokePath(path, 'rgba(36, 87, 163, .06)', 18);
+        strokePath(path, 'rgba(' + BLUE + ',.045)', 30);
+        strokePath(path, 'rgba(' + BLUE + ',.07)', 14);
       }
       context.restore();
     }
 
-    const positions = particles.map(p => position(p));
-    // Proximity links stand for contacts between particles.
-    if (weights[1] > .01) {
-      context.save(); context.globalAlpha = weights[1];
-      let count = 0;
-      for (let i = 0; i < positions.length && count < 24; i++) {
-        const a = positions[i];
-        if (a.x < 180 || a.x > 565) continue;
-        for (let j = i + 1; j < positions.length && count < 24; j++) {
-          const b = positions[j], distance = Math.hypot(a.x - b.x, a.y - b.y);
-          if (distance < 31 && distance > 7) {
-            strokePath([a, b], 'rgba(217, 105, 15, .5)', 1.1);
-            context.beginPath(); context.arc((a.x + b.x) / 2, (a.y + b.y) / 2, 8 + Math.sin(time * 2 + i) * 2, 0, Math.PI * 2);
-            context.strokeStyle = 'rgba(217, 105, 15, .28)'; context.stroke(); count++;
-          }
-        }
-      }
-      context.restore();
+    // Contact flashes.
+    for (const f of flashes) {
+      const age = (time - f.t) / .9;
+      context.beginPath(); context.arc(f.x, f.y, 5 + age * 16, 0, Math.PI * 2);
+      context.strokeStyle = 'rgba(' + ORANGE + ',' + (.75 * (1 - age)) + ')';
+      context.lineWidth = 1.4; context.stroke();
+      context.beginPath(); context.arc(f.x, f.y, 2.2, 0, Math.PI * 2);
+      context.fillStyle = 'rgba(' + ORANGE + ',' + (.9 * (1 - age)) + ')'; context.fill();
     }
 
-    particles.forEach((p, i) => {
-      const point = positions[i], tail = position(p, .017);
-      context.save(); context.globalAlpha = Math.max(0, point.edge);
-      if (point.x - tail.x > 0 && point.x - tail.x < 25) strokePath([tail, point], 'rgba(36, 87, 163, .2)', p.size * .75);
-      if (p.size > 3) {
-        context.beginPath(); context.arc(point.x, point.y, p.size + 5, 0, Math.PI * 2);
-        context.fillStyle = 'rgba(23, 33, 48, .06)'; context.fill();
+    // Particles, with short tails and a faint halo on the heavy ones.
+    for (const p of particles) {
+      const s = toScreen(p);
+      let tx = -.012 * (LW - 80), ty = -p.dy * .012 * 360;
+      const len = Math.hypot(tx, ty), cap = 4 + p.size * 2.2;
+      if (len > cap) { tx *= cap / len; ty *= cap / len; }
+      const tail = {x: s.x + tx, y: s.y + ty};
+      context.save(); context.globalAlpha = edgeFade(p.x);
+      strokePath([tail, s], 'rgba(' + BLUE + ',.22)', p.size * .7);
+      if (p.tau > .5) {
+        context.beginPath(); context.arc(s.x, s.y, p.size + 4, 0, Math.PI * 2);
+        context.fillStyle = 'rgba(' + INK + ',.045)'; context.fill();
       }
-      context.beginPath(); context.arc(point.x, point.y, p.size, 0, Math.PI * 2);
-      context.fillStyle = i % 7 === 0 ? '#172130' : i % 3 === 0 ? '#5b7fb5' : '#2457a3'; context.fill();
+      context.beginPath(); context.arc(s.x, s.y, p.size, 0, Math.PI * 2);
+      context.fillStyle = p.tau > .5 ? '#172130' : (p.lane % 2 ? '#5b7fb5' : '#2457a3');
+      context.fill();
       context.restore();
-    });
+    }
   }
+
   function resize() {
     const bounds = canvas.getBoundingClientRect();
     if (!bounds.width || !bounds.height) return;
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.round(bounds.width * ratio);
     canvas.height = Math.round(bounds.height * ratio);
-    context.setTransform(canvas.width / W, 0, 0, canvas.height / H, 0, 0);
+    const scale = canvas.height / H;
+    LW = canvas.width / scale;
+    context.setTransform(scale, 0, 0, scale, 0, 0);
     draw();
   }
   function tick(now) {
@@ -153,9 +211,13 @@
     previous = now; time += delta; story = (story + delta) % (duration * STAGES);
     const stage = Math.floor(story / duration);
     if (stage !== current) selectStage(stage);
-    weights = weights.map((weight, i) => weight + ((i === current ? 1 : 0) - weight) * Math.min(1, delta * 2.3));
-    draw(); schedule();
+    weights = weights.map((weight, i) => weight + ((i === current ? 1 : 0) - weight) * Math.min(1, delta * 1.6));
+    step(delta); draw(); schedule();
   }
+  // Settle the initial state so the first frame already looks like a flow.
+  for (let i = 0; i < 90; i++) { time += .04; step(.04); }
+  time = 0;
+
   if (toggle) toggle.addEventListener('click', () => {
     paused = !paused; updateToggle();
     if (paused) { stop(); draw(); } else schedule();

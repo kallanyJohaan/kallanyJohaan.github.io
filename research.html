@@ -1,46 +1,213 @@
-<!doctype html><html lang="en"><head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Research | Johaan Tomy Kallany</title><meta name="description" content="Research areas in inertial-particle simulation, prescribed carrier flows, near-wall turbulence and collective transport statistics.">
-    <meta name="theme-color" content="#ffffff"><meta name="color-scheme" content="light">
-    <link rel="canonical" href="https://kallanyjohaan.github.io/research.html">
-    <meta property="og:type" content="website"><meta property="og:title" content="Research | Johaan Tomy Kallany"><meta property="og:description" content="Research areas in inertial-particle simulation, prescribed carrier flows, near-wall turbulence and collective transport statistics.">
-    <meta property="og:image" content="https://kallanyjohaan.github.io/assets/images/social-card.png">
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/site.css">
-    </head><body><a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="container header-inner">
-      <a class="wordmark" href="index.html">Johaan Tomy Kallany</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
-      <nav class="main-nav" id="primary-navigation" aria-label="Main navigation" data-open="false"><a class="nav-link" href="index.html">Home</a><a class="nav-link" href="research.html" aria-current="page">Research</a><a class="nav-link" href="thesis.html">Thesis</a><a class="nav-link" href="resources.html">Resources</a><a class="nav-link" href="contact.html">Contact</a>
-        <span class="nav-separator" aria-hidden="true"></span>
-        <a class="nav-download" href="documents/Johaan_Tomy_Kallany_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg><span>Download CV</span></a>
-      </nav></div></header>
-    <main id="main">
-<section class="page-intro"><div class="container page-lead-grid"><div><div class="kicker">RESEARCH</div><h1 class="page-title">Understanding particle dynamics across scales.</h1><p class="section-intro">My work sits at the intersection of computational fluid mechanics, numerical particle dynamics and statistical analysis. I study how local inertia and interparticle interactions shape large-scale organisation in prescribed carrier flows.</p></div><div class="quote-box">Carrier-flow structure organises the population; collisions redistribute it in a regime- and scale-dependent way.</div></div></section>
-<section class="section-block"><div class="container"><div class="section-head"><div><div class="kicker eyebrow-line">RESEARCH AREAS</div><h2 class="section-title">Three connected themes</h2></div></div>
-<div class="research-grid">
- <article class="research-card" id="particles"><img class="card-image" loading="lazy" src="assets/images/controlled-shear.webp" alt="Thesis Figure 3.2 comparing particle spatial organisation with and without elastic collisions in alternating sinusoidal shear"><div class="card-content"><h3>01 · Particle dynamics</h3><p>Numerical frameworks for hard-disk collisions and inertial particles under Stokes relaxation, including chronologically resolved contacts within kick–drift splitting.</p><a class="inline-link" href="thesis.html#methods">Methods <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a></div></article>
- <article class="research-card" id="flow"><img class="card-image" loading="lazy" src="assets/images/particles-in-streaks.webp" alt="Thesis Figure 4.4 showing particles distributed along turbulent near-wall streaks"><div class="card-content"><h3>02 · Flow–particle interactions</h3><p>Transport through analytic shears and a time-resolved wall-parallel carrier field from turbulent-channel DNS, focusing on preferential sampling and collision-induced redistribution.</p><a class="inline-link" href="thesis.html#results">View figures <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a></div></article>
- <article class="research-card" id="statistics"><img class="card-image" loading="lazy" src="assets/images/collision-selection.webp" alt="Thesis Figure 4.11 showing angular collision selection and pair-relative kinematics in near-wall flow"><div class="card-content"><h3>03 · Collective statistics</h3><p>Particle-number fluctuations, density coherence, pair alignment, collision-angle selection, same-pair recurrence and bootstrap uncertainty estimates.</p><a class="inline-link" href="thesis.html#findings">Key findings <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a></div></article>
-</div><p class="note" style="margin-top:17px">Scientific images above are figures from the original MSc thesis, not generated illustrations.</p></div></section>
-<section class="band"><div class="container"><div class="kicker eyebrow-line">COMPUTATIONAL APPROACH</div><h2 class="section-title">From numerical mechanics to physical interpretation</h2><p class="section-intro">The modelling choices are intentionally explicit: finite-size contact geometry, a prescribed one-way-coupled carrier field, and careful numerical/statistical checks.</p>
-<div class="method-grid" style="margin-top:30px">
- <div class="method-card"><span class="small-caps">01 / PARTICLE MODEL</span><h3>Hybrid continuous–discrete dynamics</h3><p>Stokes-drag evolution is paired with instantaneous hard-particle impulses; an event-driven force-free reference supports numerical verification.</p></div>
- <div class="method-card"><span class="small-caps">02 / FLOW RECONSTRUCTION</span><h3>Controlled and DNS-derived fields</h3><p>Alternating sinusoidal shear provides a tractable comparison, while a reconstructed turbulent-channel wall-parallel field introduces near-wall structure.</p></div>
- <div class="method-card"><span class="small-caps">03 / COMPARATIVE DESIGN</span><h3>Matched collision-on / collision-off runs</h3><p>Paired simulations begin from matching particle states and experience the same carrier record to clarify the statistical effect of enabling contacts.</p></div>
- <div class="method-card"><span class="small-caps">04 / VALIDATION</span><h3>Verification and uncertainty</h3><p>Conservation tests, timestep refinement, flow-field interpolation checks, statistical confidence bands and sensitivity analysis support interpretation.</p></div>
-</div></div></section>
-<section class="section-block"><div class="container"><div class="section-head"><div><div class="kicker eyebrow-line">SELECTED INSIGHTS</div><h2 class="section-title">Research findings</h2></div><a class="inline-link" href="thesis.html#results">See all thesis figures <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></a></div>
-<div class="result-spotlight"><figure class="spotlight-figure"><img loading="lazy" src="assets/images/density-coherence.webp" alt="Thesis Figure 4.8: collisional and collisionless near-wall particle density autocorrelation maps"><figcaption>MSc thesis · Figure 4.8 · Density autocorrelation and coherence</figcaption></figure><div class="spotlight-copy"><div class="kicker">NEAR-WALL TURBULENCE</div><h3>Collisions can reorganise structure across scales.</h3><p>In the focused reduced near-wall case, contacts modify particle-number fluctuations, pair-axis alignment and streamwise density coherence without eliminating the organisation imposed by turbulent streaks.</p></div></div>
-<div class="result-spotlight"><div class="spotlight-copy"><div class="kicker">COLLISION RECURRENCE</div><h3>Repeated contact is not the same as collective trapping.</h3><p>Collision-conditioned analysis identifies local same-pair recurrences, while neighbourhood-retention measurements distinguish these encounters from long-lived many-particle confinement.</p></div><figure class="spotlight-figure"><img loading="lazy" src="assets/images/pair-recurrence.webp" alt="Thesis Figure 4.15: distributions of same-pair collision multiplicity and spatial recurrence"><figcaption>MSc thesis · Figure 4.15 · Same-pair collision recurrence</figcaption></figure></div>
-</div></section>
-<section class="band"><div class="container"><div class="kicker eyebrow-line">FUTURE WORK</div><h2 class="section-title">Research directions</h2><p class="section-intro">Directions for future investigation, rather than completed thesis results.</p><div class="direction-grid">
- <div class="direction-card"><h3>Reduced and stochastic descriptions</h3><p>Bridging particle-level collisions with coarse-grained continuum dynamics and stochastic closure.</p></div>
- <div class="direction-card"><h3>Richer particle-contact physics</h3><p>Extending contact laws to incorporate rotation, tangential restitution and frictional interactions.</p></div>
- <div class="direction-card"><h3>Scientific machine learning and control</h3><p>Exploring learning-based optimisation and control strategies for particle transport and collective behaviour.</p></div>
-</div></div></section>
-</main><footer class="site-footer"><div class="container">
-     <div class="footer-inner"><div><div class="footer-name">Johaan Tomy Kallany</div>
-       <p>Computational modelling · Particle-laden flows · Statistical analysis</p>
-       <p>From particle interactions to collective transport.</p></div>
-       <nav class="footer-nav" aria-label="Footer navigation"><a href="research.html">Research</a><a href="thesis.html">MSc thesis</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a><a href="https://github.com/kallanyjohaan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
-     </div><div class="footer-bottom"><span>© <span data-year>2026</span> Johaan Tomy Kallany</span><span>Built for clarity, accessibility and scientific accuracy.</span></div>
-    </div></footer><script src="assets/js/site.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Johaan Tomy Kallany’s MSc thesis: how hard-particle collisions change the collective organisation of inertial particles in alternating shear and in a reduced model of near-wall turbulence.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://kallanyjohaan.github.io/research.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows">
+  <meta property="og:description" content="MSc thesis, Inria Sophia Antipolis, 2026: what collisions do to the organisation that inertia and the carrier flow create.">
+  <meta property="og:url" content="https://kallanyjohaan.github.io/research.html">
+  <meta property="og:image" content="https://kallanyjohaan.github.io/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Collision-on particles on near-wall turbulent streaks, from the MSc thesis, with the site title.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Collective Dynamics of Colliding Inertial Particles — thesis study — Johaan Tomy Kallany</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Johaan Tomy Kallany</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main">
+        <a href="index.html#work">Research</a>
+        <a href="research.html" aria-current="page">Thesis</a>
+        <a href="index.html#documents">Documents</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="assets/Johaan_Tomy_Kallany_CV.pdf">Download CV <span class="pdf">PDF</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="wrap study-hero">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Thesis study</p>
+      <p class="label">Master’s thesis, Erasmus Mundus MathMods, 2026</p>
+      <h1>Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows</h1>
+      <p class="lead">What do local collisions do to the collective organisation that inertia and the surrounding flow create? The thesis answers in two settings: controlled alternating shear, and a reduced model of near-wall turbulence.</p>
+      <p class="meta">Johaan Tomy Kallany. Research internship with Team CALISTO, Inria Sophia Antipolis, April–September 2026, supervised by Christophe Henry and Laetitia Giraldi. Selected and funded through Inria’s 2026 Machine Learning + Simulation thematic semester.</p>
+      <div class="actions">
+        <a class="btn" href="assets/Johaan_Kallany_Thesis.pdf">Read the thesis <span class="pdf">PDF, 25.9 MB</span></a>
+        <a class="btn btn-ghost" href="assets/Thesis_Defence_Slides.pdf">Defence slides <span class="pdf">PDF, 15.7 MB</span></a>
+      </div>
+    </section>
+
+    <div class="wrap study">
+      <nav class="contents" aria-label="On this page">
+        <a href="#question">Question</a>
+        <a href="#findings">Findings</a>
+        <a href="#methods">Methods</a>
+        <a href="#scope">Scope</a>
+        <a href="#directions">Directions</a>
+        <a href="#documents">Documents</a>
+      </nav>
+
+      <div class="study-content">
+        <section id="question" aria-labelledby="question-title">
+          <h2 id="question-title">From local contact to collective transport</h2>
+          <p>Inertial particles do not follow fluid pathlines exactly: a finite response time can make the particle distribution non-uniform even in an incompressible carrier flow. Finite size adds a second ingredient. A contact impulse changes the relative velocity of two particles, and with it their later trajectories and encounters.</p>
+          <p>The thesis works through three connected stages: hard-particle numerical modelling, controlled alternating sinusoidal shear, and a reduced near-wall turbulent configuration. The common picture is that the carrier flow establishes particle organisation and collisions redistribute it, in a way that depends on regime and on scale.</p>
+          <h3>My contribution</h3>
+          <ul>
+            <li>Developed and verified particle-dynamics solvers coupling continuous Stokes relaxation to discrete hard-particle contacts.</li>
+            <li>Reconstructed the time-resolved near-wall carrier field and designed matched simulations with collisions enabled and disabled.</li>
+            <li>Built particle, density and collision-conditioned diagnostics, with uncertainty and resolution checks, to connect local contact, pair recurrence and population-level redistribution.</li>
+          </ul>
+          <p>The carrier-flow DNS was performed by Jérémie Bec (Institut de Physique de Nice) and supplied for this study. The reconstruction of that velocity record, the particle simulations and the statistical analysis are my own work. <span class="ref"><a href="assets/Johaan_Kallany_Thesis.pdf#page=46">Chapter 4, p. 41</a>; contributions in <a href="assets/Johaan_Kallany_Thesis.pdf#page=8">Chapter 1, p. 3</a></span></p>
+          <details>
+            <summary>Watch the matched near-wall simulations</summary>
+            <video controls preload="none" playsinline aria-label="Near-wall particle simulations with and without collisions">
+              <source src="assets/near-wall-comparison.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="assets/near-wall-comparison.mp4">Open the video file.</a>
+            </video>
+            <p>Simulation animation from slide 9 of the thesis defence. It shows the two populations under the same carrier forcing; the quantitative conclusions come from the matched statistical diagnostics below.</p>
+          </details>
+        </section>
+
+        <section id="findings" aria-labelledby="findings-title">
+          <h2 id="findings-title">Collisions act within a structure set by the flow</h2>
+
+          <h3>One collision law, two opposite outcomes</h3>
+          <p>In alternating sinusoidal shear, exactly elastic collisions suppress the strong inhomogeneity of a high-inertia collisionless population. At low inertia, the same collision law produces pronounced banded inhomogeneity from an approximately homogeneous collisionless state. The reversal does not require collisional energy dissipation: the population response is set by competing particle, collision and carrier-transport timescales.</p>
+          <div class="fig-pair">
+            <figure class="fig">
+              <a href="assets/figures/fig-3-1.webp" aria-label="Open Figure 3.1 at full size"><img src="assets/figures/fig-3-1ab.webp" width="1880" height="1140" loading="lazy" alt="Thesis Figure 3.1(a,b): high-inertia particle configurations in alternating shear, collisions off with a grid-like filament pattern (VMR 6.31) and collisions on, elastic, nearly uniform (VMR 0.81)."></a>
+              <figcaption><strong>High inertia.</strong> Collisions off (a) and elastic collisions on (b): the collisionless filament pattern, VMR 6.31, is erased to a near-uniform state, VMR 0.81. <a href="assets/Johaan_Kallany_Thesis.pdf#page=38">Thesis Fig. 3.1, p. 33</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-3-2.webp" aria-label="Open Figure 3.2 at full size"><img src="assets/figures/fig-3-2-1100.webp" width="1880" height="1145" loading="lazy" alt="Thesis Figure 3.2: low-inertia particle configurations, collisions off nearly uniform (VMR 0.97) and elastic collisions on forming two dense bands (VMR 3.58)."></a>
+              <figcaption><strong>Low inertia.</strong> The same elastic collision law turns a near-uniform population, VMR 0.97, into two dense bands, VMR 3.58. <a href="assets/Johaan_Kallany_Thesis.pdf#page=40">Thesis Fig. 3.2, p. 35</a></figcaption>
+            </figure>
+          </div>
+          <p class="ref">Distribution-level evidence for both regimes: box-occupancy distributions in <a href="assets/Johaan_Kallany_Thesis.pdf#page=41">Fig. 3.3, p. 36</a>.</p>
+
+          <h3>Near the wall, collisions reorganise a structure they did not create</h3>
+          <p>Both near-wall populations inherit a dominant streamwise orientation from the carrier streaks; collisions do not create that preferred direction. Instead they weaken short-range pair-axis alignment, reduce local particle-number fluctuations and increase the streamwise coherence of the density field within the existing anisotropic structure.</p>
+          <figure class="fig">
+            <a href="assets/figures/fig-4-8.webp" aria-label="Open Figure 4.8 at full size"><img src="assets/figures/fig-4-8.webp" width="2400" height="532" loading="lazy" alt="Thesis Figure 4.8: particle-density autocorrelation maps for collisions off (a) and on (b), and the extracted correlation lengths (c); the collisional map is strongly elongated streamwise."></a>
+            <figcaption><strong>Collision-enhanced density coherence.</strong> (a,b) Density autocorrelation maps, collisions off and on, averaged over the same 21 frames centred on <span class="nowrap">t = 120</span>; the spanwise axis is stretched sevenfold. (c) Correlation lengths: the paired streamwise difference is <span class="nowrap">ΔL = 0.826</span> and the collision-on aspect ratio 22; the collisionless spanwise crossing lies inside the first grid cell and is unresolved, so the robust comparison is the streamwise increase. <a href="assets/Johaan_Kallany_Thesis.pdf#page=71">Thesis Fig. 4.8, p. 66</a></figcaption>
+          </figure>
+
+          <h3>Elastic rebound, then local return</h3>
+          <p>Elastic contact reverses the inward normal relative motion and produces an immediate radial rebound. Even so, 87.9% of supported repeat-contact intervals show no resolved separation beyond two particle diameters before the next collision. Under equal-pair weighting, local recurrence rises from about 73% for pairs with two recorded collisions to about 92% for pairs with at least ten.</p>
+          <figure class="fig">
+            <a href="assets/figures/fig-4-15.webp" aria-label="Open Figure 4.15 at full size"><img src="assets/figures/fig-4-15-1100.webp" srcset="assets/figures/fig-4-15-1100.webp 1100w, assets/figures/fig-4-15.webp 2400w" sizes="(max-width: 980px) calc(100vw - 72px), 690px" width="2400" height="1771" loading="lazy" alt="Thesis Figure 4.15: (a) collision multiplicity per pair, (b) maximum resolved separation before the next collision, (c) local-recurrence fraction rising with multiplicity, (d) waiting time against excursion."></a>
+            <figcaption><strong>Same-pair recurrence is local in resolved separation.</strong> (a) Multiplicity per pair. (b) Maximum resolved separation between successive collisions of a pair: 87.9% of supported intervals stay within two diameters. (c) The pair-balanced local-recurrence fraction, about 73% at M = 2 and 92% at M ≥ 10. (d) Waiting time against excursion. Because output is saved at a finite cadence the sampled maximum is a lower bound, and the result does not establish uninterrupted confinement or a bound state. <a href="assets/Johaan_Kallany_Thesis.pdf#page=86">Thesis Fig. 4.15, p. 81</a></figcaption>
+          </figure>
+          <p>Selected pairs collide repeatedly while the wider neighbourhood keeps turning over. Likewise, raw event counts do not measure collision propensity: conditioning on pair availability and inward-motion exposure separates the encounter population from the configurations selected for contact.</p>
+          <h3>More figures from the thesis</h3>
+          <div class="gallery">
+            <figure class="fig">
+              <a href="assets/figures/fig-4-3.webp" aria-label="Open Figure 4.3 at full size"><img src="assets/figures/fig-4-3-1100.webp" width="2400" height="1837" loading="lazy" alt="Thesis Figure 4.3: streamwise velocity fluctuation at the particle plane, low- and high-speed streak classification, the two-dimensional velocity autocorrelation and its directional cuts."></a>
+              <figcaption><strong>The carrier streaks.</strong> Velocity fluctuation and streak classification at the particle plane, with the velocity autocorrelation that sets the reference direction for every particle statistic. <a href="assets/Johaan_Kallany_Thesis.pdf#page=65">Fig. 4.3, p. 60</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-4-5.webp" aria-label="Open Figure 4.5 at full size"><img src="assets/figures/fig-4-5-1100.webp" width="2068" height="1507" loading="lazy" alt="Thesis Figure 4.5: particle configurations at six times for the collision-off and collision-on runs, and DBSCAN cluster classifications at t = 200."></a>
+              <figcaption><strong>How the organisation develops.</strong> Both legs from t = 0 to 200, and DBSCAN clusters at the end: 78 clusters with collisions on against 158 without. <a href="assets/Johaan_Kallany_Thesis.pdf#page=67">Fig. 4.5, p. 62</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-4-11.webp" aria-label="Open Figure 4.11 at full size"><img src="assets/figures/fig-4-11-1100.webp" width="2400" height="1918" loading="lazy" alt="Thesis Figure 4.11: angular distributions of near-contact pair time and collision events, relative collision selection against pair-axis angle, near-contact radial kinematics, and collision yield per unit inward flux."></a>
+              <figcaption><strong>Which pairs collide.</strong> Collision selection against pair-axis angle from 298 029 events, with inward-motion exposure and simultaneous 95% bands. <a href="assets/Johaan_Kallany_Thesis.pdf#page=75">Fig. 4.11, p. 70</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-4-13.webp" aria-label="Open Figure 4.13 at full size"><img src="assets/figures/fig-4-13-1100.webp" width="2400" height="1991" loading="lazy" alt="Thesis Figure 4.13: standardised one-particle sampling biases of carrier-flow quantities for the collisionless and collisional systems at two times, and their paired differences with bootstrap intervals."></a>
+              <figcaption><strong>Where particles sit in the flow.</strong> Sampling biases of in-plane divergence, the Okubo–Weiss indicator, strain, wall-normal vorticity and streamwise velocity at <span class="nowrap">t = 120</span> and 199, and the paired collision effect with detection floors. <a href="assets/Johaan_Kallany_Thesis.pdf#page=81">Fig. 4.13, p. 76</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-4-16.webp" aria-label="Open Figure 4.16 at full size"><img src="assets/figures/fig-4-16-1100.webp" width="2400" height="944" loading="lazy" alt="Thesis Figure 4.16: distribution of collisions within proximity episodes, and the retention of initial neighbours over time for collisions on and off."></a>
+              <figcaption><strong>The neighbourhood turns over.</strong> 32.1% of proximity episodes contain at least two collisions, yet initial neighbours are lost faster with collisions on than off: pair-local recurrence, not a many-particle cage. <a href="assets/Johaan_Kallany_Thesis.pdf#page=90">Fig. 4.16, p. 85</a></figcaption>
+            </figure>
+            <figure class="fig">
+              <a href="assets/figures/fig-3-3.webp" aria-label="Open Figure 3.3 at full size"><img src="assets/figures/fig-3-3-1100.webp" width="1833" height="1794" loading="lazy" alt="Thesis Figure 3.3: box-occupancy distributions against a Poisson reference for the high- and low-inertia regimes, with and without collisions."></a>
+              <figcaption><strong>Occupancy distributions.</strong> The distribution-level evidence behind the reversal: elastic collisions narrow the high-inertia distribution towards Poisson and broaden the low-inertia one. <a href="assets/Johaan_Kallany_Thesis.pdf#page=41">Fig. 3.3, p. 36</a></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section id="methods" aria-labelledby="methods-title">
+          <h2 id="methods-title">A verified computational foundation</h2>
+          <h3>Chronological hard-particle dynamics</h3>
+          <p>I developed an event-driven solver for the force-free hard-disk problem and a forced kick–drift solver that couples continuous Stokes relaxation to chronologically resolved contacts within each ballistic drift. The force-free solver is an independent reference within its stated assumptions.</p>
+          <p>Analytical single-particle comparisons, cross-solver checks, conservation diagnostics and timestep refinement fix the numerical scope used in the physical analyses. Reliability is assessed for the tested regimes and observables, not claimed in general.</p>
+          <h3>Matched simulations and multiscale diagnostics</h3>
+          <p>The collision-on and collision-off near-wall calculations start from the same labelled particle state and experience the same prescribed carrier-flow record. Lagrangian particle statistics are combined with Eulerian density diagnostics to separate encounter availability, collision selection and the response to contact.</p>
+          <ul>
+            <li><strong>Collective structure:</strong> box-occupancy distributions, particle-number fluctuations, pair orientation and density autocorrelation.</li>
+            <li><strong>Collision selection:</strong> near-contact pair availability, inward-motion exposure and environment-conditioned event yield.</li>
+            <li><strong>Event and pair dynamics:</strong> radial rebound, separation, pair-axis memory, repeat-contact intervals and neighbourhood turnover.</li>
+            <li><strong>Statistical assessment:</strong> matched comparisons, bootstrap uncertainty estimates and estimator-specific resolution checks.</li>
+          </ul>
+          <p class="ref"><a href="assets/Johaan_Kallany_Thesis.pdf#page=9">Numerical methods, Chapter 2</a>; <a href="assets/Johaan_Kallany_Thesis.pdf#page=112">validation, Appendix B</a></p>
+        </section>
+
+        <section id="scope" aria-labelledby="scope-title">
+          <h2 id="scope-title">What the study establishes</h2>
+          <p>The detailed near-wall results are for one prescribed relaxation time, <span class="nowrap">τ<sub>p</sub> = 0.5</span> in the DNS’s own nondimensional time units (<span class="nowrap">τ<sub>p</sub><sup>+</sup> ≈ 8</span> in viscous wall units), at one particle size, concentration and wall distance. A time-resolved carrier field is reconstructed from a three-dimensional turbulent-channel DNS at <span class="nowrap">Re<sub>τ</sub> ≈ 360</span>, while the particles evolve as a two-dimensional wall-parallel hard-disk system.</p>
+          <div class="callout"><p><strong>Mechanically finite-sized, hydrodynamically unresolved.</strong> Particle diameter sets contact geometry and excluded volume. Carrier forcing is centre-sampled Stokes relaxation with one-way coupling. Wall-normal transport, lubrication, lift, particle rotation, tangential contact forces and feedback on the turbulence are outside the baseline model.</p></div>
+          <p>The matched design isolates the accumulated statistical consequence of enabling hard-particle interactions within this model. It is not an exact counterfactual for an individual collision once trajectories diverge. Isolated collision and collision–drag calculations serve as diagnostic references, and the recurrence statistics remain subject to finite observation windows and saved-state cadence.</p>
+          <p class="ref"><a href="assets/Johaan_Kallany_Thesis.pdf#page=94">Limitations and extensions, Chapter 5, pp. 89–91</a></p>
+        </section>
+
+        <section id="directions" aria-labelledby="directions-title">
+          <h2 id="directions-title">From particle mechanics to reduced models</h2>
+          <p>The thesis sets out a staged extension of the confined particle model to rotation and frictional contact, alongside a continuum formulation with a stochastic closure for unresolved collision history. The aim is a tractable population description that still carries the directional anisotropy, collision selection and recurrence measured at particle level.</p>
+          <p>A longer-term direction is to treat particle shape and flexibility as design variables and to target transport and preferential sampling in complex flows with optimisation methods such as Bayesian optimisation or reinforcement learning. These are proposed directions, distinct from the numerical and statistical work completed in the thesis.</p>
+          <p class="ref"><a href="assets/Johaan_Kallany_Thesis.pdf#page=96">Ongoing and parallel work, pp. 91–92</a></p>
+        </section>
+
+        <section id="documents" aria-labelledby="documents-title">
+          <h2 id="documents-title">Documents</h2>
+          <ul class="docs">
+            <li><a href="assets/Johaan_Kallany_Thesis.pdf" download="Johaan_Kallany_Thesis.pdf"><div><h3>Master’s thesis</h3><p>Methods, results, interpretation and validation appendices</p></div><span class="size">PDF, 25.9 MB</span></a></li>
+            <li><a href="assets/Thesis_Defence_Slides.pdf" download="Thesis_Defence_Slides.pdf"><div><h3>Thesis defence slides</h3><p>The presentation and its selected results</p></div><span class="size">PDF, 15.7 MB</span></a></li>
+            <li><a href="assets/Johaan_Tomy_Kallany_CV.pdf" download="Johaan_Tomy_Kallany_CV.pdf"><div><h3>Curriculum vitae</h3><p>Research experience, education and projects</p></div><span class="size">PDF, 0.2 MB</span></a></li>
+          </ul>
+          <p class="note-line">A first-author manuscript with Christophe Henry and Laetitia Giraldi, based on this thesis, is in preparation.</p>
+          <div class="cite">
+            <div class="cite-head"><h3 id="cite-title">Cite this thesis</h3><button class="copy-button" type="button" data-copy-target="bibtex" hidden>Copy BibTeX</button></div>
+            <pre id="bibtex" aria-labelledby="cite-title" tabindex="0"><code>@mastersthesis{kallany2026collective,
+  author = {Kallany, Johaan Tomy},
+  title  = {Collective Dynamics of Colliding Inertial Particles
+            in Prescribed Carrier Flows},
+  school = {Universit{\'e} C{\^o}te d'Azur},
+  type   = {{MSc} thesis, Erasmus Mundus MathMods},
+  note   = {Research carried out at Inria Sophia Antipolis},
+  year   = {2026},
+  month  = aug,
+  url    = {https://kallanyjohaan.github.io/research.html}
+}</code></pre>
+            <p class="copy-status" role="status" aria-live="polite"></p>
+          </div>
+          <p class="note-line">Looking for a PhD student in particle transport, computational fluid dynamics or multiscale modelling? <a href="mailto:johaantk2001@gmail.com">Write to me</a>.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Johaan Tomy Kallany. Last updated October 2026. <a href="https://github.com/kallanyJohaan/kallanyJohaan.github.io">Source on GitHub</a></p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>

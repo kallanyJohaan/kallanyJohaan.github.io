@@ -1,59 +1,232 @@
-<!doctype html><html lang="en"><head>
-    <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Johaan Tomy Kallany | Computational Modelling & Particle-Laden Flows</title><meta name="description" content="Academic research portfolio of Johaan Tomy Kallany: particle dynamics, carrier-flow interactions, numerical simulation and collective statistics.">
-    <meta name="theme-color" content="#ffffff"><meta name="color-scheme" content="light">
-    <link rel="canonical" href="https://kallanyjohaan.github.io/">
-    <meta property="og:type" content="website"><meta property="og:title" content="Johaan Tomy Kallany | Computational Modelling & Particle-Laden Flows"><meta property="og:description" content="Academic research portfolio of Johaan Tomy Kallany: particle dynamics, carrier-flow interactions, numerical simulation and collective statistics.">
-    <meta property="og:image" content="https://kallanyjohaan.github.io/assets/images/social-card.png">
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="assets/css/site.css">
-    </head><body><a href="#main" class="skip-link">Skip to content</a><header class="site-header"><div class="container header-inner">
-      <a class="wordmark" href="index.html">Johaan Tomy Kallany</a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button>
-      <nav class="main-nav" id="primary-navigation" aria-label="Main navigation" data-open="false"><a class="nav-link" href="index.html" aria-current="page">Home</a><a class="nav-link" href="research.html">Research</a><a class="nav-link" href="thesis.html">Thesis</a><a class="nav-link" href="resources.html">Resources</a><a class="nav-link" href="contact.html">Contact</a>
-        <span class="nav-separator" aria-hidden="true"></span>
-        <a class="nav-download" href="documents/Johaan_Tomy_Kallany_CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg><span>Download CV</span></a>
-      </nav></div></header>
-    <main id="main">
-<section class="hero"><div class="container hero-grid">
- <div class="hero-copy">
-   <div class="kicker">MATHEMATICAL MODELLING · PARTICLE-LADEN FLOWS</div>
-   <h1 class="hero-title">From particle interactions to collective transport.</h1>
-   <p class="lede">I investigate how fluid motion, particle inertia and collisions shape the distribution and transport of dispersed particles. My work combines particle-level simulations with statistical analysis to connect microscale interactions with clustering, spatial correlations and collective behaviour in complex flows.</p>
-   <div class="hero-credentials">
-     <div class="credential"><span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 10 10-5 10 5-10 5zM6 12v6c4 3 8 3 12 0v-6M22 10v7"/></svg></span><div><strong>Joint European MSc MathMods<br>(Mathematical Modelling in Engineering)</strong><span>L’Aquila · Hamburg · Université Côte d’Azur · 2026</span></div></div>
-     <div class="credential"><span class="credential-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="14" rx="2"/><path d="M8 7V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v3M3 12h18"/></svg></span><div><strong>MSc research internship</strong><span>Inria Sophia Antipolis · 2026</span></div></div>
-   </div>
-   <div class="btn-row"><a class="btn btn-primary" href="research.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg><span>Explore research</span></a><a class="btn btn-outline" href="thesis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg><span>View MSc thesis</span></a></div>
- </div>
- <div class="sim-card" aria-label="Interactive illustration of particles in a prescribed carrier flow">
-   <div class="sim-top"><h2>Particle interactions in flow</h2><div class="sim-controls">
-     <button type="button" class="control-btn" id="simulation-toggle" aria-pressed="true"> <svg data-play-icon viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg> <span data-play-label>Pause</span></button>
-     <button type="button" class="control-btn" id="simulation-reset"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 3 7M3 4v7h7"/></svg> Reset</button>
-   </div></div>
-   <div class="sim-canvas-wrap"><canvas id="particle-canvas" role="img" aria-label="Animated conceptual illustration of inertial particles interacting and moving through an analytic carrier flow; orange rings mark contact events."></canvas></div>
-   <div class="sim-bottom"><div class="sim-legend"><span class="legend-item"><span class="line-icon" aria-hidden="true"></span> Carrier flow</span><span class="legend-item"><span class="dot-icon" aria-hidden="true"></span> Inertial particles</span><span class="legend-item"><span class="dot-icon orange-icon" aria-hidden="true"></span> Collision events</span></div>
-   <p>Carrier-flow structure guides particle motion; finite-size collisions can redirect trajectories and alter spatial organisation.</p>
-   <p class="sim-note">Interactive conceptual model, not a reproduction of thesis simulation data.</p>
-   </div>
- </div>
-</div></section>
-<section class="pillar-section" aria-label="Core research themes"><div class="container"><div class="pillar-grid">
- <a class="pillar-card" href="research.html#particles"><span class="pillar-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="6" r="3"/><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M10 9 8 14M14 9l2 5M9 17h6"/></svg></span><div><h3>Particle dynamics</h3><p>Event-driven modelling of inertial particles with finite-size collisions.</p></div><span class="pillar-arrow" aria-hidden="true">↗</span></a>
- <a class="pillar-card" href="research.html#flow"><span class="pillar-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 7c4 0 4-4 8-4s4 4 8 4 4-4 4-4M2 13c4 0 4-4 8-4s4 4 8 4 4-4 4-4M2 19c4 0 4-4 8-4s4 4 8 4 4-4 4-4"/></svg></span><div><h3>Flow–particle interactions</h3><p>Transport and preferential sampling in prescribed and turbulence-derived flows.</p></div><span class="pillar-arrow" aria-hidden="true">↗</span></a>
- <a class="pillar-card" href="research.html#statistics"><span class="pillar-graphic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V12M10 20V6M16 20V10M22 20V3"/></svg></span><div><h3>Collective statistics</h3><p>Clustering, spatial correlations and collision-conditioned analysis.</p></div><span class="pillar-arrow" aria-hidden="true">↗</span></a>
-</div></div></section>
-<section class="band"><div class="container split-layout">
-  <div><div class="kicker eyebrow-line">THE RESEARCH QUESTION</div><h2 class="section-title">What changes when particles collide?</h2><p class="body-prose">A carrier flow already structures where inertial particles travel, accumulate and encounter one another. I study what happens when hard-particle contacts are introduced—and how local interactions affect the wider population.</p><p class="body-prose">The focus is not a single trajectory, but the connection between mechanics, transport and statistical organisation.</p><a class="btn btn-outline" href="research.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg><span>Read the research overview</span></a></div>
-  <div class="steps" aria-label="Research workflow"><div class="step"><div class="step-no">01</div><h3>Model</h3><p>Continuous particle forcing and instantaneous mechanical contact.</p></div><div class="step"><div class="step-no">02</div><h3>Simulate</h3><p>Validated particle solvers across controlled and turbulence-derived fields.</p></div><div class="step"><div class="step-no">03</div><h3>Analyse</h3><p>Clustering, pair statistics and uncertainty across scales.</p></div></div>
-</div></section>
-<section class="section-block"><div class="container media-feature">
- <figure class="media-frame"><img loading="lazy" src="assets/images/particles-in-streaks.webp" alt="Thesis Figure 4.4: collisional and collisionless particle configurations embedded in near-wall turbulent carrier-flow streaks"><figcaption>From my MSc thesis, Figure 4.4: particles within near-wall streak structures. Original scientific figure.</figcaption></figure>
- <div><div class="kicker eyebrow-line">FEATURED WORK</div><h2 class="section-title">An event-driven view of collective dynamics.</h2><p>My MSc thesis develops a computational framework for finite-size inertial-particle collisions, then examines their influence in prescribed analytic flows and a reduced near-wall turbulent setting.</p><p>Matched collision-on and collision-off simulations help isolate how contacts reorganise a particle population.</p><div class="tag-row"><span class="tag">Inertial particles</span><span class="tag">Numerical simulation</span><span class="tag">Near-wall turbulence</span></div><a class="btn btn-primary" href="thesis.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-7-7 7 7-7 7"/></svg><span>Discover the MSc thesis</span></a></div>
-</div></section>
-</main><footer class="site-footer"><div class="container">
-     <div class="footer-inner"><div><div class="footer-name">Johaan Tomy Kallany</div>
-       <p>Computational modelling · Particle-laden flows · Statistical analysis</p>
-       <p>From particle interactions to collective transport.</p></div>
-       <nav class="footer-nav" aria-label="Footer navigation"><a href="research.html">Research</a><a href="thesis.html">MSc thesis</a><a href="resources.html">Resources</a><a href="contact.html">Contact</a><a href="https://github.com/kallanyjohaan" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav>
-     </div><div class="footer-bottom"><span>© <span data-year>2026</span> Johaan Tomy Kallany</span><span>Built for clarity, accessibility and scientific accuracy.</span></div>
-    </div></footer><script src="assets/js/site.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Johaan Tomy Kallany studies how carrier flow, particle inertia and collisions shape collective transport, with particle-level simulation and statistical analysis. MSc thesis at Inria Sophia Antipolis, 2026.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="https://kallanyjohaan.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Johaan Tomy Kallany — particle transport and computational modelling">
+  <meta property="og:description" content="From particle interactions to collective transport: simulation and statistical analysis of colliding inertial particles in prescribed flows.">
+  <meta property="og:url" content="https://kallanyjohaan.github.io/">
+  <meta property="og:image" content="https://kallanyjohaan.github.io/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Collision-on particles on near-wall turbulent streaks, from the MSc thesis, with the site title.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Johaan Tomy Kallany — particle transport and computational modelling</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script defer src="animation.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Johaan Tomy Kallany","url":"https://kallanyjohaan.github.io/","email":"mailto:johaantk2001@gmail.com","sameAs":["https://github.com/kallanyJohaan","https://www.linkedin.com/in/johaantomykallany/"],"knowsAbout":["Particle-laden flows","Inertial particle clustering","Numerical modelling","Scientific computing","Stochastic modelling"],"alumniOf":[{"@type":"CollegeOrUniversity","name":"University of L'Aquila"},{"@type":"CollegeOrUniversity","name":"University of Hamburg"},{"@type":"CollegeOrUniversity","name":"Université Côte d'Azur"},{"@type":"CollegeOrUniversity","name":"CHRIST (Deemed to be University)"}]}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Johaan Tomy Kallany</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main">
+        <a href="#work">Research</a>
+        <a href="research.html">Thesis</a>
+        <a href="#documents">Documents</a>
+        <a href="#contact">Contact</a>
+        <a href="assets/Johaan_Tomy_Kallany_CV.pdf">Download CV <span class="pdf">PDF</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="kicker">Mathematical modelling of particle-laden flows</p>
+        <h1>From particle interactions to collective transport.</h1>
+        <p class="lead">I investigate how fluid motion, inertia and collisions decide where dispersed particles go and how they cluster. I build particle-level simulations and use statistical diagnostics to connect single contacts with the clustering, spatial correlations and transport of a whole population.</p>
+        <p class="context">MSc in mathematical modelling, Erasmus Mundus MathMods, 2026.<br>Research intern, Team CALISTO, Inria Sophia Antipolis, <span class="nowrap">April–September 2026</span>.<br>Applying for PhD positions in particle transport and multiscale modelling.</p>
+        <div class="actions">
+          <a class="btn" href="research.html">Read the thesis study</a>
+          <a class="btn btn-ghost" href="assets/Johaan_Tomy_Kallany_CV.pdf">Download CV <span class="pdf">PDF</span></a>
+        </div>
+        <div class="links">
+          <a href="mailto:johaantk2001@gmail.com">johaantk2001@gmail.com</a>
+          <a href="https://github.com/kallanyJohaan">GitHub</a>
+          <a href="https://www.linkedin.com/in/johaantomykallany/">LinkedIn</a>
+        </div>
+      </div>
+      <figure class="motion" aria-labelledby="motion-title">
+        <div class="motion-top">
+          <p id="motion-title">Particle interactions in a carrier flow</p>
+          <button id="animation-toggle" type="button" disabled aria-controls="research-canvas">Pause</button>
+        </div>
+        <div class="motion-view">
+          <canvas id="research-canvas" width="720" height="430" role="img" aria-label="Schematic animation: particles carried by a flow meet and collide, and a population-level pattern forms."></canvas>
+          <svg class="animation-fallback" viewBox="0 0 600 430" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Particles following flow paths, with local encounters and organised transport." focusable="false">
+            <defs>
+              <linearGradient id="flow-wash" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef3fa"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+              <marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="none" stroke="#7f9bc4" stroke-width="1.2"/></marker>
+            </defs>
+            <rect width="600" height="430" fill="url(#flow-wash)"/>
+            <g fill="none" stroke="#c5d3e6" stroke-width="1.4">
+              <path d="M30 95 C140 20 210 185 320 108 S465 55 565 105" marker-end="url(#flow-arrow)"/>
+              <path d="M30 165 C155 85 225 265 330 178 S485 135 565 175" marker-end="url(#flow-arrow)"/>
+              <path d="M30 245 C155 165 220 345 335 256 S475 215 565 250" marker-end="url(#flow-arrow)"/>
+              <path d="M30 325 C145 250 215 405 330 333 S470 295 565 328" marker-end="url(#flow-arrow)"/>
+            </g>
+            <g fill="#2457a3">
+              <circle cx="90" cy="72" r="5"/><circle cx="145" cy="96" r="4"/><circle cx="205" cy="132" r="5"/><circle cx="265" cy="136" r="4"/><circle cx="347" cy="88" r="5"/><circle cx="470" cy="76" r="4"/>
+              <circle cx="106" cy="150" r="4"/><circle cx="205" cy="202" r="5"/><circle cx="255" cy="223" r="4"/><circle cx="287" cy="208" r="5"/><circle cx="355" cy="157" r="4"/><circle cx="445" cy="147" r="5"/>
+              <circle cx="135" cy="238" r="5"/><circle cx="213" cy="280" r="4"/><circle cx="278" cy="296" r="5"/><circle cx="338" cy="253" r="4"/><circle cx="403" cy="229" r="5"/><circle cx="506" cy="238" r="4"/>
+              <circle cx="91" cy="302" r="4"/><circle cx="197" cy="354" r="5"/><circle cx="261" cy="368" r="4"/><circle cx="357" cy="319" r="5"/><circle cx="451" cy="307" r="4"/><circle cx="525" cy="315" r="5"/>
+            </g>
+            <g fill="none" stroke="#d9690f" stroke-width="1.5"><circle cx="255" cy="223" r="13"/><circle cx="287" cy="208" r="13"/><path d="M267 217 L275 213" stroke-dasharray="2 3"/></g>
+          </svg>
+        </div>
+        <figcaption>
+          <ul class="legend" aria-label="Legend">
+            <li><span class="sw sw-flow" aria-hidden="true"></span>Carrier flow</li>
+            <li><span class="sw sw-light" aria-hidden="true"></span>Light particle</li>
+            <li><span class="sw sw-heavy" aria-hidden="true"></span>Heavy particle</li>
+            <li><span class="sw sw-contact" aria-hidden="true"></span>Contact</li>
+          </ul>
+          <p id="animation-caption">A carrier flow organises particle paths. Light particles follow it; heavy ones lag and cross it.</p>
+          <p class="note">Schematic model, not simulation data: streamlines are prescribed, heavy particles relax to them with a lag, and close pairs rebound.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section id="work" class="section">
+      <div class="wrap two">
+        <div>
+          <h2>Research focus</h2>
+          <p class="intro">Which particle-scale mechanisms matter for collective transport, and how should a tractable model represent them?</p>
+        </div>
+        <ul class="topics">
+          <li><h3>Particle dynamics</h3><p>Event-driven and kick–drift simulation of inertial particles with finite-size collisions, verified against analytical solutions and cross-solver checks. How does a single contact change two trajectories?</p></li>
+          <li><h3>Flow–particle interaction</h3><p>Transport in prescribed carrier flows: controlled alternating shear and fields reconstructed from turbulent-channel DNS. How do flow structure and particle response time shape preferential concentration?</p></li>
+          <li><h3>Collective statistics</h3><p>Clustering, spatial correlation, pair orientation and collision-conditioned diagnostics with bootstrap uncertainty. Which statistics separate structure made by the flow from structure made by collisions?</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="thesis" class="section tinted">
+      <div class="wrap">
+        <div class="thesis-head">
+          <div>
+            <p class="label">Master’s thesis, 2026</p>
+            <h2>Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows</h2>
+            <p>Six months with Team CALISTO at Inria Sophia Antipolis, supervised by Christophe Henry and Laetitia Giraldi, in an internship selected and funded through Inria’s 2026 Machine Learning + Simulation thematic semester.</p>
+            <p>One question in two settings: what do hard-particle collisions do to the organisation that inertia and the carrier flow create? First in controlled alternating shear, then in a reduced model of near-wall turbulence driven by a channel-flow DNS at <span class="nowrap">Re<sub>τ</sub> ≈ 360</span>.</p>
+            <p>I wrote and verified the particle solvers, reconstructed the time-resolved carrier field from the DNS, and ran matched simulations with collisions on and off, with the particle, density and collision-conditioned diagnostics needed to compare them.</p>
+          </div>
+          <figure class="fig">
+            <a href="assets/figures/fig-4-4.webp" aria-label="Open the full-resolution figure"><img src="assets/figures/fig-4-4-700.webp" srcset="assets/figures/fig-4-4-700.webp 700w, assets/figures/fig-4-4-1100.webp 1100w, assets/figures/fig-4-4-1400.webp 1400w" sizes="(max-width: 980px) calc(100vw - 40px), 520px" alt="Thesis Figure 4.4: (a) collision-on and (b) collision-off particle configurations as black points on the same instantaneous streamwise velocity fluctuation; (c) enlargement of one dense filament with recorded collision locations marked in red." width="2400" height="1662" loading="lazy"></a>
+            <figcaption><strong>The matched comparison.</strong> (a) Collisions on and (b) collisions off: the same 15 000 labelled particles in the same carrier-flow record at <span class="nowrap">t = 150</span>, drawn as black points on the streamwise velocity fluctuation at the particle plane (red fast, blue slow). (c) One dense filament enlarged, with recorded collision locations in red. Every near-wall result is a difference between the two legs. <a href="assets/Johaan_Kallany_Thesis.pdf#page=66">Thesis Fig. 4.4, p. 61</a></figcaption>
+          </figure>
+        </div>
+
+        <div class="findings">
+          <h3 class="heading">What the thesis found</h3>
+          <ul class="finding-list">
+            <li>
+              <a class="thumb" href="assets/figures/fig-3-2.webp" aria-label="Open Figure 3.2 at full size"><img src="assets/figures/fig-3-2-1100.webp" width="1880" height="1145" loading="lazy" alt="Thesis Figure 3.2: low-inertia particle configurations without collisions (VMR 0.97) and with elastic collisions (VMR 3.58), the latter forming two dense bands."></a>
+              <h3>One collision law, two opposite outcomes</h3>
+              <p>In alternating shear, elastic collisions erase the clustering of a high-inertia population and create banded clustering where a low-inertia population was nearly uniform. No collisional dissipation is needed; the outcome is set by competing particle, collision and transport timescales.</p>
+              <p class="ref">Shown: low inertia, collisions off and on. <a href="assets/Johaan_Kallany_Thesis.pdf#page=40">Thesis Fig. 3.2, p. 35</a>; high inertia in <a href="assets/Johaan_Kallany_Thesis.pdf#page=38">Fig. 3.1, p. 33</a></p>
+            </li>
+            <li>
+              <a class="thumb" href="assets/figures/fig-4-8.webp" aria-label="Open Figure 4.8 at full size"><img src="assets/figures/fig-4-8b.webp" width="904" height="532" loading="lazy" alt="Detail of thesis Figure 4.8(b): the particle-density autocorrelation map of the collisional population, elongated along the streamwise direction."></a>
+              <h3>Near the wall, collisions reorganise a structure they did not create</h3>
+              <p>Carrier streaks set the streamwise orientation of both populations. Collisions weaken short-range pair alignment, damp local number fluctuations and lengthen the streamwise coherence of the density field.</p>
+              <p class="ref">Shown: density autocorrelation, collisions on. <a href="assets/Johaan_Kallany_Thesis.pdf#page=71">Thesis Fig. 4.8(b), p. 66</a></p>
+            </li>
+            <li>
+              <a class="thumb" href="assets/figures/fig-4-15.webp" aria-label="Open Figure 4.15 at full size"><img src="assets/figures/fig-4-15c.webp" width="1123" height="730" loading="lazy" alt="Detail of thesis Figure 4.15(c): the pair-balanced local-recurrence fraction rising from about 73 percent for pairs with two collisions to about 92 percent for pairs with ten or more."></a>
+              <h3>Elastic rebound, then local return</h3>
+              <p>After contact, 87.9% of repeat-contact intervals never resolve a separation beyond two particle diameters. The share rises from about 73% for pairs that collide twice to about 92% for pairs that collide ten times or more.</p>
+              <p class="ref">Shown: local-recurrence fraction against pair multiplicity. <a href="assets/Johaan_Kallany_Thesis.pdf#page=86">Thesis Fig. 4.15(c), p. 81</a></p>
+            </li>
+          </ul>
+          <div class="how">
+            <h3 class="heading">How it was done</h3>
+            <ul>
+              <li>An event-driven hard-disk solver (force-free reference) and a kick–drift solver coupling Stokes relaxation to chronologically resolved contacts.</li>
+              <li>Verification against analytical single-particle solutions, cross-solver checks, conservation diagnostics and timestep refinement.</li>
+              <li>Matched collision-on and collision-off runs from the same particle state in the same carrier-flow record.</li>
+              <li>Box-occupancy, pair-orientation, density-autocorrelation and collision-conditioned statistics with bootstrap uncertainty and resolution checks.</li>
+            </ul>
+          </div>
+          <div class="scope"><p>The near-wall results hold for a two-dimensional, one-way-coupled hard-disk model on a wall-parallel plane, at one inertia (<span class="nowrap">τ<sub>p</sub><sup>+</sup> ≈ 8</span>), one particle size and one concentration.</p></div>
+          <div class="actions thesis-actions">
+            <a class="btn" href="research.html">Methods, figures and limitations</a>
+            <a class="btn btn-ghost" href="assets/Johaan_Kallany_Thesis.pdf">Thesis <span class="pdf">PDF, 25.9 MB</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="updates" class="section">
+      <div class="wrap two">
+        <h2>Updates</h2>
+        <ol class="rows">
+          <li><time datetime="2026-09">September 2026</time><p>Graduated: MSc in mathematical modelling, Erasmus Mundus MathMods.</p></li>
+          <li><time datetime="2026-08">August 2026</time><p>Thesis submitted: <a href="research.html">Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows</a>.</p></li>
+          <li><time datetime="2026-04">April 2026</time><p>Started a six-month research internship with Team CALISTO, Inria Sophia Antipolis.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="background" class="section">
+      <div class="wrap two">
+        <div>
+          <h2>Background</h2>
+          <p class="intro">Numerical analysis and continuum mechanics, with probability, stochastic calculus and statistical learning.</p>
+        </div>
+        <ul class="rows">
+          <li><span class="when">2024–2026</span><div><h3>Erasmus Mundus MSc, MathMods</h3><p class="detail">Mathematical Modelling in Engineering: Theory, Numerics, Applications. University of L’Aquila, University of Hamburg and Université Côte d’Azur. Course projects included an adaptive micro–macro traffic simulation coupling the Cell Transmission Model with the Intelligent Driver Model (Hamburg, 2025) and hyperparameter optimisation with approximate gradients, implementing HOAG through implicit differentiation (Côte d’Azur, 2026).</p></div></li>
+          <li><span class="when">2022–2024</span><div><h3>Associate Analyst, Deloitte</h3><p class="detail">Bengaluru. Automated regression testing for ERP data workflows, with a focus on reliability and validation.</p></div></li>
+          <li><span class="when">2019–2022</span><div><h3>BSc in Economics, Mathematics and Statistics</h3><p class="detail">CHRIST (Deemed to be University), Bengaluru.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="documents" class="section">
+      <div class="wrap two">
+        <h2>Documents</h2>
+        <div>
+          <ul class="docs">
+            <li><a href="assets/Johaan_Kallany_Thesis.pdf" download="Johaan_Kallany_Thesis.pdf"><div><h3>Master’s thesis</h3><p>Methods, results, interpretation and validation appendices</p></div><span class="size">PDF, 25.9 MB</span></a></li>
+            <li><a href="assets/Thesis_Defence_Slides.pdf" download="Thesis_Defence_Slides.pdf"><div><h3>Thesis defence slides</h3><p>The presentation and its selected results</p></div><span class="size">PDF, 15.7 MB</span></a></li>
+            <li><a href="assets/Johaan_Tomy_Kallany_CV.pdf" download="Johaan_Tomy_Kallany_CV.pdf"><div><h3>Curriculum vitae</h3><p>Research experience, education and projects</p></div><span class="size">PDF, 0.2 MB</span></a></li>
+          </ul>
+          <p class="note-line">A first-author manuscript with Christophe Henry and Laetitia Giraldi, based on the thesis, is in preparation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="wrap two">
+        <h2>Contact</h2>
+        <div>
+          <p>I am looking for a PhD position in particle transport, computational fluid dynamics or multiscale modelling. Write to me about research fit, or about anything on this page.</p>
+          <a class="contact-email" href="mailto:johaantk2001@gmail.com">johaantk2001@gmail.com</a>
+          <div class="links" style="margin-top:0">
+            <a href="https://github.com/kallanyJohaan">GitHub</a>
+            <a href="https://www.linkedin.com/in/johaantomykallany/">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Johaan Tomy Kallany. Last updated October 2026. <a href="https://github.com/kallanyJohaan/kallanyJohaan.github.io">Source on GitHub</a></p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
