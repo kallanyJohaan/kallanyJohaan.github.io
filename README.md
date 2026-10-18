@@ -1,76 +1,67 @@
-# Johaan Tomy Kallany — Research website
+# Johaan Tomy Kallany — Academic Research Website
 
-A light, responsive research portfolio for GitHub Pages. The homepage centres the broader question of how flow, particle inertia and local interactions produce collective transport. The thesis follows as a concrete study; `research.html` explains the individual contribution, findings, methods and model scope. Scientific content is grounded in the MSc thesis, the defence slides and the CV (version 4, 9 October 2026); every result on the site links to the thesis page it comes from.
+A complete, self-contained, responsive, five-page academic website designed for GitHub Pages. No npm, build tools, backend, database, web fonts, or third-party JavaScript libraries are required.
 
-## Update the GitHub site
+## Pages
 
-1. Extract the ZIP. Open the extracted folder containing `index.html`.
-2. In `kallanyJohaan/kallanyJohaan.github.io`, choose **Add file → Upload files**.
-3. Drag the extracted contents into the upload area, including the entire `assets` folder. Upload the contents at the repository root, without an extra parent folder and without uploading the ZIP itself.
-4. Choose **Commit changes** to update `main`.
-5. In **Actions**, wait for the Pages deployment to finish, then refresh https://kallanyjohaan.github.io/.
+- `index.html` — home page with research introduction and an interactive **conceptual** particle-flow model (Play/Pause/Reset).
+- `research.html` — research themes, computational approach, scientific insights, and future directions.
+- `thesis.html` — original MSc thesis overview, methods, key findings, limitations, and a gallery of **actual figures** extracted from the thesis.
+- `resources.html` — PDF downloads and computational project summaries.
+- `contact.html` — contact information and professional profiles.
 
-The `assets` folder must appear at the repository root after uploading. It contains the research figures, three PDF downloads and the simulation video. Check the homepage image and all three **Download PDF** links after deployment; a 404 means the corresponding asset has not reached the repository at the linked path.
+## Included, real documents
 
-### Verify the documents after deployment
+- `documents/Johaan_Tomy_Kallany_MSc_Thesis.pdf` — the 136-page thesis provided by the user, **not** a placeholder.
+- `documents/Johaan_Tomy_Kallany_CV.pdf` — the supplied two-page CV, **not** a placeholder.
 
-The **Outputs** lists on both pages use native, same-origin download links with explicit PDF filenames. The **View CV**, **Read full thesis** and thesis page citations open documents for reading. Downloads work without JavaScript; a browser or device that opens a preview also provides its own save/download action.
+All research images in `assets/images/` except `social-card.png` and the favicon were extracted from the original thesis PDF. Image file names refer to their subject, and the thesis page captions retain their original thesis figure numbers.
 
-| Document | Required file inside the repository | Pages |
-| --- | --- | ---: |
-| CV | `assets/Johaan_Tomy_Kallany_CV.pdf` | 2 |
-| Thesis | `assets/Johaan_Kallany_Thesis.pdf` | 136 |
-| Defence slides | `assets/Thesis_Defence_Slides.pdf` | 37 |
+**Scientific accuracy:** The animated homepage panel is explicitly an educational illustration generated from an analytic incompressible field with simplified inertial-particle contact handling. It is **not** data from the thesis, and is not presented as a DNS or fully coupled fluid–particle computation. The real thesis uses a reduced, one-way-coupled wall-parallel model in its near-wall chapter.
 
-After a successful Pages deployment, open each link below and confirm it displays the correct PDF, then use each **Download PDF** link on the site and open the saved file. Keep filenames and capitalisation exactly as packaged.
+## Publish on GitHub Pages
 
-- https://kallanyjohaan.github.io/assets/Johaan_Tomy_Kallany_CV.pdf
-- https://kallanyjohaan.github.io/assets/Johaan_Kallany_Thesis.pdf
-- https://kallanyjohaan.github.io/assets/Thesis_Defence_Slides.pdf
+For the GitHub repository `kallanyJohaan/kallanyJohaan.github.io`:
 
-GitHub Pages should publish from `main` and `/ (root)`. Each individual file is below GitHub's 25 MiB web-upload limit. The original PowerPoint is not included because it exceeds that limit; a PDF export and a simulation video are included instead.
+1. **Download and unzip** the website archive.
+2. Open your website repository on GitHub. Upload **all contents of the unzipped folder directly into the repository root**. Make sure `index.html` is in the root, not hidden inside another folder. The `assets/` and `documents/` folders must remain intact.
+3. Commit the files to your default branch (`main`, if that is what your repository uses).
+4. Under **Settings → Pages**, select **Deploy from a branch**, choose the correct branch and `/ (root)`, and save (if not already configured).
+5. Once GitHub Pages has built the site, visit your configured website URL. Check the thesis PDF and CV buttons, then verify the mobile navigation and homepage animation.
 
-## Files
+If the repository already contains website files, back them up or create a branch before replacing anything. Publishing is not performed by this package.
 
-- `index.html`: who I am, the research question (with the schematic animation), the thesis with its three findings, updates, background, documents and contact.
-- `research.html`: the thesis study in detail — question, findings with the original figures, methods, scope, directions, documents and a BibTeX entry with a copy button.
-- `404.html`: the page GitHub Pages shows for a broken link.
-- `style.css`: typography (Source Serif 4 for headings, IBM Plex Sans for text, IBM Plex Mono for BibTeX), layout, responsive rules and print styles.
-- `script.js`: mobile navigation, copyright year and the Copy BibTeX button.
-- `animation.js`: the schematic canvas illustration (flow, contacts, collective structure).
-- `assets/`: public document copies, extracted research figures, responsive WebP variants and the simulation video.
-- `assets/fonts/`: self-hosted fonts (SIL Open Font License 1.1).
-- `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll`: site metadata and Pages configuration.
+For a project repository rather than an account-level Pages repository, relative internal links/assets also work, but **canonical URLs, `robots.txt`, `sitemap.xml`, and the `og:image` URL** should be updated from `kallanyjohaan.github.io` to the actual published URL.
 
-There is no build step, dependency installation, analytics or external request of any kind; fonts are served from the repository. Open `index.html` directly in a browser for a local preview.
+## Editing
 
-When news happens (a submitted manuscript, a talk, a PhD offer), add a `<li>` at the top of the **Updates** list in `index.html` and update the `lastmod` dates in `sitemap.xml` and the footer date on both pages.
-
-## Homepage animation
-
-The animation is a schematic of the research question, not a thesis simulation or a quantitative result, and the page says so under it. It cycles through three phases: a carrier flow organising particle paths, contacts between particles, and population-level structure. Visitors can pause it; a reduced-motion preference starts it paused, and a static SVG stands in without JavaScript. Rendering stops when the illustration is out of view or the tab is hidden.
-
-## Research sources
-
-The thesis is *Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows*, by Johaan Tomy Kallany, supervised by Christophe Henry with co-advisor Laetitia Giraldi, academic year 2025/2026.
-
-Figure files preserve the actual scientific plots:
-
-| File | Source |
+| To change | File |
 | --- | --- |
-| `near-wall-particles.png` | Thesis figure 4.4, printed page 61 (PDF page 66) |
-| `density-coherence.png` | Thesis figure 4.8, printed page 66 (PDF page 71) |
-| `pair-recurrence.png` | Thesis figure 4.15, printed page 81 (PDF page 86) |
-| `shear-regimes.png` | Thesis figure 3.3, printed page 36 (PDF page 41) |
-| `cluster-morphology.png` | Defence slide 10 |
-| `near-wall-comparison.mp4` | Embedded simulation from defence slide 9 |
+| Homepage and scientific narrative | `index.html` |
+| Research summaries | `research.html` |
+| Thesis details, findings, figure captions | `thesis.html` |
+| Resource links | `resources.html` |
+| Contact information | `contact.html` |
+| Colours, typography and layout | `assets/css/site.css` |
+| Scientific conceptual animation, mobile menu, copy-email button | `assets/js/site.js` |
+| Original thesis figures | `assets/images/*.webp` |
+| PDFs | `documents/*.pdf` |
 
-The public thesis copy omits student IDs and handwritten signatures from the cover. The public CV copy omits the phone and location line. The supplied originals are unchanged. The defence PDF uses still frames for embedded videos; the near-wall video is also playable on the research page.
+**Important: public CV review.** The included CV was supplied in October 2026 and contains personal contact details, including a phone number. Publishing this repository makes the document publicly accessible. Review the PDF and replace it if you prefer a public-facing version with fewer contact details. The site itself displays only the academic email and professional links.
 
-The manuscript is labelled **in preparation**. Proposed optimisation, machine learning and control directions are explicitly separate from completed thesis work. No peer-reviewed publication, DOI, public solver repository or reproducibility package is claimed.
+**Thesis figure rights.** The figures are taken from the user's thesis. Confirm any institutional/publication permissions applicable to public distribution before publishing.
 
-## Maintain the content
+## Accessibility and performance
 
-Edit the text in the two HTML files and update their metadata when research status changes. Replace documents using the same filenames to preserve links. Update the footer date after substantive changes. Add publication and code links only when those resources exist publicly.
+- Responsive layout with a mobile navigation toggle.
+- Keyboard-visible focus states and a skip link.
+- Alt text on original scientific figures.
+- Animation controls with accessible names and reduced-motion support.
+- Responsive scientific images encoded as WebP; no external runtime dependencies.
+- CSS system-font fallbacks (no bundled font files).
 
-The site includes semantic headings, descriptive figure captions, a keyboard skip link, visible focus styles, mobile menu controls, reduced-motion handling and print styles.
+## Limits and recommended final checks
+
+The design includes the selected scientific results from the submitted thesis, not fabricated sample datasets or plots. **Defence slides are not bundled because no original slide deck was provided.** Contact links should be reviewed before publication if they change. The academic degree is written as **Joint European MSc MathMods (Mathematical Modelling in Engineering)**.
+
+No publication or GitHub push has been performed; this is an upload-ready source archive.
