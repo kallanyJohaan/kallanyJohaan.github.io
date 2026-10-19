@@ -11,6 +11,7 @@
   if (!context) return;
   const figure = canvas.closest('.motion');
   const toggle = document.getElementById('animation-toggle');
+  const reset = document.getElementById('animation-reset');
   const caption = document.getElementById('animation-caption');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const descriptions = [
@@ -29,7 +30,7 @@
   }
   // x in [0,1) along the flow, y in [-.5,.5] across it. Each particle carries the
   // label c of the streamline it would follow if it had no inertia.
-  const particles = Array.from({length: 230}, (_, i) => {
+  function makeParticles() { return Array.from({length: 230}, (_, i) => {
     const heavy = i % 6 === 0;
     const c = (random() - .5) * .86;
     return {
@@ -40,7 +41,8 @@
       tau: heavy ? 1.0 + random() * .9 : .04 + random() * .1,
       off: (random() - .5) * .05
     };
-  });
+  }); }
+  let particles = makeParticles();
   const flashes = [];
   let current = motion.matches ? 2 : 0;
   let weights = Array(STAGES).fill(0); weights[current] = 1;
@@ -222,6 +224,16 @@
     paused = !paused; updateToggle();
     if (paused) { stop(); draw(); } else schedule();
   });
+  if (reset) reset.addEventListener('click', () => {
+    stop();
+    seed = 283923597;
+    particles = makeParticles();
+    flashes.length = 0;
+    current = 0; weights = [1,0,0]; story = 0; time = 0; previous = 0;
+    for (let i = 0; i < 90; i++) { time += .04; step(.04); }
+    time = 0;
+    selectStage(0); draw(); schedule();
+  });
   document.addEventListener('visibilitychange', () => { if (document.hidden) stop(); else schedule(); });
   motion.addEventListener('change', event => {
     if (event.matches) { paused = true; stop(); updateToggle(); draw(); }
@@ -233,5 +245,6 @@
   else window.addEventListener('resize', resize, {passive: true});
   figure.classList.add('animation-ready');
   if (toggle) toggle.disabled = false;
+  if (reset) reset.disabled = false;
   selectStage(current); updateToggle(); resize(); schedule();
 })();

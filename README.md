@@ -1,73 +1,45 @@
-# kallanyjohaan.github.io
+# Johaan Tomy Kallany — research website
 
-Research website of **Johaan Tomy Kallany** — computational modelling of particle-laden flows. Joint European MSc MathMods (Mathematical Modelling in Engineering); MSc thesis at Inria Sophia Antipolis, 2026.
-Live at **https://kallanyjohaan.github.io/**
+Static, accessible, responsive academic research website for GitHub Pages. It preserves the user's supplied site architecture, thesis analysis and scholarly content, with a new three-part **Research directions** overview.
 
-The homepage states the research question (how carrier flow, particle inertia and collisions shape collective transport) and presents the MSc thesis, *Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows* (Inria Sophia Antipolis, 2026), with its three main findings. `research.html` goes deeper: question, findings with the original figures, numerical methods, scope and limitations, directions, documents and a BibTeX entry. Every result on the site links to the thesis page it comes from.
+## Deploy
 
-## Structure
+1. Extract this archive. Upload **the contents** (not the enclosing folder) to the root of `kallanyJohaan/kallanyJohaan.github.io` on the `main` branch.
+2. In GitHub Settings → Pages, configure *Deploy from a branch*, `main`, `/ (root)`.
+3. Keep the directory structure and exact capitalisation. Confirm the two downloads and scientific figures open after publishing.
+4. If the repository has existing files, this package replaces the site root; review the changes before committing. The package has **not** modified GitHub remotely. It includes redirects for the three older pages that currently exist in the live repository.
 
-| File | Purpose |
-| --- | --- |
-| `index.html` | Homepage: who I am, the question in motion, research directions (MSc thesis, inverse design of flexible particles, continuum modelling after López and Puglisi 2004), the thesis and its findings, updates, background, documents, contact |
-| `research.html` | The thesis study in detail |
-| `404.html` | Shown by GitHub Pages for a broken link |
-| `thesis.html`, `resources.html`, `contact.html` | Redirects from the addresses of an earlier version of the site |
-| `style.css` | Typography, layout, responsive and print styles |
-| `script.js` | Mobile navigation, copyright year, Copy BibTeX button |
-| `animation.js` | The schematic canvas animation on the homepage |
-| `assets/` | Public copies of the thesis and CV, and the social-preview image |
-| `assets/figures/` | Figures extracted from the thesis PDF at native resolution (`fig-N-M.webp`, plus `-1100` previews and a few labelled panel crops) |
-| `assets/fonts/` | Self-hosted fonts (see Credits) |
-| `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll` | Site metadata and Pages configuration |
+### Contents
 
-Static HTML, CSS and JavaScript only. No build step, no dependencies, no analytics and no external requests of any kind. Open `index.html` in a browser for a local preview.
+- `index.html`: homepage, conceptual animation, research directions, thesis highlights, background and PhD enquiry.
+- `research.html`: complete accessible MSc-thesis study, results, original figure captions, scope, proposed directions and BibTeX.
+- `style.css`, `script.js`, `animation.js`: dependency-free layout and controls.
+- `assets/figures/`: 11 original thesis figures extracted from cited pages with optimised web-sized copies.
+- `assets/images/`: two self-contained conceptual SVG research-direction illustrations.
+- `assets/Johaan_Kallany_Thesis.pdf`: public thesis PDF (25.35 MB).
+- `assets/Johaan_Tomy_Kallany_CV.pdf`: public research CV (0.19 MB).
+- `assets/social-card.jpg`, `favicon.svg`: Open Graph preview and favicon.
+- `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`: GitHub Pages configuration.
+- `thesis.html`, `resources.html`, `contact.html`: lightweight redirects protecting links to legacy pages in the existing repository.
 
-## Documents
+### Scientific and bibliographic integrity
 
-Keep these filenames exactly as they are; every link on the site points to them.
+The original thesis figures are cropped directly from the supplied thesis PDF, not AI-generated plots. Captions point to the corresponding thesis pages. The hero animation and the inverse-design/continuum diagrams are **conceptual illustrations**, not research data or quantitative model solutions. Future PhD directions are explicitly labelled *proposed*.
 
-| Document | Path | Size |
-| --- | --- | ---: |
-| Master's thesis | `assets/Johaan_Kallany_Thesis.pdf` | 25.9 MB |
-| CV | `assets/Johaan_Tomy_Kallany_CV.pdf` | 0.2 MB |
+The López–Puglisi citation is: C. López and A. Puglisi, *Continuum description of finite-size particles advected by external flows: The effect of collisions*, Physical Review E **69**, 046306 (2004), DOI `10.1103/PhysRevE.69.046306`.
 
-**Privacy.** The public thesis copy has the student ID numbers and both handwritten signatures removed from the cover page (the page is rasterised; everything else is the original). The public CV has the phone-number and address line removed by true redaction, so it cannot be recovered from the file. Never upload the unredacted originals to this repository: once pushed, a file stays in the Git history even after it is deleted. Each file is below GitHub's 25 MiB web-upload limit.
+### Privacy and document availability
 
-## Figures
+The provided CV's phone-number and city/address line was removed using PDF text redaction. The public thesis retains all three original signatures, as requested. The two student-ID lines beneath the candidate signature are masked on its rasterised cover, and the remaining 135 pages are retained from the original thesis. These public copies should still be visually reviewed before publishing. Never commit unredacted originals; deleting them later would not remove them from git history.
 
-All figures are the original thesis figures, extracted from the PDF at native resolution and unedited apart from cropping. Printed page numbers map to PDF pages with an offset of +5.
+A defence-slides PDF and a near-wall video were **not supplied** in this upload and were **not present** in the checked GitHub repository. Their broken download/video references have therefore been removed rather than fabricating replacements. Add those links back only when their actual files are provided.
 
-| File | Source | Used |
-| --- | --- | --- |
-| `fig-3-1.webp` (+ `fig-3-1ab.webp`, panels a,b) | Fig. 3.1, p. 33 (PDF 38) | thesis page |
-| `fig-3-2.webp` | Fig. 3.2, p. 35 (PDF 40) | homepage, thesis page |
-| `fig-3-3.webp` | Fig. 3.3, p. 36 (PDF 41) | thesis page gallery |
-| `fig-4-3.webp` | Fig. 4.3, p. 60 (PDF 65) | thesis page gallery |
-| `fig-4-4.webp` (+ `-700`, `-1100`, `-1400`) | Fig. 4.4, p. 61 (PDF 66) | homepage, social card |
-| `fig-4-5.webp` | Fig. 4.5, p. 62 (PDF 67) | thesis page gallery |
-| `fig-4-8.webp` (+ `fig-4-8b.webp`, panel b) | Fig. 4.8, p. 66 (PDF 71) | homepage, thesis page |
-| `fig-4-11.webp` | Fig. 4.11, p. 70 (PDF 75) | thesis page gallery |
-| `fig-4-13.webp` | Fig. 4.13, p. 76 (PDF 81) | thesis page gallery |
-| `fig-4-15.webp` (+ `fig-4-15c.webp`, panel c) | Fig. 4.15, p. 81 (PDF 86) | homepage, thesis page |
-| `fig-4-16.webp` | Fig. 4.16, p. 85 (PDF 90) | thesis page gallery |
+The included styles use reliable system font stacks, without bundling proprietary/external font files or relying on font-network requests.
 
-Every `-1100.webp` file is a 1100 px preview of the same figure for page loading; the links open the full-resolution file.
+### Testing and changes
 
-## The homepage animation
+See `QA_REPORT.md` for local asset, markup, JavaScript, responsive and link checks. The tests run against the shipped files; external sites, email delivery and GitHub deployment cannot be guaranteed by local checks.
 
-A schematic of the research question, not a simulation result, and labelled as such on the page. Three phases cycle: a carrier flow organises particle paths (light particles follow it, heavy ones lag), particles meet and contacts flash, and the population settles into streamwise bands. A legend names the four marks (carrier flow, light particle, heavy particle, contact). It can be paused; a reduced-motion preference starts it paused; a static SVG stands in without JavaScript; rendering stops when the panel is out of view or the tab is hidden.
+### Updating
 
-## Updating the site
-
-- **News** (a submitted manuscript, a talk, a PhD offer): add a `<li>` at the top of the *Updates* list in `index.html`.
-- **A new document**: replace the file in `assets/` under the same name.
-- **A publication**: add it under *Documents* on both pages and replace the "manuscript in preparation" line.
-- After any change, update the `lastmod` dates in `sitemap.xml` and the "Last updated" line in both footers.
-
-Deploy by committing to `main`; GitHub Pages publishes from `main` / root. **Upload the `assets` folder together with the pages**: every figure, font and document lives there, and without it images and downloads fail. After deployment, open the two document links above and the homepage figure to confirm they load.
-
-## Credits
-
-Text, figures and documents © Johaan Tomy Kallany. The near-wall carrier-flow DNS was performed by Jérémie Bec (Institut de Physique de Nice).
-Fonts: [Source Serif 4](https://github.com/adobe-fonts/source-serif) (Adobe), [IBM Plex Sans and IBM Plex Mono](https://github.com/IBM/plex) (IBM), all under the SIL Open Font License 1.1, packaged via [Fontsource](https://fontsource.org/).
+After site changes, update `sitemap.xml` timestamps, the footer's last-updated date and resource file links. Keep this repository free of confidential documents.

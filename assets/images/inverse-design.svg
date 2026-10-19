@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Conceptual diagram of particles with varying shapes, flow trajectories, and a transport target">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f2f7ff"/><stop offset="1" stop-color="#fff"/></linearGradient><linearGradient id="sphere" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#a4c1ed"/><stop offset="1" stop-color="#265aa3"/></linearGradient><marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 9 5 1 9" stroke="#336bad" fill="none" stroke-width="2"/></marker></defs>
+<rect width="720" height="380" rx="22" fill="url(#bg)"/>
+<g fill="none" stroke="#bfd5ee" stroke-width="3"><path d="M20 245 C160 180 200 290 330 226 S580 150 700 190"/><path d="M20 290 C170 225 215 320 350 270 S570 216 700 255"/><path d="M20 325 C160 290 220 345 350 319 S565 285 700 300"/></g>
+<g fill="url(#sphere)" stroke="#265aa3" stroke-width="2"><circle cx="120" cy="90" r="29"/><ellipse cx="220" cy="90" rx="39" ry="25"/><path d="M320 64Q340 82 363 67L355 91 369 111 336 106 320 126 315 104 288 100 310 84Z"/><path d="M405 70 C438 44 440 103 466 85 S500 97 486 111" fill="none" stroke="#4b78ae" stroke-width="18" stroke-linecap="round"/></g>
+<g fill="none" stroke="#336bad" stroke-width="4" marker-end="url(#tip)"><path d="M115 153 Q220 162 327 175"/><path d="M225 155 Q318 120 426 174"/><path d="M341 154 Q435 208 546 203"/></g>
+<g transform="translate(600 182)" fill="none" stroke="#d98a49" stroke-width="9"><circle r="64"/><circle r="41"/><circle r="18"/></g><circle cx="600" cy="182" r="9" fill="#d9792d"/>
+<g fill="#2457a3" opacity=".72"><circle cx="94" cy="215" r="10"/><circle cx="203" cy="238" r="7"/><circle cx="279" cy="216" r="9"/><circle cx="393" cy="252" r="8"/><circle cx="480" cy="232" r="8"/></g>
+</svg>

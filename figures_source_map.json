@@ -1,0 +1,101 @@
+{
+  "3-1": {
+    "pdf_page": 38,
+    "image_px": [
+      1476,
+      1710
+    ],
+    "source_caption_y": 604.26,
+    "file_bytes": 193672
+  },
+  "3-2": {
+    "pdf_page": 40,
+    "image_px": [
+      1476,
+      927
+    ],
+    "source_caption_y": 359.51,
+    "file_bytes": 134442
+  },
+  "3-3": {
+    "pdf_page": 41,
+    "image_px": [
+      1476,
+      1463
+    ],
+    "source_caption_y": 526.89,
+    "file_bytes": 194844
+  },
+  "4-3": {
+    "pdf_page": 65,
+    "image_px": [
+      1476,
+      1017
+    ],
+    "source_caption_y": 392.68,
+    "file_bytes": 216828
+  },
+  "4-4": {
+    "pdf_page": 66,
+    "image_px": [
+      1476,
+      1019
+    ],
+    "source_caption_y": 393.36,
+    "file_bytes": 296094
+  },
+  "4-5": {
+    "pdf_page": 67,
+    "image_px": [
+      1476,
+      1052
+    ],
+    "source_caption_y": 403.53,
+    "file_bytes": 344766
+  },
+  "4-8": {
+    "pdf_page": 71,
+    "image_px": [
+      1476,
+      473
+    ],
+    "source_caption_y": 222.59,
+    "file_bytes": 49244
+  },
+  "4-11": {
+    "pdf_page": 75,
+    "image_px": [
+      1476,
+      1162
+    ],
+    "source_caption_y": 437.91,
+    "file_bytes": 124578
+  },
+  "4-13": {
+    "pdf_page": 81,
+    "image_px": [
+      1476,
+      1225
+    ],
+    "source_caption_y": 457.62,
+    "file_bytes": 72908
+  },
+  "4-15": {
+    "pdf_page": 86,
+    "image_px": [
+      1476,
+      1088
+    ],
+    "source_caption_y": 414.8,
+    "file_bytes": 135954
+  },
+  "4-16": {
+    "pdf_page": 90,
+    "image_px": [
+      1476,
+      669
+    ],
+    "source_caption_y": 283.93,
+    "file_bytes": 63360
+  }
+}
