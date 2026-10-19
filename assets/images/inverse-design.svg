@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Conceptual diagram of particles with varying shapes, flow trajectories, and a transport target">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" role="img" aria-label="Conceptual diagram of flexible particles whose geometry and mechanical properties are design variables in an inverse-design problem">
 <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f2f7ff"/><stop offset="1" stop-color="#fff"/></linearGradient><linearGradient id="sphere" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#a4c1ed"/><stop offset="1" stop-color="#265aa3"/></linearGradient><marker id="tip" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M1 1 9 5 1 9" stroke="#336bad" fill="none" stroke-width="2"/></marker></defs>
 <rect width="720" height="380" rx="22" fill="url(#bg)"/>
 <g fill="none" stroke="#bfd5ee" stroke-width="3"><path d="M20 245 C160 180 200 290 330 226 S580 150 700 190"/><path d="M20 290 C170 225 215 320 350 270 S570 216 700 255"/><path d="M20 325 C160 290 220 345 350 319 S565 285 700 300"/></g>

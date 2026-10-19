@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 920" role="img" aria-labelledby="title desc">
+  <title id="title">AI-based optimisation of flexible particle shapes</title>
+  <desc id="desc">The completed thesis supplies the mechanistic particle-transport foundation. Proposed research introduces flexible particles whose geometry and mechanical properties become design variables in an inverse-design problem, with AI-assisted optimisation used to identify particle properties that produce targeted behaviour in complex flows.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7faff"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="loop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2457a3"/>
+      <stop offset="1" stop-color="#16815b"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#172130" flood-opacity=".08"/>
+    </filter>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#2457a3" stroke-width="2"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#16815b" stroke-width="2"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="920" rx="28" fill="url(#paper)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="800" y="67" text-anchor="middle" fill="#172130" font-size="48" font-weight="700">AI-based optimisation of flexible particle shapes</text>
+    <text x="800" y="109" text-anchor="middle" fill="#50647f" font-size="24">The present thesis supplies the mechanistic particle-transport foundation</text>
+
+    <!-- Established thesis foundation -->
+    <g filter="url(#shadow)">
+      <rect x="44" y="150" width="470" height="704" rx="22" fill="#fff" stroke="#aebfda" stroke-width="2"/>
+      <path d="M66 150H492A22 22 0 0 1 514 172V224H44V172A22 22 0 0 1 66 150Z" fill="#183f7c"/>
+    </g>
+    <text x="279" y="198" text-anchor="middle" fill="#fff" font-size="27" font-weight="700" letter-spacing="1">ESTABLISHED IN THE THESIS</text>
+
+    <g fill="#172130">
+      <g transform="translate(74 259)">
+        <circle cx="36" cy="36" r="24" fill="#dce7f7" stroke="#2457a3" stroke-width="3"/>
+        <circle cx="63" cy="47" r="16" fill="#7fa4d2" stroke="#2457a3" stroke-width="3"/>
+        <text x="104" y="31" font-size="23" font-weight="650">Rigid hard disks</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">disks, excluded volume and pair geometry</text>
+      </g>
+      <line x1="72" y1="339" x2="486" y2="339" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(74 360)">
+        <circle cx="40" cy="38" r="30" fill="#eef3fa"/>
+        <path d="M20 38H60M40 18V58M26 24L54 52M54 24L26 52" stroke="#2457a3" stroke-width="5" stroke-linecap="round"/>
+        <text x="104" y="31" font-size="23" font-weight="650">Time-resolved particle dynamics</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">Stokes relaxation and hard contacts</text>
+      </g>
+      <line x1="72" y1="443" x2="486" y2="443" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(74 465)">
+        <path d="M7 31C25 12 46 50 72 23M7 49C30 31 48 65 74 43" fill="none" stroke="#2457a3" stroke-width="5" stroke-linecap="round"/>
+        <text x="104" y="31" font-size="23" font-weight="650">Prescribed carrier flows</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">controlled shear and a DNS-derived planar field</text>
+      </g>
+      <line x1="72" y1="548" x2="486" y2="548" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(74 571)">
+        <g fill="#2457a3"><circle cx="15" cy="18" r="7"/><circle cx="38" cy="39" r="8"/><circle cx="64" cy="20" r="7"/><circle cx="20" cy="61" r="7"/><circle cx="67" cy="61" r="8"/></g>
+        <text x="104" y="31" font-size="23" font-weight="650">Characterise organisation</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">clustering, collisions and transport statistics</text>
+      </g>
+    </g>
+    <rect x="70" y="680" width="418" height="142" rx="16" fill="#eef3fa" stroke="#b7c9e1" stroke-width="2"/>
+    <text x="279" y="714" text-anchor="middle" fill="#183f7c" font-size="19" font-weight="700">FORWARD QUESTION</text>
+    <text x="279" y="748" text-anchor="middle" fill="#29425f" font-size="18">How do finite-size interparticle collisions</text>
+    <text x="279" y="775" text-anchor="middle" fill="#29425f" font-size="18">modify collective organisation generated</text>
+    <text x="279" y="802" text-anchor="middle" fill="#29425f" font-size="18">by inertial transport?</text>
+
+    <!-- Proposed loop -->
+    <rect x="620" y="155" width="360" height="48" rx="24" fill="#edf4f1" stroke="#b8d7c9"/>
+    <text x="800" y="187" text-anchor="middle" fill="#176f51" font-size="19" font-weight="700" letter-spacing="1.5">PROPOSED INVERSE-DESIGN PROBLEM</text>
+    <path d="M800 229A212 212 0 0 0 592 421" fill="none" stroke="#2457a3" stroke-width="8" marker-end="url(#arrow-blue)"/>
+    <path d="M586 450A212 212 0 0 0 795 647" fill="none" stroke="#2457a3" stroke-width="8" marker-end="url(#arrow-blue)"/>
+    <path d="M805 647A212 212 0 0 0 1014 450" fill="none" stroke="#16815b" stroke-width="8" marker-end="url(#arrow-green)"/>
+    <path d="M1008 421A212 212 0 0 0 800 229" fill="none" stroke="#16815b" stroke-width="8" marker-end="url(#arrow-green)"/>
+    <line x1="800" y1="286" x2="800" y2="588" stroke="#c6d2df" stroke-width="2" stroke-dasharray="8 8"/>
+    <text x="692" y="374" text-anchor="middle" fill="#183f7c" font-size="34" font-weight="700">Flexible</text>
+    <text x="692" y="414" text-anchor="middle" fill="#183f7c" font-size="34" font-weight="700">particles</text>
+    <text x="692" y="458" text-anchor="middle" fill="#5d6878" font-size="19">particle geometry</text>
+    <text x="692" y="486" text-anchor="middle" fill="#5d6878" font-size="19">mechanical properties</text>
+    <text x="692" y="514" text-anchor="middle" fill="#5d6878" font-size="19">reduced Stokes flow</text>
+    <text x="908" y="374" text-anchor="middle" fill="#176f51" font-size="34" font-weight="700">AI-assisted</text>
+    <text x="908" y="414" text-anchor="middle" fill="#176f51" font-size="34" font-weight="700">optimisation</text>
+    <text x="908" y="458" text-anchor="middle" fill="#5d6878" font-size="19">Bayesian optimisation</text>
+    <text x="908" y="486" text-anchor="middle" fill="#5d6878" font-size="19">reinforcement learning</text>
+    <text x="908" y="514" text-anchor="middle" fill="#5d6878" font-size="19">targeted behaviour</text>
+
+    <rect x="548" y="700" width="504" height="154" rx="18" fill="#fff" stroke="#cad5e1" stroke-width="2"/>
+    <text x="800" y="737" text-anchor="middle" fill="#29425f" font-size="20" font-weight="700">MECHANISTIC PARTICLE-TRANSPORT FOUNDATION</text>
+    <g font-size="18" font-weight="600" text-anchor="middle">
+      <rect x="574" y="759" width="100" height="60" rx="12" fill="#eef3fa"/><text x="624" y="786" fill="#2457a3">particle</text><text x="624" y="808" fill="#5d6878" font-size="15">response</text>
+      <rect x="690" y="759" width="100" height="60" rx="12" fill="#eef3fa"/><text x="740" y="786" fill="#2457a3">prescribed</text><text x="740" y="808" fill="#5d6878" font-size="15">flows</text>
+      <rect x="806" y="759" width="100" height="60" rx="12" fill="#eef3fa"/><text x="856" y="786" fill="#2457a3">pair</text><text x="856" y="808" fill="#5d6878" font-size="15">geometry</text>
+      <rect x="922" y="759" width="104" height="60" rx="12" fill="#eef3fa"/><text x="974" y="786" fill="#2457a3">collision</text><text x="974" y="808" fill="#5d6878" font-size="15">dynamics</text>
+    </g>
+
+    <!-- Proposed extension -->
+    <g filter="url(#shadow)">
+      <rect x="1086" y="150" width="470" height="704" rx="22" fill="#fff" stroke="#a8cdbd" stroke-width="2"/>
+      <path d="M1108 150H1534A22 22 0 0 1 1556 172V224H1086V172A22 22 0 0 1 1108 150Z" fill="#14734f"/>
+    </g>
+    <text x="1321" y="198" text-anchor="middle" fill="#fff" font-size="27" font-weight="700" letter-spacing="1">PROPOSED RESEARCH</text>
+    <g fill="#172130">
+      <g transform="translate(1116 257)">
+        <path d="M13 54C28 18 49 18 57 42S83 55 74 17" fill="none" stroke="#16815b" stroke-width="17" stroke-linecap="round"/>
+        <text x="104" y="31" font-size="23" font-weight="650">Flexible particles</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">geometry and mechanical properties</text>
+      </g>
+      <line x1="1114" y1="339" x2="1528" y2="339" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(1116 360)">
+        <g stroke="#16815b" stroke-width="5" stroke-linecap="round"><line x1="8" y1="20" x2="74" y2="20"/><line x1="8" y1="40" x2="74" y2="40"/><line x1="8" y1="60" x2="74" y2="60"/></g>
+        <g fill="#16815b"><circle cx="30" cy="20" r="9"/><circle cx="58" cy="40" r="9"/><circle cx="39" cy="60" r="9"/></g>
+        <text x="104" y="31" font-size="23" font-weight="650">Inverse-design variables</text>
+        <text x="104" y="60" font-size="16" fill="#5d6878">particle geometry and mechanical properties</text>
+      </g>
+      <line x1="1114" y1="443" x2="1528" y2="443" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(1116 465)">
+        <path d="M7 31C25 12 46 50 72 23M7 49C30 31 48 65 74 43" fill="none" stroke="#16815b" stroke-width="5" stroke-linecap="round"/>
+        <text x="104" y="31" font-size="23" font-weight="650">Controlled flows to turbulence</text>
+        <text x="104" y="60" font-size="15" fill="#5d6878">turbulent environments of increasing complexity</text>
+      </g>
+      <line x1="1114" y1="548" x2="1528" y2="548" stroke="#e1e7ef" stroke-width="2"/>
+      <g transform="translate(1116 570)">
+        <circle cx="40" cy="39" r="32" fill="none" stroke="#16815b" stroke-width="6"/><circle cx="40" cy="39" r="17" fill="none" stroke="#16815b" stroke-width="6"/><path d="M40 39L73 9M62 9H73V20" fill="none" stroke="#16815b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="104" y="31" font-size="23" font-weight="650">AI-assisted optimisation</text>
+        <text x="104" y="60" font-size="15" fill="#5d6878">Bayesian optimisation and reinforcement learning</text>
+      </g>
+    </g>
+    <rect x="1112" y="680" width="418" height="142" rx="16" fill="#edf7f2" stroke="#aad0bf" stroke-width="2"/>
+    <text x="1321" y="714" text-anchor="middle" fill="#14734f" font-size="19" font-weight="700">INVERSE QUESTION</text>
+    <text x="1321" y="748" text-anchor="middle" fill="#29425f" font-size="18">How can particle geometry and mechanical</text>
+    <text x="1321" y="775" text-anchor="middle" fill="#29425f" font-size="18">properties be selected to produce a prescribed</text>
+    <text x="1321" y="802" text-anchor="middle" fill="#29425f" font-size="18">preferential-sampling behaviour?</text>
+  </g>
+</svg>

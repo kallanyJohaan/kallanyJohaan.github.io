@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1180" role="img" aria-labelledby="title desc">
+  <title id="title">AI-based optimisation of flexible particle shapes</title>
+  <desc id="desc">A mobile diagram showing the mechanistic particle-transport foundation supplied by the thesis and the proposed inverse-design direction in which particle geometry and mechanical properties become design variables for AI-assisted optimisation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2457a3" stroke-width="2"/></marker>
+    <marker id="green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#16815b" stroke-width="2"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#172130" flood-opacity=".08"/></filter>
+  </defs>
+  <rect width="720" height="1180" rx="24" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="360" y="50" text-anchor="middle" fill="#172130" font-size="27" font-weight="750">AI-based optimisation of flexible particle shapes</text>
+    <text x="360" y="80" text-anchor="middle" fill="#50647f" font-size="17">Mechanistic particle-transport foundation and proposed inverse design</text>
+
+    <g filter="url(#shadow)"><rect x="35" y="108" width="650" height="300" rx="20" fill="#fff" stroke="#b4c5dd" stroke-width="2"/></g>
+    <path d="M55 108H665A20 20 0 0 1 685 128V166H35V128A20 20 0 0 1 55 108Z" fill="#183f7c"/>
+    <text x="360" y="147" text-anchor="middle" fill="#fff" font-size="23" font-weight="750" letter-spacing="1">ESTABLISHED IN THE THESIS</text>
+    <g font-size="22" fill="#172130" font-weight="650">
+      <g transform="translate(70 196)"><circle cx="20" cy="18" r="14" fill="#dce7f7" stroke="#2457a3" stroke-width="2"/><circle cx="37" cy="27" r="10" fill="#7fa4d2" stroke="#2457a3" stroke-width="2"/><text x="65" y="25">Rigid hard disks</text></g>
+      <g transform="translate(380 196)"><circle cx="22" cy="21" r="18" fill="#eef3fa"/><path d="M22 7V35M8 21H36M12 11L32 31M32 11L12 31" stroke="#2457a3" stroke-width="3"/><text x="58" y="25">Time-resolved dynamics</text></g>
+      <g transform="translate(70 285)"><path d="M0 14C19 0 34 29 59 10M0 34C20 20 37 48 61 30" fill="none" stroke="#2457a3" stroke-width="4" stroke-linecap="round"/><text x="75" y="27">Prescribed carrier flows</text></g>
+      <g transform="translate(380 280)"><g fill="#2457a3"><circle cx="7" cy="8" r="5"/><circle cx="28" cy="22" r="6"/><circle cx="49" cy="7" r="5"/><circle cx="10" cy="40" r="5"/><circle cx="51" cy="39" r="6"/></g><text x="68" y="28">Collective organisation</text></g>
+    </g>
+    <rect x="70" y="356" width="580" height="34" rx="17" fill="#eef3fa"/>
+    <text x="360" y="379" text-anchor="middle" fill="#183f7c" font-size="17" font-weight="700">FORWARD: how do collisions modify collective organisation?</text>
+
+    <path d="M360 418V451" fill="none" stroke="#2457a3" stroke-width="6" marker-end="url(#blue)"/>
+    <text x="385" y="438" fill="#2457a3" font-size="15" font-weight="750" letter-spacing="1">FOUNDATION</text>
+
+    <g filter="url(#shadow)"><rect x="35" y="463" width="650" height="340" rx="20" fill="#fff" stroke="#b9d5c9" stroke-width="2"/></g>
+    <rect x="35" y="463" width="650" height="57" rx="20" fill="#edf7f2"/><rect x="35" y="500" width="650" height="20" fill="#edf7f2"/>
+    <text x="360" y="499" text-anchor="middle" fill="#14734f" font-size="22" font-weight="750" letter-spacing=".7">PROPOSED INVERSE-DESIGN PROBLEM</text>
+    <g font-size="20" font-weight="700" text-anchor="middle">
+      <rect x="75" y="550" width="220" height="70" rx="14" fill="#eef3fa"/><text x="185" y="592" fill="#183f7c">Flexible particles</text>
+      <rect x="425" y="550" width="220" height="70" rx="14" fill="#eef3fa"/><text x="535" y="592" fill="#183f7c">Geometry and mechanics</text>
+      <rect x="425" y="682" width="220" height="70" rx="14" fill="#edf7f2"/><text x="535" y="724" fill="#14734f">Bayesian optimisation</text>
+      <rect x="75" y="682" width="220" height="70" rx="14" fill="#edf7f2"/><text x="185" y="724" fill="#14734f">Reinforcement learning</text>
+    </g>
+    <path d="M296 585H416" fill="none" stroke="#2457a3" stroke-width="5" marker-end="url(#blue)"/>
+    <path d="M535 622V673" fill="none" stroke="#16815b" stroke-width="5" marker-end="url(#green)"/>
+    <path d="M424 717H304" fill="none" stroke="#16815b" stroke-width="5" marker-end="url(#green)"/>
+    <path d="M185 681V630" fill="none" stroke="#2457a3" stroke-width="5" marker-end="url(#blue)"/>
+    <circle cx="360" cy="650" r="42" fill="#fff" stroke="#cfdae6" stroke-width="2"/>
+    <text x="360" y="645" text-anchor="middle" fill="#29425f" font-size="16" font-weight="700">PRESCRIBED</text>
+    <text x="360" y="667" text-anchor="middle" fill="#5d6878" font-size="15">preferential sampling</text>
+    <text x="360" y="785" text-anchor="middle" fill="#4f5d70" font-size="16">Particle geometry and mechanical properties become design variables.</text>
+
+    <g filter="url(#shadow)"><rect x="35" y="832" width="650" height="306" rx="20" fill="#fff" stroke="#a9cdbc" stroke-width="2"/></g>
+    <path d="M55 832H665A20 20 0 0 1 685 852V890H35V852A20 20 0 0 1 55 832Z" fill="#14734f"/>
+    <text x="360" y="871" text-anchor="middle" fill="#fff" font-size="23" font-weight="750" letter-spacing="1">PROPOSED RESEARCH</text>
+    <g font-size="18" font-weight="650" fill="#172130">
+      <g transform="translate(72 925)"><path d="M0 35C12 7 31 8 38 26S58 37 52 7" fill="none" stroke="#16815b" stroke-width="12" stroke-linecap="round"/><text x="75" y="29">Flexible particles</text></g>
+      <g transform="translate(374 925)"><path d="M0 10H55M0 31H55M0 52H55" stroke="#16815b" stroke-width="4"/><circle cx="19" cy="10" r="7" fill="#16815b"/><circle cx="41" cy="31" r="7" fill="#16815b"/><circle cx="27" cy="52" r="7" fill="#16815b"/><text x="72" y="29">Geometry and mechanics</text></g>
+      <g transform="translate(72 1005)"><path d="M0 13C17 0 34 28 58 10M0 34C19 20 35 48 60 30" fill="none" stroke="#16815b" stroke-width="4"/><text x="75" y="20">Controlled flows</text><text x="75" y="43">to turbulence</text></g>
+      <g transform="translate(374 1003)"><circle cx="27" cy="25" r="21" fill="none" stroke="#16815b" stroke-width="4"/><circle cx="27" cy="25" r="10" fill="none" stroke="#16815b" stroke-width="4"/><path d="M27 25L53 2" stroke="#16815b" stroke-width="4"/><text x="72" y="20">AI-assisted</text><text x="72" y="43">optimisation</text></g>
+    </g>
+    <rect x="70" y="1086" width="580" height="34" rx="17" fill="#edf7f2"/>
+    <text x="360" y="1109" text-anchor="middle" fill="#14734f" font-size="14" font-weight="700">INVERSE: which properties produce prescribed preferential-sampling behaviour?</text>
+  </g>
+</svg>

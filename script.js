@@ -36,24 +36,58 @@ document.querySelectorAll('[data-copy-target]').forEach(button=>{
  });
 });
 
+const overviewVideo=document.querySelector('.thesis-overview-video');
+if(overviewVideo){
+ const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let overviewVideoVisible=false;
+ function syncOverviewVideo(){
+  if(motionPreference.matches||!overviewVideoVisible){
+   overviewVideo.pause();
+   overviewVideo.removeAttribute('autoplay');
+   return;
+  }
+  overviewVideo.setAttribute('autoplay','');
+  const playRequest=overviewVideo.play();
+  if(playRequest)playRequest.catch(()=>{});
+ }
+ if('IntersectionObserver' in window){
+  const videoObserver=new IntersectionObserver(entries=>{
+   overviewVideoVisible=Boolean(entries[0]?.isIntersecting);
+   syncOverviewVideo();
+  },{threshold:.25});
+  videoObserver.observe(overviewVideo);
+ }else{
+  overviewVideoVisible=true;
+  syncOverviewVideo();
+ }
+ if(motionPreference.addEventListener)motionPreference.addEventListener('change',syncOverviewVideo);
+ else if(motionPreference.addListener)motionPreference.addListener(syncOverviewVideo);
+}
+
+const codeViewStatus=document.getElementById('code-view-status');
 const codeSearch=document.getElementById('code-search');
 if(codeSearch){
  const modules=[...document.querySelectorAll('[data-code-module]')];
  const groups=[...document.querySelectorAll('[data-code-group]')];
+ const groupLinks=[...document.querySelectorAll('.code-group-nav a[href^="#"]')];
  const status=document.getElementById('code-results');
  const empty=document.getElementById('code-empty');
  const normalise=value=>value.toLocaleLowerCase().trim().replace(/\s+/g,' ');
+ const searchable=new Map(modules.map(module=>[module,normalise(`${module.dataset.codeName||''} ${module.textContent}`)]));
  function filterCode(){
   const query=normalise(codeSearch.value);
   let shown=0;
   modules.forEach(module=>{
-   const searchable=normalise(`${module.dataset.codeName||''} ${module.textContent}`);
-   const match=!query||searchable.includes(query);
+   const match=!query||searchable.get(module).includes(query);
    module.hidden=!match;
    if(match)shown+=1;
   });
   groups.forEach(group=>{
    group.hidden=!group.querySelector('[data-code-module]:not([hidden])');
+  });
+  groupLinks.forEach(link=>{
+   const group=document.querySelector(link.getAttribute('href'));
+   link.hidden=Boolean(group?.hidden);
   });
   if(status)status.textContent=`${shown} ${shown===1?'module':'modules'} shown`;
   if(empty)empty.hidden=shown!==0;
@@ -66,4 +100,21 @@ if(codeSearch){
   }
  });
  filterCode();
+}
+
+const expandAllCode=document.getElementById('expand-all-code');
+const collapseAllCode=document.getElementById('collapse-all-code');
+const codeViewActions=document.getElementById('code-view-actions');
+if(expandAllCode&&collapseAllCode&&codeViewActions){
+ const modules=[...document.querySelectorAll('[data-code-module]')];
+ codeViewActions.hidden=false;
+ expandAllCode.addEventListener('click',()=>{
+  const visible=modules.filter(module=>!module.hidden);
+  visible.forEach(module=>{module.open=true});
+  if(codeViewStatus)codeViewStatus.textContent=`${visible.length} complete ${visible.length===1?'file':'files'} expanded.`;
+ });
+ collapseAllCode.addEventListener('click',()=>{
+  modules.forEach(module=>{module.open=false});
+  if(codeViewStatus)codeViewStatus.textContent='All code panels collapsed.';
+ });
 }

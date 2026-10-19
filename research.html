@@ -15,7 +15,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Collision-on particles on near-wall turbulent streaks, from the MSc thesis, with the site title.">
   <meta name="twitter:card" content="summary_large_image">
-  <title>MSc thesis — Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows — Johaan Tomy Kallany</title>
+  <title>MSc thesis: Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows | Johaan Tomy Kallany</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
@@ -24,7 +24,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html" aria-label="Johaan Tomy Kallany — homepage">Johaan Tomy Kallany</a>
+      <a class="brand" href="index.html" aria-label="Johaan Tomy Kallany homepage">Johaan Tomy Kallany</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav id="site-nav" aria-label="Main navigation">
         <a href="index.html#work">Research</a>
@@ -58,7 +58,7 @@
         <a href="#methods">Methods</a>
         <a href="#code">Code</a>
         <a href="#scope">Scope</a>
-        <a href="#directions">Directions</a>
+        <a href="#future-research">Future research</a>
         <a href="#documents">Documents</a>
       </nav>
 
@@ -158,10 +158,10 @@
           <p class="section-eyebrow">Research software</p>
           <h2 id="code-title">A modular simulation and analysis pipeline</h2>
           <p>The implementation is divided into 20 Python modules covering hard-particle dynamics, periodic neighbour searches, DNS interpolation, study orchestration, clustering and collective-motion diagnostics, saved snapshots and figure production.</p>
-          <p>The public code page contains short excerpts from every module. The complete source is kept outside the public website repository and is available by permission for academic review and collaboration.</p>
+          <p>The public code page displays every complete Python module for technical review. No source archive or code-download button is provided; written permission is requested before reuse, redistribution or adaptation.</p>
           <div class="actions">
-            <a class="btn" href="code.html">Browse code excerpts</a>
-            <a class="btn btn-ghost" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20access%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20requested%3A%0AIntended%20use%3A">Request full access</a>
+            <a class="btn" href="code.html">Browse complete code</a>
+            <a class="btn btn-ghost" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20reuse%20permission%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20of%20interest%3A%0AIntended%20use%3A">Request reuse permission</a>
           </div>
         </section>
 
@@ -173,16 +173,116 @@
           <p class="ref"><a href="assets/Johaan_Kallany_Thesis.pdf#page=94">Limitations and extensions in the thesis</a></p>
         </section>
 
-        <section id="directions" aria-labelledby="directions-title">
-          <p class="section-eyebrow">Future research · proposed</p>
-          <h2 id="directions-title">From particle dynamics to design and reduced theory</h2>
-          <p>My completed thesis establishes a particle-level computational basis for studying how collisions redistribute inertial particles. Two complementary research interests build on that foundation; neither is presented as a result already established by the thesis.</p>
-          <h3>Inverse particle design and flow control</h3>
-          <p>A natural extension is to treat particle shape, flexibility and mechanical response as design variables, and possibly the carrier-flow forcing as a control input. Numerical simulation, optimisation and scientific machine learning could then be used to seek target transport or preferential-sampling behaviour.</p>
-          <h3>Continuum and stochastic descriptions</h3>
-          <p>A complementary direction is to derive coarse-grained density descriptions from colliding particle dynamics. The study by Cristóbal López and Andrea Puglisi established a continuum density approach for finite-size inertial particles advected by prescribed flows, including collision-driven clustering and dispersion. I am interested in investigating reduced models and stochastic closures that retain anisotropy, collision selection and history effects, with validation against resolved particle simulations.</p>
-          <p class="ref">Foundational reference: C. López and A. Puglisi, <em>Continuum description of finite-size particles advected by external flows: The effect of collisions</em>, Physical Review E 69, 046306 (2004). <a href="https://doi.org/10.1103/PhysRevE.69.046306">Read the paper ↗</a></p>
-          <p class="ref">See also <a href="assets/Johaan_Kallany_Thesis.pdf#page=96">extensions discussed in my MSc thesis</a>.</p>
+        <section id="future-research" aria-labelledby="future-research-title">
+          <p class="section-eyebrow">Future research: proposed</p>
+          <h2 id="future-research-title">Continuum modelling and AI-based optimisation of flexible particle shapes</h2>
+          <p class="future-lead">The complete research programme extends beyond the scope of one Master’s thesis. The present work develops the microscopic hard-particle framework, examines collision-modified collective behaviour in a controlled alternating sinusoidal shear flow, and applies the same particle model to a reconstructed wall-parallel carrier field from a turbulent channel-flow DNS. The two directions below extend that particle-level foundation.</p>
+
+          <div class="future-boundary" role="note" aria-label="Boundary between completed and proposed research">
+            <div>
+              <p class="future-status">Established in the thesis</p>
+              <p>A common computational framework for finite-size particles subject to continuous forcing and instantaneous hard-particle collisions, followed by controlled-flow and near-wall turbulent analyses of collision-modified collective organisation.</p>
+            </div>
+            <div>
+              <p class="future-status proposed">Ongoing and prospective directions</p>
+              <p>A reduced continuum description for wall-bounded turbulent carrier flows, and AI-based optimisation of flexible particle shapes. These directions are not results established by the completed particle-level study.</p>
+            </div>
+          </div>
+
+          <figure class="fig future-figure">
+            <a href="assets/images/forward-inverse-programme.svg" aria-label="Open the particle-level foundation and proposed inverse-design programme at full size">
+              <picture>
+                <source media="(max-width:700px)" srcset="assets/images/forward-inverse-programme-mobile.svg">
+                <img src="assets/images/forward-inverse-programme.svg" width="1600" height="920" loading="lazy" alt="The thesis provides a particle-transport foundation for proposed flexible-particle models in which geometry and mechanical properties become design variables in an inverse-design problem.">
+              </picture>
+            </a>
+            <figcaption><strong>Particle-level foundation and proposed inverse design.</strong> The present thesis supplies the mechanistic particle-transport foundation. The proposed research introduces particle shape and flexibility as design variables and AI-assisted optimisation as a systematic means of identifying particle properties that produce targeted behaviour in complex flows. <a href="assets/images/forward-inverse-programme.svg">Open the full-size figure.</a></figcaption>
+          </figure>
+
+          <article class="future-track" aria-labelledby="inverse-design-title">
+            <div class="future-track-head">
+              <p class="future-track-number">Long-term research direction: proposed</p>
+              <h3 id="inverse-design-title">AI-based optimisation of flexible particle shapes</h3>
+              <p class="future-question"><strong>Research question.</strong> How can particle geometry and mechanical properties be selected to produce a prescribed preferential-sampling behaviour?</p>
+            </div>
+
+            <p>A natural long-term research direction emerging from this thesis is to extend the present physics-based description from rigid finite-size particles to flexible particles whose geometry and mechanical properties influence their transport and preferential sampling of turbulent flows. Studies of non-spherical particles and deformable particle models show that particle geometry and flexibility can modify transport, orientation and preferential sampling in turbulence.</p>
+            <p>The present thesis provides a mechanistic foundation for this extension by examining how prescribed carrier flows, particle response, finite-size interactions, pair geometry and collision dynamics contribute to particle organisation. The associated inverse-design problem is to determine how particle geometry and mechanical properties can be selected to produce a prescribed preferential-sampling behaviour.</p>
+            <p>Within the proposed reduced Stokes-flow framework, flexible particles are represented as assemblies of rigid spheres, with elastic deformation projected onto a finite-dimensional mechanical space. Such a formulation combines a reduced representation of compliant-body mechanics with bead-based low-Reynolds-number hydrodynamics. Particle geometry and mechanical properties then become design variables in an inverse-design problem.</p>
+            <p>Bayesian optimisation provides a natural approach for shape optimisation in such reduced hydrodynamic models, while reinforcement learning provides a complementary strategy for learning flow-dependent policies in complex carrier flows. These methods provide related methodological precedents rather than direct models of the flexible-particle problem considered here.</p>
+
+            <h4>Proposed progression</h4>
+            <ol class="future-steps">
+              <li><div><strong>Represent flexible particles.</strong> Use assemblies of rigid spheres, with elastic deformation projected onto a finite-dimensional mechanical space.</div></li>
+              <li><div><strong>Define the inverse-design problem.</strong> Treat particle geometry and mechanical properties as design variables.</div></li>
+              <li><div><strong>Develop the methodology in controlled flows.</strong> Begin with controlled carrier flows, including cellular flows, before extending to turbulent environments of increasing complexity.</div></li>
+              <li><div><strong>Specify the preferential-sampling objective.</strong> Possible objectives include enhancing or suppressing preferential sampling of regions characterised by prescribed strain, vorticity or related flow quantities.</div></li>
+            </ol>
+
+            <div class="future-method-grid" role="group" aria-label="Inverse-design research basis">
+              <div class="future-method-card">
+                <h4>Optimisation methods</h4>
+                <p>Bayesian optimisation provides a natural approach for shape optimisation in reduced hydrodynamic models. Reinforcement learning provides a complementary strategy for learning flow-dependent policies in complex carrier flows.</p>
+              </div>
+              <div class="future-method-card">
+                <h4>Scope of the thesis</h4>
+                <p>The present thesis supplies the mechanistic particle-transport foundation. Particle shape, flexibility and AI-assisted optimisation remain prospective research directions.</p>
+              </div>
+            </div>
+            <p class="ref">This long-term research direction is set out in <a href="assets/Johaan_Kallany_Thesis.pdf#page=97">Section 5.1.4 of the thesis</a>.</p>
+          </article>
+
+          <article class="future-track" aria-labelledby="continuum-title">
+            <div class="future-track-head">
+              <p class="future-track-number">Parallel research direction: prescribed-flow formulation implemented; wall-bounded extension is the current objective</p>
+              <h3 id="continuum-title">Continuum modelling for wall-bounded turbulent carrier flows</h3>
+              <p class="future-question"><strong>Research question.</strong> How should the existing stochastic collisional closure be generalised in an anisotropic turbulent environment, and must a one-particle density description be supplemented by separation- and orientation-resolved pair information?</p>
+            </div>
+
+            <p>In parallel with the particle-level work presented in this thesis, I am developing a continuum description of colliding inertial-particle populations derived from the underlying microscopic dynamics. The framework has already been implemented for analytically prescribed carrier flows, including the Solomon–Gollub cellular flow, and builds on the continuum approach of López and Puglisi.</p>
+            <p>Starting from the microscopic Stokes-drag and hard-particle collision model, the particle velocity is expanded in the particle response time. At higher order, the expansion contains unresolved collisional contributions involving derivatives of collision sums and terms associated with successive and repeated collision events.</p>
+            <p>Retaining the complete sequence of collision times, collision partners and contact orientations would preserve microscopic information that a reduced continuum description is intended to eliminate. The unresolved collisional remainder is therefore represented through a stochastic closure. Its singular collision-dependent contribution is modelled as an effective sequence of collision-localised random kicks whose covariance is related to the local collision-rate field. The underlying microscopic dynamics remain deterministic; the stochasticity enters only through the reduced description of unresolved collision history.</p>
+
+            <figure class="fig future-figure">
+              <a href="assets/images/micro-to-continuum.svg" aria-label="Open the microscopic-to-continuum modelling framework at full size">
+                <picture>
+                  <source media="(max-width:700px)" srcset="assets/images/micro-to-continuum-mobile.svg">
+                  <img src="assets/images/micro-to-continuum.svg" width="1600" height="760" loading="lazy" alt="The microscopic Stokes-drag and hard-particle collision model is reduced through an expansion in particle response time and a stochastic closure for unresolved collision history, leading to a reduced evolution equation for the particle-density field.">
+                </picture>
+              </a>
+              <figcaption><strong>Reduction and stochastic closure.</strong> The underlying microscopic dynamics remain deterministic. Stochasticity enters only through the reduced description of unresolved collision history. The closed particle-velocity representation is then used to derive a reduced evolution equation for the particle-density field. <a href="assets/images/micro-to-continuum.svg">Open the full-size figure.</a></figcaption>
+            </figure>
+
+            <h4>From microscopic dynamics to a reduced density equation</h4>
+            <ol class="future-steps">
+              <li><div><strong>Start from the microscopic model.</strong> Use the same Stokes-drag and hard-particle collision model developed for the particle-level work.</div></li>
+              <li><div><strong>Expand the particle velocity.</strong> An expansion in particle response time identifies higher-order unresolved collisional contributions involving derivatives of collision sums and successive or repeated collision events.</div></li>
+              <li><div><strong>Represent unresolved collision history.</strong> Model the singular collision-dependent remainder as collision-localised random kicks whose covariance is related to the local collision-rate field.</div></li>
+              <li><div><strong>Derive the density evolution.</strong> Use the closed particle-velocity representation to derive a reduced evolution equation for the particle-density field.</div></li>
+            </ol>
+
+            <h4>Statistical structure required in the wall-bounded extension</h4>
+            <p>The near-wall analysis developed in Chapter 4 identifies additional statistical structure that the extension must represent:</p>
+            <ul class="future-requirements">
+              <li><strong>Directional anisotropy.</strong></li>
+              <li><strong>Spatially non-uniform pair availability.</strong></li>
+              <li><strong>Orientation-dependent inward relative motion.</strong></li>
+              <li><strong>Preferential collision selection.</strong></li>
+              <li><strong>Substantial same-pair recurrence.</strong></li>
+              <li><strong>Wall-normal dependence of these statistics in an extension beyond the fixed wall-parallel plane.</strong></li>
+            </ul>
+
+            <div class="future-constraint" role="note">
+              <h4>Required state information</h4>
+              <p>The particle-level measurements provide a basis for determining how the existing stochastic collisional closure should be generalised in an anisotropic turbulent environment and whether a one-particle density description must be supplemented by separation- and orientation-resolved pair information.</p>
+            </div>
+
+            <h4>Aim of the extension</h4>
+            <p>The aim is to construct and assess a reduced continuum model that retains the tractability of the stochastic closure while incorporating the collision statistics and anisotropic organisation identified in the present near-wall turbulent setting.</p>
+            <p class="ref">This parallel research direction is described in <a href="assets/Johaan_Kallany_Thesis.pdf#page=96">Section 5.1.3 of the thesis</a>. Foundational reference: C. López and A. Puglisi, <em>Continuum description of finite-size particles advected by external flows: The effect of collisions</em>, Physical Review E 69, 046306 (2004). <a href="https://doi.org/10.1103/PhysRevE.69.046306">Read the paper ↗</a>.</p>
+          </article>
+
+          <div class="callout future-closing"><p><strong>Common foundation.</strong> The present thesis supplies the mechanistic particle-transport foundation. The continuum direction extends the reduced description to the wall-bounded setting, while the flexible-particle direction introduces design variables and AI-assisted optimisation.</p></div>
         </section>
 
         <section id="documents" aria-labelledby="documents-title">
@@ -191,7 +291,7 @@
             <li><a href="assets/Johaan_Kallany_Thesis.pdf" download="Johaan_Kallany_Thesis.pdf"><div><h3>Master’s thesis</h3><p>Methods, results, interpretation and validation appendices</p></div><span class="size">PDF</span></a></li>
             <li><a href="assets/Johaan_Tomy_Kallany_CV.pdf" download="Johaan_Tomy_Kallany_CV.pdf"><div><h3>Curriculum vitae</h3><p>Research experience, education and projects</p></div><span class="size">PDF</span></a></li>
           </ul>
-          <p class="note-line">A first-author manuscript based on this thesis is in preparation with Christophe Henry and Laetitia Giraldi.</p>
+          <p class="note-line">A first-author manuscript based on the research presented in this thesis is currently in preparation with Dr. Christophe Henry and Dr. Laetitia Giraldi.</p>
           <div class="cite">
             <div class="cite-head"><h3 id="cite-title">Cite this thesis</h3><button class="copy-button" type="button" data-copy-target="bibtex" hidden>Copy BibTeX</button></div>
             <pre id="bibtex" aria-labelledby="cite-title" tabindex="0"><code>@mastersthesis{kallany2026collective,
@@ -206,7 +306,7 @@
 }</code></pre>
             <p class="copy-status" role="status" aria-live="polite"></p>
           </div>
-          <p class="note-line">Interested in discussing a funded PhD project for 2027? <a href="mailto:johaantk2001@gmail.com?subject=Prospective%20PhD%20research%20opportunity">Get in touch</a>.</p>
+          <p class="note-line">Interested in discussing a funded PhD project? I am available to start immediately. <a href="mailto:johaantk2001@gmail.com?subject=Prospective%20PhD%20research%20opportunity">Get in touch</a>.</p>
         </section>
       </div>
     </div>

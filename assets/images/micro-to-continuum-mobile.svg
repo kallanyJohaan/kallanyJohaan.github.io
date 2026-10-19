@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1290" role="img" aria-labelledby="title desc">
+  <title id="title">Continuum modelling for wall-bounded turbulent carrier flows</title>
+  <desc id="desc">A mobile four-stage diagram. The microscopic Stokes-drag and hard-particle collision model is reduced through an expansion in particle response time. Unresolved collision history is represented through a stochastic closure, leading to a reduced evolution equation for the particle-density field. The current objective is a wall-bounded turbulent extension.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faff"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#2457a3" stroke-width="2"/></marker>
+    <marker id="return" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#16815b" stroke-width="2"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#172130" flood-opacity=".08"/></filter>
+  </defs>
+  <rect width="720" height="1290" rx="24" fill="url(#bg)"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="360" y="35" text-anchor="middle" fill="#172130" font-size="25" font-weight="750">Continuum modelling for wall-bounded</text>
+    <text x="360" y="62" text-anchor="middle" fill="#172130" font-size="25" font-weight="750">turbulent carrier flows</text>
+    <text x="360" y="88" text-anchor="middle" fill="#50647f" font-size="13">Microscopic dynamics remain deterministic; stochasticity enters in the closure</text>
+    <rect x="140" y="101" width="440" height="32" rx="16" fill="#eef3fa" stroke="#c5d2e2"/>
+    <text x="360" y="122" text-anchor="middle" fill="#2457a3" font-size="14" font-weight="750" letter-spacing=".7">IMPLEMENTED FOR ANALYTICALLY PRESCRIBED FLOWS</text>
+
+    <g filter="url(#shadow)"><rect x="55" y="150" width="610" height="190" rx="18" fill="#fff" stroke="#b4c5dd" stroke-width="2"/></g>
+    <rect x="55" y="150" width="150" height="190" rx="18" fill="#183f7c"/><rect x="185" y="150" width="20" height="190" fill="#183f7c"/>
+    <text x="130" y="184" text-anchor="middle" fill="#fff" font-size="14" font-weight="750">1 · MICROSCOPIC</text>
+    <g transform="translate(83 211)" fill="#fff"><circle cx="12" cy="10" r="7"/><circle cx="38" cy="23" r="9"/><circle cx="68" cy="9" r="7"/><circle cx="18" cy="53" r="8"/><circle cx="64" cy="55" r="9"/></g>
+    <text x="235" y="200" fill="#172130" font-size="26" font-weight="700">Deterministic particles</text>
+    <text x="235" y="239" fill="#4f5d70" font-size="20">• Stokes relaxation</text><text x="235" y="271" fill="#4f5d70" font-size="20">• hard-particle contacts</text><text x="235" y="303" fill="#4f5d70" font-size="20">• complete resolved event history</text>
+    <path d="M360 347V374" fill="none" stroke="#2457a3" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <g filter="url(#shadow)"><rect x="55" y="385" width="610" height="190" rx="18" fill="#fff" stroke="#b4c5dd" stroke-width="2"/></g>
+    <rect x="55" y="385" width="150" height="190" rx="18" fill="#2457a3"/><rect x="185" y="385" width="20" height="190" fill="#2457a3"/>
+    <text x="130" y="419" text-anchor="middle" fill="#fff" font-size="20" font-weight="750">2 · EXPAND</text>
+    <path d="M83 485C108 458 134 512 177 470" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <text x="235" y="435" fill="#172130" font-size="26" font-weight="700">Velocity representation</text>
+    <text x="235" y="474" fill="#4f5d70" font-size="20">• expansion in particle response time</text><text x="235" y="506" fill="#4f5d70" font-size="20">• higher-order collision terms</text><text x="235" y="538" fill="#4f5d70" font-size="20">• unresolved collisional remainder</text>
+    <path d="M360 582V609" fill="none" stroke="#2457a3" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <g filter="url(#shadow)"><rect x="55" y="620" width="610" height="190" rx="18" fill="#fff" stroke="#acd0c0" stroke-width="2"/></g>
+    <rect x="55" y="620" width="150" height="190" rx="18" fill="#16815b"/><rect x="185" y="620" width="20" height="190" fill="#16815b"/>
+    <text x="130" y="654" text-anchor="middle" fill="#fff" font-size="20" font-weight="750">3 · CLOSE</text>
+    <g transform="translate(82 707)" fill="#fff"><circle cx="10" cy="0" r="7"/><circle cx="40" cy="-19" r="6"/><circle cx="68" cy="13" r="8"/><circle cx="99" cy="-15" r="7"/></g>
+    <text x="235" y="670" fill="#172130" font-size="26" font-weight="700">Stochastic closure</text>
+    <text x="235" y="709" fill="#4f5d70" font-size="20">• collision-localised random kicks</text><text x="235" y="741" fill="#4f5d70" font-size="20">• covariance tied to local collision rate</text><text x="235" y="773" fill="#4f5d70" font-size="20">• unresolved collision history only</text>
+    <path d="M360 817V844" fill="none" stroke="#16815b" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <g filter="url(#shadow)"><rect x="55" y="855" width="610" height="190" rx="18" fill="#fff" stroke="#acd0c0" stroke-width="2"/></g>
+    <rect x="55" y="855" width="150" height="190" rx="18" fill="#14734f"/><rect x="185" y="855" width="20" height="190" fill="#14734f"/>
+    <text x="130" y="884" text-anchor="middle" fill="#fff" font-size="15" font-weight="750">4 · DENSITY</text>
+    <text x="130" y="904" text-anchor="middle" fill="#fff" font-size="15" font-weight="750">EQUATION</text>
+    <path d="M82 958C107 925 135 984 181 937" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <text x="235" y="905" fill="#172130" font-size="26" font-weight="700">Particle-density evolution</text>
+    <text x="235" y="944" fill="#4f5d70" font-size="20">• closed velocity representation</text><text x="235" y="976" fill="#4f5d70" font-size="20">• reduced evolution equation</text><text x="235" y="1008" fill="#4f5d70" font-size="20">• particle-density field</text>
+
+    <rect x="55" y="1080" width="610" height="170" rx="18" fill="#edf7f2" stroke="#acd0c0" stroke-width="2"/>
+    <text x="360" y="1114" text-anchor="middle" fill="#14734f" font-size="19" font-weight="750" letter-spacing=".5">WALL-BOUNDED EXTENSION TO TEST</text>
+    <g font-size="17" font-weight="650" text-anchor="middle" fill="#29425f">
+      <rect x="82" y="1132" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="212" y="1155">directional anisotropy</text>
+      <rect x="378" y="1132" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="508" y="1155">spatial pair availability</text>
+      <rect x="82" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="212" y="1200">inward motion + selection</text>
+      <rect x="378" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="508" y="1200">recurrence + pair state?</text>
+    </g>
+    <text x="360" y="1230" text-anchor="middle" fill="#14734f" font-size="15" font-weight="700">incorporate collision statistics and anisotropic organisation</text>
+    <path d="M600 1241H123" fill="none" stroke="#16815b" stroke-width="4" marker-end="url(#return)"/>
+  </g>
+</svg>
