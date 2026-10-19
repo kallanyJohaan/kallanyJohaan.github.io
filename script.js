@@ -64,6 +64,41 @@ if(overviewVideo){
  else if(motionPreference.addListener)motionPreference.addListener(syncOverviewVideo);
 }
 
+const sourceDisclosures=[...document.querySelectorAll('details[data-code-module]')];
+sourceDisclosures.forEach(disclosure=>{
+ const summary=disclosure.querySelector(':scope>summary');
+ const purpose=summary?.querySelector('small');
+ const sourceLink=summary?.querySelector('.code-new-tab');
+ const body=disclosure.querySelector(':scope>.code-module-body');
+ const explanation=body?.querySelector(':scope>p');
+ const source=body?.querySelector(':scope>pre[data-source-file]');
+ if(!summary||!purpose||!sourceLink||!body||!explanation||!source)return;
+
+ const entry=document.createElement('article');
+ entry.className='code-entry';
+ entry.dataset.codeModule='';
+ entry.dataset.codeName=disclosure.dataset.codeName||'';
+ const head=document.createElement('div');
+ head.className='code-entry-head';
+ disclosure.before(entry);
+ entry.append(head);
+ head.append(disclosure,sourceLink);
+
+ disclosure.removeAttribute('data-code-module');
+ disclosure.removeAttribute('data-code-name');
+ disclosure.dataset.codeDisclosure='';
+ disclosure.open=false;
+
+ const purposeLine=document.createElement('span');
+ purposeLine.textContent=purpose.textContent.trim();
+ const explanationLine=document.createElement('span');
+ explanationLine.append(...explanation.childNodes);
+ explanation.replaceChildren(purposeLine,explanationLine);
+ explanation.className='code-description';
+ purpose.remove();
+ source.hidden=true;
+});
+
 const codeViewStatus=document.getElementById('code-view-status');
 const codeSearch=document.getElementById('code-search');
 if(codeSearch){
@@ -110,33 +145,44 @@ if(expandAllCode&&collapseAllCode&&codeViewActions){
  codeViewActions.hidden=false;
  expandAllCode.addEventListener('click',()=>{
   const visible=modules.filter(module=>!module.hidden);
-  visible.forEach(module=>{module.open=true});
-  if(codeViewStatus)codeViewStatus.textContent=`${visible.length} complete ${visible.length===1?'file':'files'} expanded.`;
+  visible.forEach(module=>{const disclosure=module.querySelector('[data-code-disclosure]');if(disclosure)disclosure.open=true});
+  if(codeViewStatus)codeViewStatus.textContent=`${visible.length} ${visible.length===1?'description':'descriptions'} expanded.`;
  });
  collapseAllCode.addEventListener('click',()=>{
-  modules.forEach(module=>{module.open=false});
-  if(codeViewStatus)codeViewStatus.textContent='All code panels collapsed.';
+  modules.forEach(module=>{const disclosure=module.querySelector('[data-code-disclosure]');if(disclosure)disclosure.open=false});
+  if(codeViewStatus)codeViewStatus.textContent='All descriptions collapsed.';
  });
 }
 
-const codeNewTabLinks=[...document.querySelectorAll('.code-new-tab')];
-codeNewTabLinks.forEach(link=>{
- link.addEventListener('click',event=>event.stopPropagation());
- link.addEventListener('keydown',event=>event.stopPropagation());
-});
-
 function revealLinkedCode(){
+ const entries=[...document.querySelectorAll('[data-code-module]')];
+ const groups=[...document.querySelectorAll('[data-code-group]')];
+ document.documentElement.classList.remove('code-source-view');
+ entries.forEach(entry=>{
+  entry.classList.remove('is-source-target');
+  const source=entry.querySelector('[data-source-file]');
+  if(source)source.hidden=true;
+ });
+ groups.forEach(group=>group.classList.remove('is-source-group'));
  if(!location.hash.startsWith('#source-title-'))return;
  let id;
  try{id=decodeURIComponent(location.hash.slice(1))}catch(error){return}
  const title=document.getElementById(id);
- const module=title?.closest('[data-code-module]');
- if(!title||!module)return;
- module.hidden=false;
- module.open=true;
+ const entry=title?.closest('[data-code-module]');
+ const disclosure=entry?.querySelector('[data-code-disclosure]');
+ const source=entry?.querySelector('[data-source-file]');
+ const group=entry?.closest('[data-code-group]');
+ if(!title||!entry||!disclosure||!source||!group)return;
+ document.documentElement.classList.add('code-source-view');
+ entry.hidden=false;
+ entry.classList.add('is-source-target');
+ group.hidden=false;
+ group.classList.add('is-source-group');
+ disclosure.open=true;
+ source.hidden=false;
  document.title=`${title.textContent} | Research code | Johaan Tomy Kallany`;
- if(codeViewStatus)codeViewStatus.textContent=`Complete ${title.textContent} source expanded in this tab.`;
- requestAnimationFrame(()=>title.scrollIntoView({block:'start'}));
+ if(codeViewStatus)codeViewStatus.textContent=`Complete ${title.textContent} source shown in this tab.`;
+ requestAnimationFrame(()=>source.scrollIntoView({block:'start'}));
 }
 revealLinkedCode();
 window.addEventListener('hashchange',revealLinkedCode);
