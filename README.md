@@ -1,6 +1,6 @@
 # kallanyjohaan.github.io
 
-Research website of **Johaan Tomy Kallany** — computational modelling of particle-laden flows.
+Research website of **Johaan Tomy Kallany** — computational modelling of particle-laden flows. Joint European MSc MathMods (Mathematical Modelling in Engineering); MSc thesis at Inria Sophia Antipolis, 2026.
 Live at **https://kallanyjohaan.github.io/**
 
 The homepage states the research question (how carrier flow, particle inertia and collisions shape collective transport) and presents the MSc thesis, *Collective Dynamics of Colliding Inertial Particles in Prescribed Carrier Flows* (Inria Sophia Antipolis, 2026), with its three main findings. `research.html` goes deeper: question, findings with the original figures, numerical methods, scope and limitations, directions, documents and a BibTeX entry. Every result on the site links to the thesis page it comes from.
@@ -28,7 +28,7 @@ Keep these filenames exactly as they are; every link on the site points to them.
 
 | Document | Path | Size |
 | --- | --- | ---: |
-| Master's thesis | `assets/Johaan_Kallany_Thesis.pdf` | 25.6 MB |
+| Master's thesis | `assets/Johaan_Kallany_Thesis.pdf` | 25.9 MB |
 | Defence slides | `assets/Thesis_Defence_Slides.pdf` | 15.7 MB |
 | CV | `assets/Johaan_Tomy_Kallany_CV.pdf` | 0.2 MB |
 

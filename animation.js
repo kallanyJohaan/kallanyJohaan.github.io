@@ -1,6 +1,6 @@
 'use strict';
 
-// A schematic illustration of the research question, not a numerical solver.
+// A conceptual illustration of the research question, not a numerical solver.
 // Three phases cycle: a carrier flow organises particle paths (tracers follow
 // it, heavier particles lag); particles meet and contacts flash; the population
 // settles into streamwise bands. Nothing here is measured or to scale.
@@ -14,9 +14,9 @@
   const caption = document.getElementById('animation-caption');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const descriptions = [
-    'A carrier flow organises particle paths. Light particles follow it; heavier ones lag and cross it.',
-    'Finite-size particles meet. Each contact changes two trajectories at once.',
-    'Across the whole population, structure appears: bands, alignment, coherence.'
+    'A carrier flow organises particle paths. Lower-inertia particles follow it; higher-inertia particles lag and cross it.',
+    'Particles meet. In the thesis, each contact changes two trajectories at once.',
+    'Across the whole population, structure appears: bands, alignment, coherence (stylised).'
   ];
   const STAGES = descriptions.length;
   const H = 430, duration = 8;
@@ -114,7 +114,7 @@
         }
       }
     }
-    while (flashes.length && time - flashes[0].t > .9) flashes.shift();
+    while (flashes.length && time - flashes[0].t > .6) flashes.shift();
   }
 
   function strokePath(points, color, width) {
@@ -165,8 +165,8 @@
 
     // Contact flashes.
     for (const f of flashes) {
-      const age = (time - f.t) / .9;
-      context.beginPath(); context.arc(f.x, f.y, 5 + age * 16, 0, Math.PI * 2);
+      const age = (time - f.t) / .6;
+      context.beginPath(); context.arc(f.x, f.y, 5 + age * 12, 0, Math.PI * 2);
       context.strokeStyle = 'rgba(' + ORANGE + ',' + (.75 * (1 - age)) + ')';
       context.lineWidth = 1.4; context.stroke();
       context.beginPath(); context.arc(f.x, f.y, 2.2, 0, Math.PI * 2);
