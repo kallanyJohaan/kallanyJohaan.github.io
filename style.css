@@ -160,9 +160,31 @@ sub,sup{line-height:0}
 .rows p{margin:0;max-width:62ch}
 .rows h3{font-size:18px;margin-bottom:4px}
 .rows .detail{font-size:15px;color:var(--text)}
-.semester-timeline li{grid-template-columns:minmax(165px,180px) minmax(0,1fr);gap:24px;padding:20px 0}
-.semester-timeline .when,.semester-timeline>li>time{line-height:1.55}
-.semester-timeline h3{line-height:1.35}
+.journey-section{background:linear-gradient(180deg,#fff 0%,#f8fafc 100%)}
+.journey-heading h2{max-width:12ch}
+.journey-flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;list-style:none;margin:0;padding:0}
+.journey-flow>li{position:relative;min-width:0;margin:0;padding:0 18px 0 0}
+.journey-flow>li:not(:last-child)::after{content:"";position:absolute;z-index:0;top:17px;left:40px;right:6px;height:1px;background:#b8c7d9}
+.journey-marker{position:relative;z-index:1;display:grid;place-items:center;width:34px;height:34px;border:1px solid #8fa9ca;border-radius:50%;background:#fff;color:var(--accent);font:650 11px var(--mono)}
+.journey-step-copy{padding-top:14px}
+.journey-date{min-height:3.5em;margin:0 0 8px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.journey-flow h3{margin:0 0 5px;font-size:19px;line-height:1.3}
+.journey-institution{margin:0;font-size:14.5px;line-height:1.5;color:var(--ink)}
+.journey-country{margin:5px 0 0;font-size:12px;font-weight:650;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.journey-milestones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:24px 0 0;padding:18px 0 0;border-top:1px solid var(--rule)}
+.journey-milestones li{margin:0;padding:12px 14px;border-left:3px solid var(--accent);background:var(--wash)}
+.journey-milestones time{display:block;margin-bottom:3px;font-size:12.5px;color:var(--muted)}
+.journey-milestones strong{display:block;font-size:15px;line-height:1.4;color:var(--ink)}
+.journey-milestones a{color:inherit}
+@media(max-width:760px){
+  .journey-flow{grid-template-columns:1fr}
+  .journey-flow>li{display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:14px;padding:0 0 22px}
+  .journey-flow>li:not(:last-child)::after{top:36px;right:auto;bottom:0;left:16px;width:1px;height:auto}
+  .journey-step-copy{padding-top:0}
+  .journey-date{min-height:0;margin-bottom:6px}
+  .journey-milestones{grid-template-columns:1fr}
+}
+@media print{.journey-flow>li,.journey-milestones>li{break-inside:avoid}}
 .docs{list-style:none;margin:0;padding:0}
 .docs li{margin:0;border-top:1px solid var(--rule-soft)}
 .docs li:first-child{border-top:0}
