@@ -160,6 +160,9 @@ sub,sup{line-height:0}
 .rows p{margin:0;max-width:62ch}
 .rows h3{font-size:18px;margin-bottom:4px}
 .rows .detail{font-size:15px;color:var(--text)}
+.semester-timeline li{grid-template-columns:minmax(165px,180px) minmax(0,1fr);gap:24px;padding:20px 0}
+.semester-timeline .when,.semester-timeline>li>time{line-height:1.55}
+.semester-timeline h3{line-height:1.35}
 .docs{list-style:none;margin:0;padding:0}
 .docs li{margin:0;border-top:1px solid var(--rule-soft)}
 .docs li:first-child{border-top:0}
