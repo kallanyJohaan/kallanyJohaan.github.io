@@ -1,14 +1,16 @@
 # Website QA report — 19 October 2026
 
-**Result: 52 of 52 automated checks passed.**
+**Result: 202 structural, link, privacy and excerpt-integrity checks passed, together with 12 responsive browser scenarios and JavaScript/CSS validation.**
 
 ## Completed checks
 
 - Every internal link and local image, PDF, CSS/JS and HTML asset path resolves to a real file in this package; fragment anchors resolve to matching IDs.
 - Every HTML page has one primary heading and no duplicate element IDs; images have alternative text.
 - CSS parses without top-level syntax errors; all JavaScript passes Node.js syntax verification.
-- Homepage and MSc-thesis pages rendered in headless Chromium at 1440, 1024, 850, 600, 390 and 320-pixel widths (as applicable), without horizontal overflow.
-- Mobile/tablet navigation opens and closes; interactive illustration Play/Pause and Reset controls function; BibTeX Copy control triggers and copies the intended citation.
+- The code page rendered at 1440, 1024, 390 and 320 pixels; the homepage and MSc-thesis page rendered at 1440, 900, 390 and 320 pixels. No tested page had horizontal overflow.
+- Desktop and mobile navigation exposes the Code page. The code search filters the 20 modules, reports results, shows a clear empty state and resets with Escape; excerpt panels open from their native disclosure controls.
+- All 20 displayed excerpts were compared with the corresponding supplied module and match their source text. This is an integrity check only, not a scientific or numerical correctness review.
+- No `.py` file, source ZIP or direct research-code download is present anywhere in the website package. Complete source access is routed through a permission-request email.
 - No uncaught JavaScript errors or browser console errors observed in the audited preview.
 - Every local image was embedded from the actual delivered file, decoded and inspected; 11 actual thesis figures, two original schematic SVG illustrations and the generated social card are included.
 - Thesis public PDF retains its original handwritten signatures, per owner permission. Two student-ID lines on cover are masked. The CV public PDF has a phone/address line redacted.
@@ -17,7 +19,9 @@
 
 ## Scope and limits
 
-The website is ready for upload, **not automatically published**. This runtime blocked direct browser navigation to both `file://` and local `http://` addresses, so visual browser testing used `page.set_content` with the actual HTML/CSS/JS and real image files embedded as data URLs. This tested responsive rendering and client interactions, but does **not** replace testing after GitHub Pages deployment. External websites and actual email delivery were not tested, nor was every accessibility criterion formally certified.
+The website is ready for upload, **not automatically published**. Browser tests used the shipped files through a local HTTP preview in headless Microsoft Edge. This does **not** replace testing after GitHub Pages deployment. External websites and actual email delivery were not tested, nor was every accessibility criterion formally certified.
+
+Anything displayed in a browser can be copied or saved. Permission-gating is achieved by excluding the complete research source and publishing selected excerpts only; the site does not claim that visible excerpts are technically impossible to copy.
 
 No fictional thesis-data plots, defence-slides PDF, or simulation video were included. References to unavailable downloads were removed, rather than shipping links that would fail. The hero animation and two future-direction diagrams are explicitly conceptual.
 

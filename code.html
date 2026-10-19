@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Selected Python excerpts from Johaan Tomy Kallany’s research code for inertial-particle simulation, DNS interpolation, analysis and visualisation.">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://kallanyjohaan.github.io/code.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research code — Johaan Tomy Kallany">
+  <meta property="og:description" content="Browse selected implementation excerpts from a 20-module inertial-particle research pipeline.">
+  <meta property="og:url" content="https://kallanyjohaan.github.io/code.html">
+  <meta property="og:image" content="https://kallanyjohaan.github.io/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Collision-on particles on near-wall turbulent streaks, from the MSc thesis, with the site title.">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Research code — Johaan Tomy Kallany</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html" aria-label="Johaan Tomy Kallany — homepage">Johaan Tomy Kallany</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="index.html#work">Research</a>
+        <a href="research.html">MSc thesis</a>
+        <a href="code.html" aria-current="page">Code</a>
+        <a href="index.html#documents">Documents</a>
+        <a href="index.html#contact">Contact</a>
+        <a class="btn btn-ghost btn-sm nav-cv" href="assets/Johaan_Tomy_Kallany_CV.pdf" download="Johaan_Tomy_Kallany_CV.pdf">Download CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="wrap code-hero">
+      <p class="breadcrumb"><a href="index.html">Home</a> / Research code</p>
+      <p class="label">Research software · selected excerpts</p>
+      <h1>Code, with the scientific context kept visible.</h1>
+      <p class="lead">This project connects hard-particle dynamics, interpolation of a near-wall DNS record, multiscale diagnostics and publication-ready figures. The browser below presents representative excerpts from all 20 Python modules.</p>
+      <div class="actions">
+        <a class="btn" href="#browser">Browse excerpts</a>
+        <a class="btn btn-ghost" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20access%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20requested%3A%0AIntended%20use%3A%0ACollaboration%20or%20reproduction%20planned%3A">Request full code access</a>
+      </div>
+      <div class="code-policy" role="note" aria-label="Code access policy">
+        <p><strong>Access policy.</strong> The complete source and DNS dataset are not included in this public website. These excerpts are provided for technical review; please request written permission before reuse or redistribution.</p>
+        <p>Anything displayed by a browser can be copied. Protection therefore comes from publishing excerpts only and keeping the complete project private—not from hiding a download button.</p>
+      </div>
+    </section>
+
+    <section id="browser" class="code-browser-section" aria-labelledby="browser-title">
+      <div class="wrap">
+        <div class="code-browser-head">
+          <div>
+            <p class="section-eyebrow">20 modules · five layers</p>
+            <h2 id="browser-title">Browse the implementation</h2>
+            <p>Search by filename, purpose or layer. Open any module to read a short excerpt taken from the project.</p>
+          </div>
+          <div class="code-search">
+            <label for="code-search">Filter modules</label>
+            <input id="code-search" type="search" autocomplete="off" placeholder="Try “collision”, “DNS” or “figures" aria-describedby="code-results">
+            <p id="code-results" role="status" aria-live="polite">20 modules shown</p>
+          </div>
+        </div>
+
+        <nav class="code-group-nav" aria-label="Code groups">
+          <a href="#simulation-core">Simulation core</a>
+          <a href="#dns-data">DNS data</a>
+          <a href="#study-workflow">Study workflow</a>
+          <a href="#diagnostics">Diagnostics</a>
+          <a href="#figures-outputs">Figures &amp; outputs</a>
+        </nav>
+
+        <p id="code-empty" class="code-empty" hidden>No modules match this search. Try a filename or a broader scientific term.</p>
+
+        <section id="simulation-core" class="code-group" data-code-group aria-labelledby="simulation-core-title">
+          <div class="code-group-heading">
+            <p>01</p>
+            <div><h2 id="simulation-core-title">Simulation core</h2><p>Particle motion, periodic contacts and runtime reporting.</p></div>
+          </div>
+
+          <details class="code-module" data-code-module data-code-name="modified_engine.py hard-particle dynamics contact mechanics periodic box">
+            <summary><span><code>modified_engine.py</code><small>Hard-particle dynamics, contact mechanics and drag coupling</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Periodic coordinates are normalised in place before neighbour and contact calculations.</p>
+              <pre tabindex="0" aria-label="Excerpt from modified_engine.py"><code>def wrap_positions(pos, L, W):
+    """Map positions in place to the periodic box ``[0, L) x [0, W)``."""
+    pos[:, 0] = np.mod(pos[:, 0], L)
+    pos[:, 1] = np.mod(pos[:, 1], W)
+    return pos</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="fast_pairs.py periodic neighbour search k-d tree candidate pairs">
+            <summary><span><code>fast_pairs.py</code><small>Periodic candidate-pair searches with a k-d tree</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The accelerated search preserves the engine’s periodic pair convention.</p>
+              <pre tabindex="0" aria-label="Excerpt from fast_pairs.py"><code>def _kdtree_pairs_periodic(pos, L, W, r_query):
+    """Return periodic pairs within ``r_query`` using the engine contract."""
+    p = np.mod(np.asarray(pos, float), [L, W])
+    # cKDTree with boxsize requires points strictly inside [0, L) x [0, W)
+    p[p[:, 0] &gt;= L, 0] = 0.0
+    p[p[:, 1] &gt;= W, 1] = 0.0
+    tree = cKDTree(p, boxsize=[L, W])
+    prs = tree.query_pairs(r=float(r_query), output_type="ndarray")
+    if len(prs) == 0:
+        return _EMPTY
+    return (prs[:, 0].astype(np.int64), prs[:, 1].astype(np.int64))</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="progress.py runtime progress monitoring reporting terminal">
+            <summary><span><code>progress.py</code><small>Lightweight progress and runtime diagnostic reporting</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>A compact terminal bar keeps long parameter studies readable.</p>
+              <pre tabindex="0" aria-label="Excerpt from progress.py"><code>def _bar(frac, width=20):
+    n = int(np.clip(frac, 0, 1) * width)
+    return "[" + "#" * n + "-" * (width - n) + "]"</code></pre>
+            </div>
+          </details>
+        </section>
+
+        <section id="dns-data" class="code-group" data-code-group aria-labelledby="dns-data-title">
+          <div class="code-group-heading">
+            <p>02</p>
+            <div><h2 id="dns-data-title">DNS data and interpolation</h2><p>Dataset conventions, wall units and velocity reconstruction.</p></div>
+          </div>
+
+          <details class="code-module" data-code-module data-code-name="dataset.py DNS dataset geometry derivative wall-normal Lagrange convention">
+            <summary><span><code>dataset.py</code><small>Dataset geometry, component ordering and wall-normal conventions</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>A local three-point Lagrange derivative respects the stored wall-normal node positions.</p>
+              <pre tabindex="0" aria-label="Excerpt from dataset.py"><code>def _lagrange3_derivative(F3, y3, at=1):
+    """d/d(distance) at node `at` from three nodes at true positions y3."""
+    z0, z1, z2 = y3
+    zc = y3[at]
+    dL0 = ((zc - z1) + (zc - z2)) / ((z0 - z1) * (z0 - z2))
+    dL1 = ((zc - z0) + (zc - z2)) / ((z1 - z0) * (z1 - z2))
+    dL2 = ((zc - z0) + (zc - z1)) / ((z2 - z0) * (z2 - z1))
+    return F3[:, :, 0] * dL0 + F3[:, :, 1] * dL1 + F3[:, :, 2] * dL2</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="slab_interp.py DNS slab interpolation wall units Reynolds number">
+            <summary><span><code>slab_interp.py</code><small>Spatial and temporal interpolation of the near-wall DNS slab</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The wall-unit conversion is kept explicit at the interpolation boundary.</p>
+              <pre tabindex="0" aria-label="Excerpt from slab_interp.py"><code>def to_wall_units(y_wall):
+    """Convert wall distance to ``y+ = y Re_tau`` for ``h = 1``."""
+    return np.asarray(y_wall, float) * RE_TAU
+
+
+def from_wall_units(y_plus):
+    """Convert ``y+`` to wall distance using ``y = y+ / Re_tau``."""
+    return np.asarray(y_plus, float) / RE_TAU</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="dns_fluid.py DNS velocity field particle Reynolds Stokes wall units">
+            <summary><span><code>dns_fluid.py</code><small>Connects interpolated DNS fields to the particle engine</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Small conversion helpers keep particle and wall-unit reporting consistent.</p>
+              <pre tabindex="0" aria-label="Excerpt from dns_fluid.py"><code>def particle_reynolds(slip, a=None):
+    """Return ``Re_p = |u - v_p| d / nu`` for reporting."""
+    a = A_DEFAULT if a is None else float(a)
+    return float(slip) * 2.0 * a / NU
+
+
+def tau_to_st(tau):
+    """Convert response time to the reporting label ``St+ = tau_p/t_nu``."""
+    return float(tau) / T_NU
+
+
+def st_to_tau(st_plus):
+    """Convert ``St+`` to response time using the active ``t_nu``."""
+    return float(st_plus) * T_NU</code></pre>
+            </div>
+          </details>
+        </section>
+
+        <section id="study-workflow" class="code-group" data-code-group aria-labelledby="study-workflow-title">
+          <div class="code-group-heading">
+            <p>03</p>
+            <div><h2 id="study-workflow-title">Study workflow</h2><p>Configuration, parameter resolution and one-case execution.</p></div>
+          </div>
+
+          <details class="code-module" data-code-module data-code-name="run_study.py command line configuration model collision law workflow">
+            <summary><span><code>run_study.py</code><small>Main command-line configuration and study workflow</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>One resolver translates a model label into the contact parameters used downstream.</p>
+              <pre tabindex="0" aria-label="Excerpt from run_study.py"><code>def model_of(cfg):
+    """
+    (model letter, effective e_tan, effective mu_pp) from cfg["model"].
+    e_tan is 1 (smooth) unless the model is C, D or E; mu_pp is -1 (no cap)
+    unless the model is D or E. An unknown letter is reported as itself so
+    validate() can name it.
+    """
+    m = str(cfg.get("model", "A")).strip().upper()
+    e_tan = float(cfg.get("e_tan", 0.0)) if m in ("C", "D", "E") else 1.0
+    mu = float(cfg.get("mu_pp", 0.3)) if m in ("D", "E") else -1.0
+    return m, e_tan, mu</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="run_dns_study.py parameter resolution paired runs sweep analysis response time">
+            <summary><span><code>run_dns_study.py</code><small>Parameter resolution, paired runs and sweep analysis</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The study runner keeps the Stokes response-time closure explicit.</p>
+              <pre tabindex="0" aria-label="Excerpt from run_dns_study.py"><code>def tau_from(a, rho_ratio, nu=None):
+    """tau_p implied by a radius and a density ratio."""
+    nu = NU if nu is None else float(nu)
+    return STOKES_PREFACTOR * float(rho_ratio) * float(a) ** 2 / nu</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="run_one_case.py single case snapshots frame clamp analysis">
+            <summary><span><code>run_one_case.py</code><small>Runs and analyses one particle-response case</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Snapshot limits use one convention from the command line through the analysis layer.</p>
+              <pre tabindex="0" aria-label="Excerpt from run_one_case.py"><code>def _asnap(v):
+    """'all' / 'none' / '' -&gt; None (no clamp); otherwise an int."""
+    if v is None:
+        return None
+    if isinstance(v, str):
+        if v.strip().lower() in ("all", "none", ""):
+            return None
+        v = int(v)
+    v = int(v)
+    # Negative values use the same "no clamp" convention as run_study. Convert
+    # them here before the downstream frame-count clamp.
+    return None if v &lt; 0 else v</code></pre>
+            </div>
+          </details>
+        </section>
+
+        <section id="diagnostics" class="code-group" data-code-group aria-labelledby="diagnostics-title">
+          <div class="code-group-heading">
+            <p>04</p>
+            <div><h2 id="diagnostics-title">Diagnostics</h2><p>Clustering, collective motion, turbulent structures and contact impulses.</p></div>
+          </div>
+
+          <details class="code-module" data-code-module data-code-name="clustering.py periodic clustering variance mean occupancy VMR">
+            <summary><span><code>clustering.py</code><small>Periodic clustering measures and finite-sample references</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The variance-to-mean ratio is paired with grid occupancy for context.</p>
+              <pre tabindex="0" aria-label="Excerpt from clustering.py"><code>def vmr(p, L, W, nbins):
+    """Variance-to-mean ratio and occupancy on an nbins x nbins grid."""
+    H, _, _ = np.histogram2d(np.mod(p[:, 0], L), np.mod(p[:, 1], W),
+                             bins=nbins, range=[[0, L], [0, W]])
+    c = H.ravel()
+    return float(c.var() / c.mean()), float(100.0 * np.mean(c &gt; 0))</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="collective.py pair motion collision transport radial velocity contact kernel">
+            <summary><span><code>collective.py</code><small>Pair motion, collision transport and orientational statistics</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The contact-scale diagnostic separates mean relative speed from approaching motion.</p>
+              <pre tabindex="0" aria-label="Excerpt from collective.py"><code>def w_at_contact(p, v, L, W, sigma, width=1.5):
+    """
+    Mean |w_r| and mean approaching w_r^- for pairs within `width`*sigma.
+    This is the transport factor of the collision kernel.
+    """
+    ij, d, r = _pairs(p, L, W, width * sigma)
+    _ok = r &gt; 0                      # coincident pairs: no direction
+    ij, d, r = ij[_ok], d[_ok], r[_ok]
+    if len(ij) == 0:
+        return {"w_abs": np.nan, "w_minus": np.nan,
+                "frac_approach": np.nan, "n_pairs": 0}
+    rhat = d / r[:, None]
+    wr = np.sum((v[ij[:, 0]] - v[ij[:, 1]]) * rhat, axis=1)
+    return {"w_abs": float(np.abs(wr).mean()),
+            "w_minus": float(-wr[wr &lt; 0].mean()) if np.any(wr &lt; 0) else 0.0,
+            "frac_approach": float(np.mean(wr &lt; 0)),
+            "n_pairs": int(len(wr))}</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="structures.py flow gradients spectral derivative streaks turbulence">
+            <summary><span><code>structures.py</code><small>Flow gradients, streaks and particle–structure relationships</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Periodic directions use a spectral derivative on the DNS grid.</p>
+              <pre tabindex="0" aria-label="Excerpt from structures.py"><code>def d_spectral(F, axis, h):
+    """Exact derivative of a periodic field along `axis` with spacing `h`."""
+    n = F.shape[axis]
+    k = np.fft.fftfreq(n, d=h / (2 * np.pi))
+    sh = [1, 1]
+    sh[axis] = n
+    return np.real(np.fft.ifft(1j * k.reshape(sh) * np.fft.fft(F, axis=axis),
+                               axis=axis))</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="vertical_impulse.py diagnostic contact impulse tangential slip rough law">
+            <summary><span><code>vertical_impulse.py</code><small>Post-processing of diagnostic contact impulses</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Archived slip components allow a diagnostic impulse to be re-evaluated for another contact law.</p>
+              <pre tabindex="0" aria-label="Excerpt from vertical_impulse.py"><code>def pz_for_law(d, e_tan, mu_pp, m=1.0):
+    """Re-evaluate Pz~ from the archived slips for another (e_tan, mu_pp)."""
+    wt = d["collision_wt"].astype(float)
+    uy = d["collision_Uy_diag"].astype(float)
+    Pn = d["collision_Pn"].astype(float)
+    uT = np.hypot(wt, uy)
+    trial = (m / 7.0) * (1.0 - e_tan) * uT
+    if mu_pp &gt;= 0:
+        trial = np.minimum(trial, mu_pp * Pn)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        pz = np.where(uT &gt; 0, -trial * uy / uT, 0.0)
+    return pz</code></pre>
+            </div>
+          </details>
+        </section>
+
+        <section id="figures-outputs" class="code-group" data-code-group aria-labelledby="figures-outputs-title">
+          <div class="code-group-heading">
+            <p>05</p>
+            <div><h2 id="figures-outputs-title">Figures and outputs</h2><p>Snapshots, analysis figures, consistent styling and specialised plots.</p></div>
+          </div>
+
+          <details class="code-module" data-code-module data-code-name="figures.py clustering collective figures collision kernel plots">
+            <summary><span><code>figures.py</code><small>Comparison figures for clustering and collective behaviour</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The collision kernel is displayed beside its accumulation and transport factors.</p>
+              <pre tabindex="0" aria-label="Excerpt from figures.py"><code>def fig_collision_kernel(rows, path=None):
+    """
+    The collision kernel split into its two factors:
+        Gamma = n sigma * g(sigma) * &lt;|w_r|&gt;
+                        accumulation   transport
+    Plotting them separately says WHY the collision rate changed with Stokes
+    number, which the total rate alone cannot.
+    """
+    st = np.array([r["tau"] for r in rows])
+    g = np.array([r.get("g_contact", np.nan) for r in rows], float)
+    w = np.array([r.get("w_abs_contact", np.nan) for r in rows], float)
+    fig, ax = plt.subplots(1, 3, figsize=(fs.WIDE, 2.2))
+    for a, y, lbl, col in ((ax[0], g, "$g(\\sigma)$  (accumulation)", BLUE),
+                           (ax[1], w, "$\\langle|w_r|\\rangle$  (transport)", RED),
+                           (ax[2], g * w, "$g\\cdot\\langle|w_r|\\rangle$  (kernel)", NAVY)):
+        a.plot(st, y, "o-", color=col, lw=1.8)
+        a.set_xscale("symlog", linthresh=0.05)
+        a.set_xlabel(fs.SYMBOL["tau"]); a.set_ylabel(lbl)
+    ax[0].axhline(1.0, color=GREY, ls="--", label="uniform")
+    ax[0].legend()
+    fs.panels(ax)
+    fig.tight_layout()
+    return _save(fig, path)</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="viz.py flow particle density animations comoving frame visualisation">
+            <summary><span><code>viz.py</code><small>Flow-field, particle-density and animation utilities</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>A periodic roll removes the measured downstream translation from an animation.</p>
+              <pre tabindex="0" aria-label="Excerpt from viz.py"><code>def comoving_roll(F, t, U_c=U_CONV, L=LX, hx=HX):
+    """
+    Shift a field into a frame moving downstream at U_c.
+
+    The streamwise axis is periodic, so this is a circular roll by the integer
+    number of cells the frame has travelled. Sub-cell precision is not needed:
+    the residual is under half a cell, far below the streak width.
+    """
+    n = int(round((U_c * t / hx))) % F.shape[1]
+    return np.roll(F, -n, axis=1)</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="snapshots.py particle snapshots archive load save plotting">
+            <summary><span><code>snapshots.py</code><small>Compact particle-snapshot saving, loading and plotting</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Run metadata is restored separately from the time-dependent arrays.</p>
+              <pre tabindex="0" aria-label="Excerpt from snapshots.py"><code>def load_snapshots(path):
+    """Read back a saved run. Returns a dict with positions, times and meta."""
+    z = np.load(path, allow_pickle=True)
+    out = {k: z[k] for k in z.files if not k.startswith("meta_")}
+    out["meta"] = {k[5:]: z[k].item() if z[k].ndim == 0 else z[k]
+                   for k in z.files if k.startswith("meta_")}
+    return out</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="figstyle.py figure style panel labels publication output">
+            <summary><span><code>figstyle.py</code><small>Shared figure dimensions, labels, colours and output helpers</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Panel letters stay with the title instead of covering the plotted data.</p>
+              <pre tabindex="0" aria-label="Excerpt from figstyle.py"><code>def panel(ax, letter, **kw):
+    """
+    Add a panel label to the left-aligned title.
+
+    Keeping the label in the title avoids covering data or competing with a
+    legend inside the axes.
+    """
+    t = ax.get_title()
+    ax.set_title("")
+    kw.setdefault("fontsize", 9)
+    ax.set_title(f"({letter}) {t}" if t else f"({letter})", loc="left", **kw)
+    return ax</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="housestyle.py semantic plotting style shared colour limits comparison">
+            <summary><span><code>housestyle.py</code><small>Semantic plotting styles and shared comparison limits</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Paired fields use one robust colour scale so visual contrast remains comparable.</p>
+              <pre tabindex="0" aria-label="Excerpt from housestyle.py"><code>def paired_limits(*fields, symmetric=True, q=0.995):
+    """Return one colour scale for the fields being compared.
+
+    Shared limits keep visual differences between paired fields comparable.
+    """
+    import numpy as np
+    allv = np.concatenate([np.asarray(F, float).ravel() for F in fields])
+    allv = allv[np.isfinite(allv)]
+    if not allv.size:
+        return (0.0, 1.0)
+    if symmetric:
+        a = float(np.quantile(np.abs(allv), q))
+        return (-a, a)
+    return (float(np.quantile(allv, 1 - q)), float(np.quantile(allv, q)))</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="thesisfig.py thesis figure panels layout formatting">
+            <summary><span><code>thesisfig.py</code><small>Thesis-specific panel layouts and figure formatting</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>The standard two-by-two canvas fixes the printed dimensions and panel spacing.</p>
+              <pre tabindex="0" aria-label="Excerpt from thesisfig.py"><code>def figure_2x2(height_ratio=0.62):
+    """The paired_legs canvas: 7.00 x 4.34 in, 2 x 2 panels."""
+    fig = plt.figure(figsize=(WIDE, WIDE * height_ratio))
+    gs = fig.add_gridspec(2, 2, top=0.845, bottom=0.105, left=0.100,
+                          right=0.975, hspace=0.66, wspace=0.32)
+    axes = [fig.add_subplot(gs[i, j]) for i in range(2) for j in range(2)]
+    for ax in axes:
+        cart(ax)
+    return fig, axes</code></pre>
+            </div>
+          </details>
+
+          <details class="code-module" data-code-module data-code-name="momentum_energy_plots.py momentum energy collision events histories">
+            <summary><span><code>momentum_energy_plots.py</code><small>Momentum and energy histories with collision markers</small></span><span class="excerpt-badge">Excerpt</span></summary>
+            <div class="code-module-body">
+              <p>Collision times for a selected particle are extracted from the shared event log.</p>
+              <pre tabindex="0" aria-label="Excerpt from momentum_energy_plots.py"><code>def _events_of(d, i):
+    if "collision_t" not in d:
+        return np.empty(0)
+    ij = d["collision_ij"]
+    return d["collision_t"][(ij[:, 0] == i) | (ij[:, 1] == i)]</code></pre>
+            </div>
+          </details>
+        </section>
+      </div>
+    </section>
+
+    <section id="request-access" class="section code-access-section" aria-labelledby="access-title">
+      <div class="wrap code-access-panel">
+        <div>
+          <p class="section-eyebrow">Full source access</p>
+          <h2 id="access-title">Request the modules you need.</h2>
+          <p>The complete project is shared selectively for academic review, reproducibility discussions and research collaboration. Include your affiliation, the modules you need and the intended use.</p>
+        </div>
+        <a class="btn" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20access%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20requested%3A%0AIntended%20use%3A%0ACollaboration%20or%20reproduction%20planned%3A">Request permission <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Johaan Tomy Kallany. Last updated October 2026. <a href="https://github.com/kallanyJohaan/kallanyJohaan.github.io">Website source on GitHub</a></p>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+</body>
+</html>
