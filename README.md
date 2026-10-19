@@ -9,13 +9,14 @@ The homepage states the research question (how carrier flow, particle inertia an
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Homepage: who I am, the question in motion, the thesis and its findings, updates, background, documents, contact |
+| `index.html` | Homepage: who I am, the question in motion, research directions (MSc thesis, inverse design of flexible particles, continuum modelling after López and Puglisi 2004), the thesis and its findings, updates, background, documents, contact |
 | `research.html` | The thesis study in detail |
 | `404.html` | Shown by GitHub Pages for a broken link |
+| `thesis.html`, `resources.html`, `contact.html` | Redirects from the addresses of an earlier version of the site |
 | `style.css` | Typography, layout, responsive and print styles |
 | `script.js` | Mobile navigation, copyright year, Copy BibTeX button |
 | `animation.js` | The schematic canvas animation on the homepage |
-| `assets/` | Public copies of the thesis, defence slides and CV; the social-preview image; the simulation video |
+| `assets/` | Public copies of the thesis and CV, and the social-preview image |
 | `assets/figures/` | Figures extracted from the thesis PDF at native resolution (`fig-N-M.webp`, plus `-1100` previews and a few labelled panel crops) |
 | `assets/fonts/` | Self-hosted fonts (see Credits) |
 | `favicon.svg`, `robots.txt`, `sitemap.xml`, `.nojekyll` | Site metadata and Pages configuration |
@@ -29,7 +30,6 @@ Keep these filenames exactly as they are; every link on the site points to them.
 | Document | Path | Size |
 | --- | --- | ---: |
 | Master's thesis | `assets/Johaan_Kallany_Thesis.pdf` | 25.9 MB |
-| Defence slides | `assets/Thesis_Defence_Slides.pdf` | 15.7 MB |
 | CV | `assets/Johaan_Tomy_Kallany_CV.pdf` | 0.2 MB |
 
 **Privacy.** The public thesis copy has the student ID numbers and both handwritten signatures removed from the cover page (the page is rasterised; everything else is the original). The public CV has the phone-number and address line removed by true redaction, so it cannot be recovered from the file. Never upload the unredacted originals to this repository: once pushed, a file stays in the Git history even after it is deleted. Each file is below GitHub's 25 MiB web-upload limit.
@@ -51,7 +51,6 @@ All figures are the original thesis figures, extracted from the PDF at native re
 | `fig-4-13.webp` | Fig. 4.13, p. 76 (PDF 81) | thesis page gallery |
 | `fig-4-15.webp` (+ `fig-4-15c.webp`, panel c) | Fig. 4.15, p. 81 (PDF 86) | homepage, thesis page |
 | `fig-4-16.webp` | Fig. 4.16, p. 85 (PDF 90) | thesis page gallery |
-| `near-wall-comparison.mp4` | Simulation animation from defence slide 9 | thesis page |
 
 Every `-1100.webp` file is a 1100 px preview of the same figure for page loading; the links open the full-resolution file.
 
@@ -66,7 +65,7 @@ A schematic of the research question, not a simulation result, and labelled as s
 - **A publication**: add it under *Documents* on both pages and replace the "manuscript in preparation" line.
 - After any change, update the `lastmod` dates in `sitemap.xml` and the "Last updated" line in both footers.
 
-Deploy by committing to `main`; GitHub Pages publishes from `main` / root. After deployment, open the three document links above and the homepage figure to confirm they load.
+Deploy by committing to `main`; GitHub Pages publishes from `main` / root. **Upload the `assets` folder together with the pages**: every figure, font and document lives there, and without it images and downloads fail. After deployment, open the two document links above and the homepage figure to confirm they load.
 
 ## Credits
 

@@ -6,20 +6,43 @@
   <meta name="robots" content="noindex">
   <title>Page not found — Johaan Tomy Kallany</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/style.css">
+  <script defer src="/script.js"></script>
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap"><a class="brand" href="/">Johaan Tomy Kallany</a></div>
+    <div class="wrap">
+      <a class="brand" href="/">Johaan Tomy Kallany</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main">
+        <a href="/#work">Research</a>
+        <a href="/research.html">MSc thesis</a>
+        <a href="/#documents">Documents</a>
+        <a href="/#contact">Contact</a>
+        <a class="btn btn-ghost btn-sm nav-cv" href="/assets/Johaan_Tomy_Kallany_CV.pdf" download="Johaan_Tomy_Kallany_CV.pdf">Download CV</a>
+      </nav>
+    </div>
   </header>
   <main id="main" class="wrap notfound">
-    <p class="label">Page not found</p>
-    <h1>There is nothing at this address.</h1>
-    <p>The link may be out of date, or a file may have moved. The research pages, thesis and CV are all reachable from the homepage.</p>
+    <p class="kicker">Error 404</p>
+    <h1>This page does not exist.</h1>
+    <p>The address may be mistyped or out of date. These pages are all available:</p>
+    <ul class="notfound-links">
+      <li><a href="/">Homepage</a><span>Research overview and main findings</span></li>
+      <li><a href="/research.html">MSc thesis</a><span>Findings, figures, methods and limitations</span></li>
+      <li><a href="/assets/Johaan_Kallany_Thesis.pdf">Thesis (PDF)</a><span>25.9 MB</span></li>
+      <li><a href="/assets/Johaan_Tomy_Kallany_CV.pdf">CV (PDF)</a><span>0.2 MB</span></li>
+    </ul>
     <div class="actions">
       <a class="btn" href="/">Go to the homepage</a>
-      <a class="btn btn-ghost" href="/research.html">MSc thesis</a>
     </div>
   </main>
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year">2026</span> Johaan Tomy Kallany. <a href="mailto:johaantk2001@gmail.com">johaantk2001@gmail.com</a></p>
+    </div>
+  </footer>
 </body>
 </html>
