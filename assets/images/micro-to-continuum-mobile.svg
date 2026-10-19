@@ -11,7 +11,7 @@
   <g font-family="Segoe UI, Arial, sans-serif">
     <text x="360" y="35" text-anchor="middle" fill="#172130" font-size="25" font-weight="750">Continuum modelling for wall-bounded</text>
     <text x="360" y="62" text-anchor="middle" fill="#172130" font-size="25" font-weight="750">turbulent carrier flows</text>
-    <text x="360" y="88" text-anchor="middle" fill="#50647f" font-size="13">Microscopic dynamics remain deterministic; stochasticity enters in the closure</text>
+    <text x="360" y="88" text-anchor="middle" fill="#50647f" font-size="13">Microscopic dynamics remain deterministic; stochasticity enters only through the closure</text>
     <rect x="140" y="101" width="440" height="32" rx="16" fill="#eef3fa" stroke="#c5d2e2"/>
     <text x="360" y="122" text-anchor="middle" fill="#2457a3" font-size="14" font-weight="750" letter-spacing=".7">IMPLEMENTED FOR ANALYTICALLY PRESCRIBED FLOWS</text>
 
@@ -20,7 +20,7 @@
     <text x="130" y="184" text-anchor="middle" fill="#fff" font-size="14" font-weight="750">1 · MICROSCOPIC</text>
     <g transform="translate(83 211)" fill="#fff"><circle cx="12" cy="10" r="7"/><circle cx="38" cy="23" r="9"/><circle cx="68" cy="9" r="7"/><circle cx="18" cy="53" r="8"/><circle cx="64" cy="55" r="9"/></g>
     <text x="235" y="200" fill="#172130" font-size="26" font-weight="700">Deterministic particles</text>
-    <text x="235" y="239" fill="#4f5d70" font-size="20">• Stokes relaxation</text><text x="235" y="271" fill="#4f5d70" font-size="20">• hard-particle contacts</text><text x="235" y="303" fill="#4f5d70" font-size="20">• complete resolved event history</text>
+    <text x="235" y="239" fill="#4f5d70" font-size="20">• Stokes relaxation</text><text x="235" y="271" fill="#4f5d70" font-size="20">• hard-particle contacts</text><text x="235" y="303" fill="#4f5d70" font-size="20">• complete collision-event history</text>
     <path d="M360 347V374" fill="none" stroke="#2457a3" stroke-width="5" marker-end="url(#arrow)"/>
 
     <g filter="url(#shadow)"><rect x="55" y="385" width="610" height="190" rx="18" fill="#fff" stroke="#b4c5dd" stroke-width="2"/></g>
@@ -36,7 +36,7 @@
     <text x="130" y="654" text-anchor="middle" fill="#fff" font-size="20" font-weight="750">3 · CLOSE</text>
     <g transform="translate(82 707)" fill="#fff"><circle cx="10" cy="0" r="7"/><circle cx="40" cy="-19" r="6"/><circle cx="68" cy="13" r="8"/><circle cx="99" cy="-15" r="7"/></g>
     <text x="235" y="670" fill="#172130" font-size="26" font-weight="700">Stochastic closure</text>
-    <text x="235" y="709" fill="#4f5d70" font-size="20">• collision-localised random kicks</text><text x="235" y="741" fill="#4f5d70" font-size="20">• covariance tied to local collision rate</text><text x="235" y="773" fill="#4f5d70" font-size="20">• unresolved collision history only</text>
+    <text x="235" y="709" fill="#4f5d70" font-size="20">• collision-localised random kicks</text><text x="235" y="741" fill="#4f5d70" font-size="20">• covariance related to local collision rate</text><text x="235" y="773" fill="#4f5d70" font-size="20">• unresolved collision history only</text>
     <path d="M360 817V844" fill="none" stroke="#16815b" stroke-width="5" marker-end="url(#arrow)"/>
 
     <g filter="url(#shadow)"><rect x="55" y="855" width="610" height="190" rx="18" fill="#fff" stroke="#acd0c0" stroke-width="2"/></g>
@@ -52,8 +52,8 @@
     <g font-size="17" font-weight="650" text-anchor="middle" fill="#29425f">
       <rect x="82" y="1132" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="212" y="1155">directional anisotropy</text>
       <rect x="378" y="1132" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="508" y="1155">spatial pair availability</text>
-      <rect x="82" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="212" y="1200">inward motion + selection</text>
-      <rect x="378" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="508" y="1200">recurrence + pair state?</text>
+      <rect x="82" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="212" y="1200">inward motion and selection</text>
+      <rect x="378" y="1177" width="260" height="34" rx="17" fill="#fff" stroke="#c6ded3"/><text x="508" y="1200">same-pair recurrence</text>
     </g>
     <text x="360" y="1230" text-anchor="middle" fill="#14734f" font-size="15" font-weight="700">incorporate collision statistics and anisotropic organisation</text>
     <path d="M600 1241H123" fill="none" stroke="#16815b" stroke-width="4" marker-end="url(#return)"/>

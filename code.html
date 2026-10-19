@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Complete Python source for Johaan Tomy Kallany’s 20-module inertial-particle simulation, DNS interpolation, analysis and visualisation pipeline.">
+  <meta name="description" content="Complete Python source for Johaan Tomy Kallany’s 20-module hard-particle simulation, carrier-field reconstruction, analysis and visualisation pipeline.">
   <meta name="theme-color" content="#ffffff">
   <meta name="color-scheme" content="light">
   <link rel="canonical" href="https://kallanyjohaan.github.io/code.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research code | Johaan Tomy Kallany">
-  <meta property="og:description" content="Browse the complete source of a 20-module inertial-particle research pipeline.">
+  <meta property="og:description" content="Browse the complete source of a 20-module hard-particle simulation and analysis pipeline.">
   <meta property="og:url" content="https://kallanyjohaan.github.io/code.html">
   <meta property="og:image" content="https://kallanyjohaan.github.io/assets/social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Collision-on particles on near-wall turbulent streaks, from the MSc thesis, with the site title.">
+  <meta property="og:image:alt" content="Collision-enabled particles organised by near-wall turbulent streaks, alongside the website title.">
   <meta name="twitter:card" content="summary_large_image">
   <title>Research code | Johaan Tomy Kallany</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -43,7 +43,7 @@
       <p class="breadcrumb"><a href="index.html">Home</a> / Research code</p>
       <p class="label">Research software · complete source</p>
       <h1>Explore the research code, file by file.</h1>
-      <p class="lead">This project connects hard-particle dynamics, interpolation of a near-wall DNS record, multiscale diagnostics and publication-ready figures. Expand a module for a concise two-line description, then select See code to read the complete file in a new tab.</p>
+      <p class="lead">This project connects hard-particle dynamics, reconstruction of a time-resolved wall-parallel carrier field from turbulent-channel DNS data, multiscale diagnostics and publication-ready figures. Expand a module to read its concise description, then select “See code” to open the complete file in a new tab.</p>
       <div class="actions">
         <a class="btn" href="#browser">Browse code modules</a>
         <a class="btn btn-ghost" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20reuse%20permission%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20of%20interest%3A%0AIntended%20use%3A%0ACollaboration%20or%20reproduction%20planned%3A">Request reuse permission</a>
@@ -54,31 +54,31 @@
       <div class="wrap">
         <div class="code-browser-head">
           <div>
-            <p class="section-eyebrow">20 complete modules · five layers</p>
+            <p class="section-eyebrow">20 Python modules · five functional groups</p>
             <h2 id="browser-title">Browse the complete implementation</h2>
-            <p>Search by filename, purpose or code content. Expand a module for its description, or select See code to open the complete file.</p>
+            <p>Search by filename, purpose or source content. Expand a module to read its description, or select “See code” to open the complete file in a new tab.</p>
           </div>
           <div class="code-search">
             <label for="code-search">Filter modules</label>
-            <input id="code-search" type="search" autocomplete="off" placeholder="Try collision, DNS or figures" aria-describedby="code-results">
+            <input id="code-search" type="search" autocomplete="off" placeholder="Try collisions, DNS or figures" aria-describedby="code-results">
             <p id="code-results" role="status" aria-live="polite">20 modules shown</p>
           </div>
         </div>
 
         <div class="code-view-toolbar">
-          <div id="code-view-actions" class="code-view-actions" aria-label="Code view controls" hidden>
+          <div id="code-view-actions" class="code-view-actions" role="group" aria-label="Module description controls" hidden>
             <button id="expand-all-code" class="btn btn-ghost btn-sm" type="button">Expand all descriptions</button>
-            <button id="collapse-all-code" class="btn btn-ghost btn-sm" type="button">Collapse all</button>
+            <button id="collapse-all-code" class="btn btn-ghost btn-sm" type="button">Collapse all descriptions</button>
           </div>
-          <p id="code-view-status" role="status" aria-live="polite">Expand for two-line descriptions. See code opens the complete file in a new tab.</p>
+          <p id="code-view-status" role="status" aria-live="polite">Expand modules to read their descriptions. “See code” opens each complete file in a new tab.</p>
         </div>
 
         <nav class="code-group-nav" aria-label="Code groups">
           <a href="#simulation-core">Simulation core</a>
-          <a href="#dns-data">DNS data</a>
+          <a href="#dns-data">DNS data and interpolation</a>
           <a href="#study-workflow">Study workflow</a>
           <a href="#diagnostics">Diagnostics</a>
-          <a href="#figures-outputs">Figures &amp; outputs</a>
+          <a href="#figures-outputs">Figures and outputs</a>
         </nav>
 
         <p id="code-empty" class="code-empty" hidden>No modules match this search. Try a filename or a broader scientific term.</p>
@@ -86,11 +86,11 @@
         <section id="simulation-core" class="code-group" data-code-group aria-labelledby="simulation-core-title">
           <div class="code-group-heading">
             <p>01</p>
-            <div><h2 id="simulation-core-title">Simulation core</h2><p>Particle motion, periodic contacts and runtime reporting.</p></div>
+            <div><h2 id="simulation-core-title">Simulation core</h2><p>Hard-particle motion, periodic contacts and runtime reporting.</p></div>
           </div>
 
           <details class="code-module" data-code-module data-code-name="modified_engine.py hard-particle dynamics contact mechanics periodic box">
-            <summary><span><code id="source-title-modified-engine">modified_engine.py</code><small>Hard-particle dynamics, contact mechanics and drag coupling</small></span><a class="source-badge code-new-tab" href="code.html#source-title-modified-engine" target="_blank" rel="noopener" aria-label="See the complete modified_engine.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-modified-engine">modified_engine.py</code><small>Hard-particle dynamics, contact resolution and continuous Stokes relaxation</small></span><a class="source-badge code-new-tab" href="code.html#source-title-modified-engine" target="_blank" rel="noopener" aria-label="Open the complete source of modified_engine.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>Periodic coordinates are normalised in place before neighbour and contact calculations.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-modified-engine" data-source-file="modified_engine.py"><code># -*- coding: utf-8 -*-
@@ -3726,7 +3726,7 @@ if __name__ == "__main__":
           </details>
 
           <details class="code-module" data-code-module data-code-name="fast_pairs.py periodic neighbour search k-d tree candidate pairs">
-            <summary><span><code id="source-title-fast-pairs">fast_pairs.py</code><small>Periodic candidate-pair searches with a k-d tree</small></span><a class="source-badge code-new-tab" href="code.html#source-title-fast-pairs" target="_blank" rel="noopener" aria-label="See the complete fast_pairs.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-fast-pairs">fast_pairs.py</code><small>Periodic candidate-pair searches with a k-d tree</small></span><a class="source-badge code-new-tab" href="code.html#source-title-fast-pairs" target="_blank" rel="noopener" aria-label="Open the complete source of fast_pairs.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>The accelerated search preserves the engine’s periodic pair convention.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-fast-pairs" data-source-file="fast_pairs.py"><code>"""Use a periodic ``cKDTree`` for candidate-pair searches.
@@ -3793,9 +3793,9 @@ def verify(N=20000, L=None, W=None, r_query=6.06e-3, seed=0):
           </details>
 
           <details class="code-module" data-code-module data-code-name="progress.py runtime progress monitoring reporting terminal">
-            <summary><span><code id="source-title-progress">progress.py</code><small>Lightweight progress and runtime diagnostic reporting</small></span><a class="source-badge code-new-tab" href="code.html#source-title-progress" target="_blank" rel="noopener" aria-label="See the complete progress.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-progress">progress.py</code><small>Lightweight progress monitoring and runtime diagnostics</small></span><a class="source-badge code-new-tab" href="code.html#source-title-progress" target="_blank" rel="noopener" aria-label="Open the complete source of progress.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>A compact terminal bar keeps long parameter studies readable.</p>
+              <p>A compact terminal display reports progress during long simulations and parameter sweeps.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-progress" data-source-file="progress.py"><code>"""
 Progress reporting for long engine runs.
 
@@ -4004,13 +4004,13 @@ class SweepProgress:
         <section id="dns-data" class="code-group" data-code-group aria-labelledby="dns-data-title">
           <div class="code-group-heading">
             <p>02</p>
-            <div><h2 id="dns-data-title">DNS data and interpolation</h2><p>Dataset conventions, wall units and velocity reconstruction.</p></div>
+            <div><h2 id="dns-data-title">DNS data and interpolation</h2><p>Dataset conventions, wall units and carrier-field reconstruction.</p></div>
           </div>
 
           <details class="code-module" data-code-module data-code-name="dataset.py DNS dataset geometry derivative wall-normal Lagrange convention">
-            <summary><span><code id="source-title-dataset">dataset.py</code><small>Dataset geometry, component ordering and wall-normal conventions</small></span><a class="source-badge code-new-tab" href="code.html#source-title-dataset" target="_blank" rel="noopener" aria-label="See the complete dataset.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-dataset">dataset.py</code><small>Dataset geometry, component ordering and wall-normal conventions</small></span><a class="source-badge code-new-tab" href="code.html#source-title-dataset" target="_blank" rel="noopener" aria-label="Open the complete source of dataset.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>A local three-point Lagrange derivative respects the stored wall-normal node positions.</p>
+              <p>A local three-point Lagrange stencil accounts for the stored wall-normal node positions.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-dataset" data-source-file="dataset.py"><code>"""Dataset-specific conventions for the near-wall DNS pipeline.
 
 The canonical component order is streamwise, spanwise, wall-normal, denoted
@@ -4767,9 +4767,9 @@ if __name__ == "__main__":
           </details>
 
           <details class="code-module" data-code-module data-code-name="slab_interp.py DNS slab interpolation wall units Reynolds number">
-            <summary><span><code id="source-title-slab-interp">slab_interp.py</code><small>Spatial and temporal interpolation of the near-wall DNS slab</small></span><a class="source-badge code-new-tab" href="code.html#source-title-slab-interp" target="_blank" rel="noopener" aria-label="See the complete slab_interp.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-slab-interp">slab_interp.py</code><small>Spatial and temporal interpolation of the near-wall DNS slab</small></span><a class="source-badge code-new-tab" href="code.html#source-title-slab-interp" target="_blank" rel="noopener" aria-label="Open the complete source of slab_interp.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>The wall-unit conversion is kept explicit at the interpolation boundary.</p>
+              <p>Wall-unit conversion remains explicit at the interpolation interface.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-slab-interp" data-source-file="slab_interp.py"><code>"""Interpolate velocity ``u(x, z, y, t)`` in a near-wall DNS slab.
 
 The component order is streamwise, spanwise, wall-normal, denoted
@@ -5654,9 +5654,9 @@ if __name__ == "__main__":
           </details>
 
           <details class="code-module" data-code-module data-code-name="dns_fluid.py DNS velocity field particle Reynolds Stokes wall units">
-            <summary><span><code id="source-title-dns-fluid">dns_fluid.py</code><small>Connects interpolated DNS fields to the particle engine</small></span><a class="source-badge code-new-tab" href="code.html#source-title-dns-fluid" target="_blank" rel="noopener" aria-label="See the complete dns_fluid.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-dns-fluid">dns_fluid.py</code><small>One-way coupling of the interpolated DNS field to the particle engine</small></span><a class="source-badge code-new-tab" href="code.html#source-title-dns-fluid" target="_blank" rel="noopener" aria-label="Open the complete source of dns_fluid.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>Small conversion helpers keep particle and wall-unit reporting consistent.</p>
+              <p>Conversion helpers keep particle-response quantities and wall-unit labels consistent.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-dns-fluid" data-source-file="dns_fluid.py"><code>"""DNS-backed velocity field for the two-dimensional hard-disk engine.
 
 The pipeline component order is streamwise, spanwise, wall-normal,
@@ -6132,13 +6132,13 @@ if __name__ == "__main__":
         <section id="study-workflow" class="code-group" data-code-group aria-labelledby="study-workflow-title">
           <div class="code-group-heading">
             <p>03</p>
-            <div><h2 id="study-workflow-title">Study workflow</h2><p>Configuration, parameter resolution and one-case execution.</p></div>
+            <div><h2 id="study-workflow-title">Study workflow</h2><p>Configuration, parameter resolution and single-case execution.</p></div>
           </div>
 
           <details class="code-module" data-code-module data-code-name="run_study.py command line configuration model collision law workflow">
-            <summary><span><code id="source-title-run-study">run_study.py</code><small>Main command-line configuration and study workflow</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-study" target="_blank" rel="noopener" aria-label="See the complete run_study.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-run-study">run_study.py</code><small>Main command-line configuration and study workflow</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-study" target="_blank" rel="noopener" aria-label="Open the complete source of run_study.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>One resolver translates a model label into the contact parameters used downstream.</p>
+              <p>A single resolver maps each model label to the corresponding contact parameters.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-run-study" data-source-file="run_study.py"><code>"""
 Command-line entry point for the DNS-slab particle study.
 
@@ -7801,9 +7801,9 @@ if __name__ == "__main__":
           </details>
 
           <details class="code-module" data-code-module data-code-name="run_dns_study.py parameter resolution paired runs sweep analysis response time">
-            <summary><span><code id="source-title-run-dns-study">run_dns_study.py</code><small>Parameter resolution, paired runs and sweep analysis</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-dns-study" target="_blank" rel="noopener" aria-label="See the complete run_dns_study.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-run-dns-study">run_dns_study.py</code><small>Parameter resolution, paired runs and sweep analysis</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-dns-study" target="_blank" rel="noopener" aria-label="Open the complete source of run_dns_study.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>The study runner keeps the Stokes response-time closure explicit.</p>
+              <p>The study runner keeps the Stokes response-time relation explicit.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-run-dns-study" data-source-file="run_dns_study.py"><code>"""
 Run clustering and collective-behaviour analyses for inertial particles in a
 near-wall DNS slab using ``modified_engine.simulate_drag_friction``.
@@ -8791,9 +8791,9 @@ if __name__ == "__main__":
           </details>
 
           <details class="code-module" data-code-module data-code-name="run_one_case.py single case snapshots frame clamp analysis">
-            <summary><span><code id="source-title-run-one-case">run_one_case.py</code><small>Runs and analyses one particle-response case</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-one-case" target="_blank" rel="noopener" aria-label="See the complete run_one_case.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-run-one-case">run_one_case.py</code><small>Single-case execution and analysis at a prescribed particle response time</small></span><a class="source-badge code-new-tab" href="code.html#source-title-run-one-case" target="_blank" rel="noopener" aria-label="Open the complete source of run_one_case.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>Snapshot limits use one convention from the command line through the analysis layer.</p>
+              <p>Snapshot-limit inputs are handled consistently from command-line configuration through analysis.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-run-one-case" data-source-file="run_one_case.py"><code>"""
 Run and analyse one particle response time.
 
@@ -9509,13 +9509,13 @@ if __name__ == "__main__":
         <section id="diagnostics" class="code-group" data-code-group aria-labelledby="diagnostics-title">
           <div class="code-group-heading">
             <p>04</p>
-            <div><h2 id="diagnostics-title">Diagnostics</h2><p>Clustering, collective motion, turbulent structures and contact impulses.</p></div>
+            <div><h2 id="diagnostics-title">Diagnostics</h2><p>Particle organisation, pair motion, carrier-flow structures and diagnostic contact impulses.</p></div>
           </div>
 
           <details class="code-module" data-code-module data-code-name="clustering.py periodic clustering variance mean occupancy VMR">
-            <summary><span><code id="source-title-clustering">clustering.py</code><small>Periodic clustering measures and finite-sample references</small></span><a class="source-badge code-new-tab" href="code.html#source-title-clustering" target="_blank" rel="noopener" aria-label="See the complete clustering.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-clustering">clustering.py</code><small>Periodic clustering measures and finite-sample references</small></span><a class="source-badge code-new-tab" href="code.html#source-title-clustering" target="_blank" rel="noopener" aria-label="Open the complete source of clustering.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>The variance-to-mean ratio is paired with grid occupancy for context.</p>
+              <p>Variance-to-mean ratios are interpreted alongside full box-occupancy distributions.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-clustering" data-source-file="clustering.py"><code>"""Particle clustering diagnostics for a periodic two-dimensional domain.
 
 All spatial calculations respect periodic boundaries. The module provides
@@ -9875,9 +9875,9 @@ def poisson_null(N, L, W, reps=5, seed=0, **kw):
           </details>
 
           <details class="code-module" data-code-module data-code-name="collective.py pair motion collision transport radial velocity contact kernel">
-            <summary><span><code id="source-title-collective">collective.py</code><small>Pair motion, collision transport and orientational statistics</small></span><a class="source-badge code-new-tab" href="code.html#source-title-collective" target="_blank" rel="noopener" aria-label="See the complete collective.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-collective">collective.py</code><small>Pair motion, collision-kernel factors and orientational statistics</small></span><a class="source-badge code-new-tab" href="code.html#source-title-collective" target="_blank" rel="noopener" aria-label="Open the complete source of collective.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>The contact-scale diagnostic separates mean relative speed from approaching motion.</p>
+              <p>Contact-scale diagnostics distinguish mean absolute radial relative speed from inward radial motion.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-collective" data-source-file="collective.py"><code>"""Collective-motion diagnostics for the inertial-particle study.
 
 The routines here complement the spatial clustering measures in
@@ -11701,9 +11701,9 @@ def analyse_angular(p, v, L, W, cluster=True):
           </details>
 
           <details class="code-module" data-code-module data-code-name="structures.py flow gradients spectral derivative streaks turbulence">
-            <summary><span><code id="source-title-structures">structures.py</code><small>Flow gradients, streaks and particle–structure relationships</small></span><a class="source-badge code-new-tab" href="code.html#source-title-structures" target="_blank" rel="noopener" aria-label="See the complete structures.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-structures">structures.py</code><small>Flow gradients, streaks and particle-structure relationships</small></span><a class="source-badge code-new-tab" href="code.html#source-title-structures" target="_blank" rel="noopener" aria-label="Open the complete source of structures.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>Periodic directions use a spectral derivative on the DNS grid.</p>
+              <p>Wall-parallel periodic derivatives are evaluated spectrally on the DNS grid.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-structures" data-source-file="structures.py"><code>"""Turbulent-structure diagnostics for a near-wall DNS slab.
 
 The component order is streamwise, spanwise, wall-normal, denoted
@@ -12139,9 +12139,9 @@ def report(k=200, plane=PLANE_TOP, spec=None):
           </details>
 
           <details class="code-module" data-code-module data-code-name="vertical_impulse.py diagnostic contact impulse tangential slip rough law">
-            <summary><span><code id="source-title-vertical-impulse">vertical_impulse.py</code><small>Post-processing of diagnostic contact impulses</small></span><a class="source-badge code-new-tab" href="code.html#source-title-vertical-impulse" target="_blank" rel="noopener" aria-label="See the complete vertical_impulse.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-vertical-impulse">vertical_impulse.py</code><small>Post-processing of diagnostic wall-normal contact impulses</small></span><a class="source-badge code-new-tab" href="code.html#source-title-vertical-impulse" target="_blank" rel="noopener" aria-label="Open the complete source of vertical_impulse.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>Archived slip components allow a diagnostic impulse to be re-evaluated for another contact law.</p>
+              <p>Archived slip components support re-evaluation of the hypothetical wall-normal impulse under alternative contact laws.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-vertical-impulse" data-source-file="vertical_impulse.py"><code>"""Analyse the diagnostic vertical impulse recorded at particle contacts.
 
 The dynamics apply only planar impulses.  For each rough contact, the engine
@@ -12484,13 +12484,13 @@ if __name__ == "__main__":
         <section id="figures-outputs" class="code-group" data-code-group aria-labelledby="figures-outputs-title">
           <div class="code-group-heading">
             <p>05</p>
-            <div><h2 id="figures-outputs-title">Figures and outputs</h2><p>Snapshots, analysis figures, consistent styling and specialised plots.</p></div>
+            <div><h2 id="figures-outputs-title">Figures and outputs</h2><p>Saved snapshots, analysis figures, shared styling and specialised plots.</p></div>
           </div>
 
           <details class="code-module" data-code-module data-code-name="figures.py clustering collective figures collision kernel plots">
-            <summary><span><code id="source-title-figures">figures.py</code><small>Comparison figures for clustering and collective behaviour</small></span><a class="source-badge code-new-tab" href="code.html#source-title-figures" target="_blank" rel="noopener" aria-label="See the complete figures.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-figures">figures.py</code><small>Comparison figures for particle organisation and collective behaviour</small></span><a class="source-badge code-new-tab" href="code.html#source-title-figures" target="_blank" rel="noopener" aria-label="Open the complete source of figures.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>The collision kernel is displayed beside its accumulation and transport factors.</p>
+              <p>The collision kernel is shown together with its accumulation and transport factors.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-figures" data-source-file="figures.py"><code>"""Figures for the DNS slab clustering study.
 
 The comparison plots include a Poisson reference, the tracer baseline and
@@ -13021,9 +13021,9 @@ def fig_angular(p, v, L, W, path=None, p_tracer=None, v_tracer=None,
           </details>
 
           <details class="code-module" data-code-module data-code-name="viz.py flow particle density animations comoving frame visualisation">
-            <summary><span><code id="source-title-viz">viz.py</code><small>Flow-field, particle-density and animation utilities</small></span><a class="source-badge code-new-tab" href="code.html#source-title-viz" target="_blank" rel="noopener" aria-label="See the complete viz.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-viz">viz.py</code><small>Flow-field, particle-density and animation utilities</small></span><a class="source-badge code-new-tab" href="code.html#source-title-viz" target="_blank" rel="noopener" aria-label="Open the complete source of viz.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>A periodic roll removes the measured downstream translation from an animation.</p>
+              <p>A periodic roll removes the measured mean streamwise translation in co-moving animations.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-viz" data-source-file="viz.py"><code>"""Visualisation tools for the DNS slab study.
 
 The module covers turbulent structures, streak statistics, particle density
@@ -13727,7 +13727,7 @@ def make_everything(snap_tracer, snap_case, outdir="viz", crop=None, fps=12):
           </details>
 
           <details class="code-module" data-code-module data-code-name="snapshots.py particle snapshots archive load save plotting">
-            <summary><span><code id="source-title-snapshots">snapshots.py</code><small>Compact particle-snapshot saving, loading and plotting</small></span><a class="source-badge code-new-tab" href="code.html#source-title-snapshots" target="_blank" rel="noopener" aria-label="See the complete snapshots.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-snapshots">snapshots.py</code><small>Compact particle-snapshot saving, loading and plotting</small></span><a class="source-badge code-new-tab" href="code.html#source-title-snapshots" target="_blank" rel="noopener" aria-label="Open the complete source of snapshots.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>Run metadata is restored separately from the time-dependent arrays.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-snapshots" data-source-file="snapshots.py"><code>"""Save, load and plot particle snapshots.
@@ -14038,9 +14038,9 @@ def save_frames(snap, L=None, W=None, outdir="frames", prefix="frame", n_show=No
           </details>
 
           <details class="code-module" data-code-module data-code-name="figstyle.py figure style panel labels publication output">
-            <summary><span><code id="source-title-figstyle">figstyle.py</code><small>Shared figure dimensions, labels, colours and output helpers</small></span><a class="source-badge code-new-tab" href="code.html#source-title-figstyle" target="_blank" rel="noopener" aria-label="See the complete figstyle.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-figstyle">figstyle.py</code><small>Shared figure dimensions, labels, colours and output helpers</small></span><a class="source-badge code-new-tab" href="code.html#source-title-figstyle" target="_blank" rel="noopener" aria-label="Open the complete source of figstyle.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
-              <p>Panel letters stay with the title instead of covering the plotted data.</p>
+              <p>Panel letters remain aligned with titles and clear of the plotted data.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-figstyle" data-source-file="figstyle.py"><code>"""Shared plotting style for the DNS analysis figures.
 
 Importing this module applies the common Matplotlib settings.  The helpers
@@ -14382,7 +14382,7 @@ def caption(fig, text, y=-0.01, fontsize=8):
           </details>
 
           <details class="code-module" data-code-module data-code-name="housestyle.py semantic plotting style shared colour limits comparison">
-            <summary><span><code id="source-title-housestyle">housestyle.py</code><small>Semantic plotting styles and shared comparison limits</small></span><a class="source-badge code-new-tab" href="code.html#source-title-housestyle" target="_blank" rel="noopener" aria-label="See the complete housestyle.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-housestyle">housestyle.py</code><small>Semantic plotting styles and shared comparison limits</small></span><a class="source-badge code-new-tab" href="code.html#source-title-housestyle" target="_blank" rel="noopener" aria-label="Open the complete source of housestyle.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>Paired fields use one robust colour scale so visual contrast remains comparable.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-housestyle" data-source-file="housestyle.py"><code>"""Semantic plotting conventions shared across the analysis scripts.
@@ -14708,7 +14708,7 @@ __all__ = ["WIDE", "HALF", "GOLDEN", "COLL", "GHOST", "NULL", "SUBSET",
           </details>
 
           <details class="code-module" data-code-module data-code-name="thesisfig.py thesis figure panels layout formatting">
-            <summary><span><code id="source-title-thesisfig">thesisfig.py</code><small>Thesis-specific panel layouts and figure formatting</small></span><a class="source-badge code-new-tab" href="code.html#source-title-thesisfig" target="_blank" rel="noopener" aria-label="See the complete thesisfig.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-thesisfig">thesisfig.py</code><small>Thesis-specific panel layouts and figure formatting</small></span><a class="source-badge code-new-tab" href="code.html#source-title-thesisfig" target="_blank" rel="noopener" aria-label="Open the complete source of thesisfig.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>The standard two-by-two canvas fixes the printed dimensions and panel spacing.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-thesisfig" data-source-file="thesisfig.py"><code>"""Figure helpers for the rotation and extension analysis scripts.
@@ -14857,7 +14857,7 @@ def fmt(x, digits=3):
           </details>
 
           <details class="code-module" data-code-module data-code-name="momentum_energy_plots.py momentum energy collision events histories">
-            <summary><span><code id="source-title-momentum-energy-plots">momentum_energy_plots.py</code><small>Momentum and energy histories with collision markers</small></span><a class="source-badge code-new-tab" href="code.html#source-title-momentum-energy-plots" target="_blank" rel="noopener" aria-label="See the complete momentum_energy_plots.py code in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
+            <summary><span><code id="source-title-momentum-energy-plots">momentum_energy_plots.py</code><small>Momentum and energy histories with collision markers</small></span><a class="source-badge code-new-tab" href="code.html#source-title-momentum-energy-plots" target="_blank" rel="noopener" aria-label="Open the complete source of momentum_energy_plots.py in a new tab">See code <span aria-hidden="true">↗</span></a></summary>
             <div class="code-module-body">
               <p>Collision times for a selected particle are extracted from the shared event log.</p>
               <pre tabindex="0" role="region" aria-labelledby="source-title-momentum-energy-plots" data-source-file="momentum_energy_plots.py"><code>"""Plot momentum and energy histories from saved study archives.
@@ -15104,10 +15104,10 @@ if __name__ == "__main__":
       <div class="wrap code-access-panel">
         <div>
           <p class="section-eyebrow">Reuse and collaboration</p>
-          <h2 id="access-title">Request permission before reuse.</h2>
-          <p>All 20 Python files are visible above for review. For reproduction, redistribution, adaptation or research collaboration, include your affiliation, the modules involved and the intended use.</p>
+          <h2 id="access-title">Request permission before reuse</h2>
+          <p>All 20 Python files are available through the “See code” links for technical review. When requesting permission for reproduction, redistribution, adaptation or research collaboration, include your affiliation, the modules involved and the intended use.</p>
         </div>
-        <a class="btn" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20reuse%20permission%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20of%20interest%3A%0AIntended%20use%3A%0ACollaboration%20or%20reproduction%20planned%3A">Request permission <span aria-hidden="true">→</span></a>
+        <a class="btn" href="mailto:johaantk2001@gmail.com?subject=Research%20code%20reuse%20permission%20request&amp;body=Name%3A%0AAffiliation%3A%0AModules%20of%20interest%3A%0AIntended%20use%3A%0ACollaboration%20or%20reproduction%20planned%3A">Request reuse permission <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </main>

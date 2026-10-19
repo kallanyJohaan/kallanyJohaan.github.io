@@ -15,9 +15,9 @@
   const caption = document.getElementById('animation-caption');
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const descriptions = [
-    'A carrier flow organises particle paths. Lower-inertia particles follow it; higher-inertia particles lag and cross it.',
-    'Particles meet. In the thesis, each contact changes two trajectories at once.',
-    'Across the whole population, structure appears: bands, alignment, coherence (stylised).'
+    'A prescribed carrier flow organises particle paths. Finite response time causes inertial particles to depart from fluid pathlines.',
+    'A hard-particle contact changes the relative velocity and subsequent trajectories of the colliding pair.',
+    'At the population level, the carrier establishes the dominant particle organisation, while collisions redistribute its strength and spatial scale. The sequence is stylised.'
   ];
   const STAGES = descriptions.length;
   const H = 430, duration = 8;
