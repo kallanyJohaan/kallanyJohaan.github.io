@@ -302,7 +302,7 @@ footer a{color:var(--muted)}
 .direction-image.thesis-comparison-image{background:#fff}
 .direction-image.thesis-comparison-image img{object-fit:contain}
 .direction-video{display:block;width:100%;height:100%;object-fit:cover;background:#0d1726}
-.thesis-video-figure .direction-video{height:auto;aspect-ratio:16/9}
+.thesis-video-figure .direction-video{height:auto;aspect-ratio:949/342;object-fit:contain;background:#fff}
 .direction-image.conceptual img{object-fit:cover}
 .direction-image[href]:hover img{transform:scale(1.035)}
 .direction-image.thesis-comparison-image:hover img{transform:none}

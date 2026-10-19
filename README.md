@@ -17,7 +17,7 @@ Static, accessible, responsive academic research website for GitHub Pages. It pr
 - `style.css`, `script.js`, `animation.js`: dependency-free layout and controls.
 - `assets/figures/`: 11 original thesis figures extracted from cited pages with optimised web-sized copies.
 - `assets/images/`: six self-contained conceptual SVG assets: two compact homepage illustrations, two detailed research frameworks and two mobile-specific stacked versions.
-- `assets/research-overview.mp4`: supplied five-second, 1920×1080 research-overview video used in the homepage thesis section.
+- `assets/research-overview.mp4`: supplied five-second research-overview video, cropped to 1898×684 to remove embedded black padding, used in the homepage thesis section.
 - `assets/Johaan_Kallany_Thesis.pdf`: public thesis PDF (25.35 MB).
 - `assets/Johaan_Tomy_Kallany_CV.pdf`: public research CV (0.19 MB).
 - `assets/social-card.jpg`, `favicon.svg`: Open Graph preview and favicon.
@@ -26,7 +26,7 @@ Static, accessible, responsive academic research website for GitHub Pages. It pr
 
 ### Scientific and bibliographic integrity
 
-The original thesis figures are cropped directly from the supplied thesis PDF, not AI-generated plots. Captions point to the corresponding thesis pages. The research-overview video is the supplied `Media1.mp4`, renamed and copied without re-encoding. The hero animation and the inverse-design/continuum diagrams are **conceptual illustrations**, not research data or quantitative model solutions. Future PhD directions are explicitly labelled *proposed*. The detailed programme distinguishes the rigid-particle foundation established in the thesis from flexible-particle optimisation and the wall-turbulence continuum closure that remain future work.
+The original thesis figures are cropped directly from the supplied thesis PDF, not AI-generated plots. Captions point to the corresponding thesis pages. The research-overview video is the supplied `Media1.mp4`, cropped only to remove its embedded black padding and re-encoded at high quality with the original audio track preserved. The hero animation and the inverse-design/continuum diagrams are **conceptual illustrations**, not research data or quantitative model solutions. Future PhD directions are explicitly labelled *proposed*. The detailed programme distinguishes the rigid-particle foundation established in the thesis from flexible-particle optimisation and the wall-turbulence continuum closure that remain future work.
 
 The López–Puglisi citation is: C. López and A. Puglisi, *Continuum description of finite-size particles advected by external flows: The effect of collisions*, Physical Review E **69**, 046306 (2004), DOI `10.1103/PhysRevE.69.046306`.
 
