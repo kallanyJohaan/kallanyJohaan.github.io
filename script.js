@@ -118,3 +118,25 @@ if(expandAllCode&&collapseAllCode&&codeViewActions){
   if(codeViewStatus)codeViewStatus.textContent='All code panels collapsed.';
  });
 }
+
+const codeNewTabLinks=[...document.querySelectorAll('.code-new-tab')];
+codeNewTabLinks.forEach(link=>{
+ link.addEventListener('click',event=>event.stopPropagation());
+ link.addEventListener('keydown',event=>event.stopPropagation());
+});
+
+function revealLinkedCode(){
+ if(!location.hash.startsWith('#source-title-'))return;
+ let id;
+ try{id=decodeURIComponent(location.hash.slice(1))}catch(error){return}
+ const title=document.getElementById(id);
+ const module=title?.closest('[data-code-module]');
+ if(!title||!module)return;
+ module.hidden=false;
+ module.open=true;
+ document.title=`${title.textContent} | Research code | Johaan Tomy Kallany`;
+ if(codeViewStatus)codeViewStatus.textContent=`Complete ${title.textContent} source expanded in this tab.`;
+ requestAnimationFrame(()=>title.scrollIntoView({block:'start'}));
+}
+revealLinkedCode();
+window.addEventListener('hashchange',revealLinkedCode);
