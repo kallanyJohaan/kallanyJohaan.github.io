@@ -19,7 +19,7 @@ Static, accessible, responsive academic research website for GitHub Pages. It pr
 - `assets/images/`: six self-contained conceptual SVG assets: two compact homepage illustrations, two detailed research frameworks and two mobile-specific stacked versions.
 - `assets/research-overview.mp4`: supplied five-second research-overview video, cropped to 1898×684 to remove embedded black padding, used in the homepage thesis section.
 - `assets/Johaan_Kallany_Thesis.pdf`: public thesis PDF (25.35 MB).
-- `assets/Johaan_Tomy_Kallany_CV.pdf`: public research CV (0.19 MB).
+- `assets/Johaan_Tomy_Kallany_CV.pdf`: public research CV (0.21 MB).
 - `assets/social-card.jpg`, `favicon.svg`: Open Graph preview and favicon.
 - `404.html`, `robots.txt`, `sitemap.xml`, `.nojekyll`: GitHub Pages configuration.
 - `thesis.html`, `resources.html`, `contact.html`: lightweight redirects protecting links to legacy pages in the existing repository.
@@ -38,7 +38,7 @@ Text visible in a browser can always be copied or saved, including code embedded
 
 ### Privacy and document availability
 
-The provided CV's phone-number and city/address line was removed using PDF text redaction. The public thesis retains all three original signatures, as requested. The two student-ID lines beneath the candidate signature are masked on its rasterised cover, and the remaining 135 pages are retained from the original thesis. These public copies should still be visually reviewed before publishing. Never commit unredacted originals; deleting them later would not remove them from git history.
+The replacement CV is published verbatim at the website owner's request, including the contact details supplied in it. The public thesis retains all three original signatures, as requested. The two student-ID lines beneath the candidate signature are masked on its rasterised cover, and the remaining 135 pages are retained from the original thesis. These public copies should still be visually reviewed before publishing. Never commit unredacted originals; deleting them later would not remove them from git history.
 
 The supplied defence-slide PPTX was used as a source for the detailed micro-to-continuum explanation. It is not bundled as a public download, and the earlier broken defence-slides PDF reference remains removed rather than being replaced with a fabricated file.
 
